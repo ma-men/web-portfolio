@@ -154,9 +154,10 @@ nav a:hover {
 /**********************************************************/
 /* Container für alle Skill-Cards */
 /* === GRID === */
+/* Masonry Layout Fix */
 #skills-grid {
     display: block !important;    /* erzwingt block statt flex/grid */
-    column-count: 3;              /* 3 Spalten im Desktop */
+    column-count: 3;
     column-gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
@@ -165,29 +166,30 @@ nav a:hover {
 }
 
 .skill-card {
-  display: inline-block;        /* WICHTIG für Masonry-Effekt */
-  width: 100%;
-  margin: 0 0 1.5rem;
-  break-inside: avoid;          /* verhindert, dass Card zerrissen wird */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  vertical-align: top;          /* gleichmäßiger Look */
-  padding: 1rem;
+    display: inline-block;        /* wichtig für Spaltenfluss */
+    width: 100%;
+    margin: 0 0 1.5rem;
+    break-inside: avoid;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    vertical-align: top;
 }
 
-/* Responsive Anpassung */
+/* Responsive */
 @media (max-width: 992px) {
     #skills-grid {
-        column-count: 2;
-    }
+      column-count: 2;
+  }
 }
 
 @media (max-width: 600px) {
     #skills-grid {
-        column-count: 1;
-    }
+      column-count: 1;
+  }
 }
+
 
 
 /*     
