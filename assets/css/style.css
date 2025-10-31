@@ -273,18 +273,6 @@ nav a:hover {
 }
 
 
-/* === RESPONSIVE === */
-@media (max-width: 1000px) {
-    #skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    }
-}
-
-@media (max-width: 650px) {
-    #skills-container {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 
