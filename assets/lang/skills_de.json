@@ -44,7 +44,32 @@
       ]
     },
     {
-      "group": "Tools & Frameworks",
+      "group": "Kollaborationstools",
+      "skills": [
+        { "name": "Jira", "rating": 4, "desc": " " },
+        { "name": "Confluence", "rating": 4, "desc": " " },
+        { "name": "Bitbucket", "rating": 2.5, "desc": " " },
+        { "name": "Git / GitHub", "rating": 3, "desc": " " },
+        { "name": "Rational Synergy", "rating": 4, "desc": " " },
+        { "name": "Rational DOORS Classic", "rating": 2, "desc": " " },
+        { "name": "Polarion", "rating": 3, "desc": " " },
+        { "name": "Google Workspace", "rating":4, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " }
+      ]
+    },
+    { 
+      "group": "Agriculture / Automotive",
+      "skills": [
+        { "name": "CAN-BUS", "rating": 4, "desc": " " },
+        { "name": "ISOBUS 11783", "rating": 5, "desc": " " },
+        { "name": "KWP2000",  "rating": 4,  "desc": " " },
+        { "name": "J1939", "rating": 3, "desc": " " }
+      ]
+    },    
+    {
+      "group": "Test- Tools & Frameworks",
       "skills": [
         {
           "name": "Selenium / Playwright / Cypress",
@@ -52,20 +77,10 @@
           "desc": "Erfahren in E2E-Testautomatisierung, Screenshots, Traces und GitHub Actions CI/CD."
         },
         {
-          "name": "Git / GitHub / GitLab",
-          "rating": 4.5,
-          "desc": "Versionsverwaltung, Branching, Pull Requests und CI/CD-Pipelines."
-        },
-        {
           "name": "Postman / Newman",
           "rating": 4,
           "desc": "API-Testautomatisierung, Reporting und Integration in GitHub Actions."
         },
-        {
-          "name": "Maven / Gradle",
-          "rating": 3.5,
-          "desc": "Build-Management und Dependency Handling in Java-Projekten."
-        }
       ]
     },
     {
