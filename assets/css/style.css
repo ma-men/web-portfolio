@@ -154,46 +154,34 @@ nav a:hover {
 /**********************************************************/
 /* Container für alle Skill-Cards */
 /* === GRID === */
-#skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.skills-grid {
+    column-count: 3;              /* Anzahl Spalten (Desktop) */
+    column-gap: 1.5rem;
+    padding: 1rem;
 }
-
-/* Einzelkarte */
-/* === CARD === */
-/* .skill-card {
-    display: inline-block;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.4rem 1.6rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-} */
 
 .skill-card {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 1.5rem;
-  break-inside: avoid;
-  background: white;
-  padding: 1.25rem;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    break-inside: avoid;          /* verhindert Card-Zerreißen */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: #fff;
 }
 
+/* Responsive Anpassung */
+@media (max-width: 992px) {
+    .skills-grid {
+        column-count: 2;
+    }
+}
 
-
-
-
-
-
-
-
+@media (max-width: 600px) {
+    .skills-grid {
+        column-count: 1;
+    }
+}
 
 
 /*     
