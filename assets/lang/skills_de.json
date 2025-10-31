@@ -6,7 +6,7 @@
             {
                "name":"Java",
                "rating":3.5,
-               "desc":"Solide Kenntnisse in OOP, JavaFX und Datenbankanbindung. Vorbereitung auf Oracle-Zertifizierung.",
+               "desc":"gute Kenntnisse inkl. JavaFX und MariaDB Anbindung",
                "certs":[
                   {
                      "label":"8-wöchiger Java-Lehrgang",
@@ -21,7 +21,7 @@
             {
                "name":"Python",
                "rating":3,
-               "desc":"Erfahrung mit Automatisierung, Playwright, CSV-Handling und Konsolenanwendungen.",
+               "desc":"Kenntnisse auf PCEP-Prüfung-Niveau",
                "certs":[
                   {
                      "label":"Python PCEP-Prüfung",
@@ -36,22 +36,34 @@
             {
                "name":"C",
                "rating":5,
-               "desc":"18 Jahre Berufserfahrung als Embedded-C-Programmierer für Automotive und Agrartechnik."
+               "desc":"18 Jahre Berufserfahrung als Embedded-C-Programmierer im Bereich Telekommunikation, Automotive und Agrartechnik."
             },
             {
                "name":"C#",
                "rating":2.5,
-               "desc":"Grundkenntnisse in OOP, GUI-Entwicklung und Testautomatisierung."
+               "desc":" "
             },
             {
                "name":"JavaScript",
                "rating":3,
-               "desc":"Grundkenntnisse in Frontend-Interaktivität, DOM-Manipulation und JSON-Datenverarbeitung."
+               "desc":"inkl. AJAX",
+               "certs":[                 
+                  {
+                     "label":"4-wöchiger JavaScript-Lehrgang",
+                     "file":" "
+                  }
+               ]
             },
             {
                "name":"HTML & CSS",
                "rating":4,
-               "desc":"Responsive Webdesign, CSS-Grid, Flexbox, GitHub Pages."
+               "desc":"gute kenntnisse auch im responsiven Webdesign",
+                "certs":[                 
+                  {
+                     "label":"8-wöchiger Webdesign-Lehrgang",
+                     "file":"Webdesign.pdf"
+                  }
+               ]
             }
          ]
       },
@@ -61,57 +73,42 @@
             {
                "name":"Jira",
                "rating":4,
-               "desc":" "
+               "desc":"ca. 7 Jahre Berufserfahrung in SCRUM und Kanban Teams."
             },
             {
                "name":"Confluence",
                "rating":4,
-               "desc":" "
+               "desc":"6 Jahre Berufserfahrung in der Dokumentation von Testplänen, Testfällen und Ergebnissen."
             },
             {
                "name":"Bitbucket",
                "rating":2.5,
-               "desc":" "
+               "desc":"ca 4 Jahre Berufserfahrung in der Quellcodeverwaltung."
             },
             {
                "name":"Git / GitHub",
                "rating":3,
-               "desc":" "
+               "desc":"7 Jahre Berufserfahrung in der Quellcodeverwaltung"
             },
             {
                "name":"Rational Synergy",
                "rating":4,
-               "desc":" "
+               "desc":"jahrelange Tätigkeit als Keyuser zur Unterstützung von Entwicklern und Testern."
             },
             {
                "name":"Rational DOORS Classic",
-               "rating":2,
+               "rating":1.5,
                "desc":" "
             },
             {
                "name":"Polarion",
                "rating":3,
-               "desc":" "
+               "desc":"Einführung von Polarion zur Anforderungsverwaltung in ein bestehendes System."
             },
             {
                "name":"Google Workspace",
                "rating":4,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
+               "desc":"Jahrelange Nutzung in einem internationalen Arbeitsumfeld."
             }
          ]
       },
@@ -121,7 +118,7 @@
             {
                "name":"CAN-BUS",
                "rating":4,
-               "desc":" "
+               "desc":"gute Analyse Affinität von CAN-Traces"
             },
             {
                "name":"ISOBUS 11783",
@@ -144,14 +141,24 @@
          "group":"Test- Tools & Frameworks",
          "skills":[
             {
-               "name":"Selenium / Playwright / Cypress",
-               "rating":5,
-               "desc":"Erfahren in E2E-Testautomatisierung, Screenshots, Traces und GitHub Actions CI/CD."
+               "name":"Selenium",
+               "rating":0,
+               "desc":" "
             },
             {
-               "name":"Postman / Newman",
-               "rating":4,
-               "desc":"API-Testautomatisierung, Reporting und Integration in GitHub Actions."
+               "name":"Playwright",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Cypress",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Postman",
+               "rating":0,
+               "desc":" "
             }
          ]
       },
@@ -164,15 +171,30 @@
                "desc":"Anbindung über JDBC und SQL-Scripting."
             },
             {
-               "name":"SQLite",
-               "rating":4,
+               "name":"JSON",
+               "rating":3,
                "desc":"Lokale Datenhaltung und Testing-Umgebungen."
+            }
+         ]
+      },
+      {
+         "group":"Elektronik, embedded Systems",
+         "skills":[
+            {
+               "name":"Elektronik",
+               "rating":3.5,
+               "desc":"Solide Kenntnisse in Elektrotechnik/Elektronik: sicherer Umgang mit Multimeter und Oszilloskop, Verständnis grundlegender Schaltungen und elektronischer Bauelemente."
             },
             {
-               "name":"CSV",
-               "rating":5,
-               "desc":"Strukturierte Datenspeicherung in Konsolenprojekten."
-            }
+               "name":"ESD",
+               "rating":4,
+               "desc":"Vertrautheit mit ESD-Schutzmaßnahmen und -Verfahren in der Elektronikentwicklung."
+            },
+            {
+               "name":"Embedded Systems",
+               "rating":4,
+               "desc":"Langjährige Erfahrung in der Entwicklung und dem Testen von Embedded Software für Telekommunikationsanwendungen und Steuergeräte in der Agrartechnik."
+            } 
          ]
       }
    ]

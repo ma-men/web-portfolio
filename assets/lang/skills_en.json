@@ -1,19 +1,19 @@
 {
    "groups":[
       {
-         "group":"Programmier-, Skript- und Markupsprachen",
+         "group":"Programming, Scripting, and Markup Languages",
          "skills":[
             {
                "name":"Java",
                "rating":3.5,
-               "desc":"Solide Kenntnisse in OOP, JavaFX und Datenbankanbindung. Vorbereitung auf Oracle-Zertifizierung.",
+               "desc":"Good knowledge including JavaFX and MariaDB integration",
                "certs":[
                   {
-                     "label":"8-wöchiger Java-Lehrgang",
+                     "label":"8-week Java course",
                      "file":"java-lehrgang.pdf"
                   },
                   {
-                     "label":"7-wöchiges Java-Praktikum",
+                     "label":"7-week Java internship",
                      "file":"java-praktikum.pdf"
                   }
                ]
@@ -21,14 +21,14 @@
             {
                "name":"Python",
                "rating":3,
-               "desc":"Erfahrung mit Automatisierung, Playwright, CSV-Handling und Konsolenanwendungen.",
+               "desc":"Knowledge at PCEP exam level",
                "certs":[
                   {
-                     "label":"Python PCEP-Prüfung",
+                     "label":"Python PCEP exam",
                      "file":"python-pcep.pdf"
                   },
                   {
-                     "label":"4-wöchiger Python-Lehrgang",
+                     "label":"4-week Python course",
                      "file":"python-lehrgang.pdf"
                   }
                ]
@@ -36,82 +36,79 @@
             {
                "name":"C",
                "rating":5,
-               "desc":"18 Jahre Berufserfahrung als Embedded-C-Programmierer für Automotive und Agrartechnik."
+               "desc":"18 years of professional experience as an Embedded C programmer in telecommunications, automotive, and agricultural technology."
             },
             {
                "name":"C#",
                "rating":2.5,
-               "desc":"Grundkenntnisse in OOP, GUI-Entwicklung und Testautomatisierung."
+               "desc":" "
             },
             {
                "name":"JavaScript",
                "rating":3,
-               "desc":"Grundkenntnisse in Frontend-Interaktivität, DOM-Manipulation und JSON-Datenverarbeitung."
+               "desc":"Including AJAX",
+               "certs":[                 
+                  {
+                     "label":"4-week JavaScript course",
+                     "file":" "
+                  }
+               ]
             },
             {
                "name":"HTML & CSS",
                "rating":4,
-               "desc":"Responsive Webdesign, CSS-Grid, Flexbox, GitHub Pages."
+               "desc":"Good knowledge including responsive web design",
+               "certs":[                 
+                  {
+                     "label":"8-week Web Design course",
+                     "file":"Webdesign.pdf"
+                  }
+               ]
             }
          ]
       },
       {
-         "group":"Kollaborationstools",
+         "group":"Collaboration Tools",
          "skills":[
             {
                "name":"Jira",
                "rating":4,
-               "desc":" "
+               "desc":"Approx. 7 years of professional experience in SCRUM and Kanban teams."
             },
             {
                "name":"Confluence",
                "rating":4,
-               "desc":" "
+               "desc":"6 years of professional experience documenting test plans, test cases, and results."
             },
             {
                "name":"Bitbucket",
                "rating":2.5,
-               "desc":" "
+               "desc":"Approx. 4 years of professional experience in source code management."
             },
             {
                "name":"Git / GitHub",
                "rating":3,
-               "desc":" "
+               "desc":"7 years of professional experience in source code management"
             },
             {
                "name":"Rational Synergy",
                "rating":4,
-               "desc":" "
+               "desc":"Years of experience as a key user supporting developers and testers."
             },
             {
                "name":"Rational DOORS Classic",
-               "rating":2,
+               "rating":1.5,
                "desc":" "
             },
             {
                "name":"Polarion",
                "rating":3,
-               "desc":" "
+               "desc":"Introduction of Polarion for requirements management into an existing system."
             },
             {
                "name":"Google Workspace",
                "rating":4,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
-            },
-            {
-               "name":" ",
-               "rating":5,
-               "desc":" "
+               "desc":"Years of use in an international work environment."
             }
          ]
       },
@@ -121,7 +118,7 @@
             {
                "name":"CAN-BUS",
                "rating":4,
-               "desc":" "
+               "desc":"Good analytical affinity for CAN traces"
             },
             {
                "name":"ISOBUS 11783",
@@ -141,38 +138,63 @@
          ]
       },
       {
-         "group":"Test- Tools & Frameworks",
+         "group":"Test Tools & Frameworks",
          "skills":[
             {
-               "name":"Selenium / Playwright / Cypress",
-               "rating":5,
-               "desc":"Erfahren in E2E-Testautomatisierung, Screenshots, Traces und GitHub Actions CI/CD."
+               "name":"Selenium",
+               "rating":0,
+               "desc":" "
             },
             {
-               "name":"Postman / Newman",
-               "rating":4,
-               "desc":"API-Testautomatisierung, Reporting und Integration in GitHub Actions."
+               "name":"Playwright",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Cypress",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Postman",
+               "rating":0,
+               "desc":" "
             }
          ]
       },
       {
-         "group":"Datenbanken & Persistenz",
+         "group":"Databases & Persistence",
          "skills":[
             {
                "name":"MariaDB / MySQL",
                "rating":4,
-               "desc":"Anbindung über JDBC und SQL-Scripting."
+               "desc":"Connection via JDBC and SQL scripting."
             },
             {
-               "name":"SQLite",
-               "rating":4,
-               "desc":"Lokale Datenhaltung und Testing-Umgebungen."
-            },
-            {
-               "name":"CSV",
-               "rating":5,
-               "desc":"Strukturierte Datenspeicherung in Konsolenprojekten."
+               "name":"JSON",
+               "rating":3,
+               "desc":"Local data storage and testing environments."
             }
+         ]
+      },
+      {
+         "group":"Electronics, Embedded Systems",
+         "skills":[
+            {
+               "name":"Electronics",
+               "rating":3.5,
+               "desc":"Solid knowledge in electrical engineering/electronics: confident use of multimeter and oscilloscope, understanding of basic circuits and electronic components."
+            },
+            {
+               "name":"ESD",
+               "rating":4,
+               "desc":"Familiarity with ESD protection measures and procedures in electronics development."
+            },
+            {
+               "name":"Embedded Systems",
+               "rating":4,
+               "desc":"Many years of experience in developing and testing embedded software for telecommunications applications and control units in agricultural technology."
+            } 
          ]
       }
    ]
