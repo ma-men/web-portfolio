@@ -1,79 +1,94 @@
 {
   "groups": [
     {
-      "group": "Programming, Scripting and Markup Languages",
+      "group": "Programmier-, Skript- und Markupsprachen",
       "skills": [
         {
           "name": "Java",
           "rating": 3.5,
-          "desc": "Solid knowledge of OOP, JavaFX and database connectivity. Preparing for Oracle certification.",
+          "desc": "Solide Kenntnisse in OOP, JavaFX und Datenbankanbindung. Vorbereitung auf Oracle-Zertifizierung.",
           "certs": [
-            { "label": "8-week Java course", "file": "java-lehrgang.pdf" },
-            { "label": "7-week Java internship", "file": "java-praktikum.pdf" }
+            { "label": "8-wöchiger Java-Lehrgang", "file": "java-lehrgang.pdf" },
+            { "label": "7-wöchiges Java-Praktikum", "file": "java-praktikum.pdf" }
           ]
         },
         {
           "name": "Python",
           "rating": 3,
-          "desc": "Experience with automation, Playwright, CSV handling and console applications.",
+          "desc": "Erfahrung mit Automatisierung, Playwright, CSV-Handling und Konsolenanwendungen.",
           "certs": [
-            { "label": "Python PCEP exam", "file": "python-pcep.pdf" },
-            { "label": "4-week Python training course", "file": "python-lehrgang.pdf" }
+            { "label": "Python PCEP-Prüfung", "file": "python-pcep.pdf" },
+            { "label": "4-wöchiger Python-Lehrgang", "file": "python-lehrgang.pdf" }
           ]
         },
         {
           "name": "C",
           "rating": 5,
-          "desc": "18 years of professional experience as Embedded C developer for automotive and agricultural electronics."
+          "desc": "18 Jahre Berufserfahrung als Embedded-C-Programmierer für Automotive und Agrartechnik."
         },
         {
           "name": "C#",
           "rating": 2.5,
-          "desc": "Basic knowledge of OOP, GUI development and test automation."
+          "desc": "Grundkenntnisse in OOP, GUI-Entwicklung und Testautomatisierung."
         },
         {
           "name": "JavaScript",
           "rating": 3,
-          "desc": "Basic understanding of frontend interactivity, DOM manipulation and JSON handling."
+          "desc": "Grundkenntnisse in Frontend-Interaktivität, DOM-Manipulation und JSON-Datenverarbeitung."
         },
         {
           "name": "HTML & CSS",
           "rating": 4,
-          "desc": "Responsive web design, CSS Grid, Flexbox, GitHub Pages."
+          "desc": "Responsive Webdesign, CSS-Grid, Flexbox, GitHub Pages."
         }
       ]
     },
     {
-      "group": "Tools & Frameworks",
+      "group": "Kollaborationstools",
+      "skills": [
+        { "name": "Jira", "rating": 4, "desc": " " },
+        { "name": "Confluence", "rating": 4, "desc": " " },
+        { "name": "Bitbucket", "rating": 2.5, "desc": " " },
+        { "name": "Git / GitHub", "rating": 3, "desc": " " },
+        { "name": "Rational Synergy", "rating": 4, "desc": " " },
+        { "name": "Rational DOORS Classic", "rating": 2, "desc": " " },
+        { "name": "Polarion", "rating": 3, "desc": " " },
+        { "name": "Google Workspace", "rating":4, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " },
+        { "name": " ", "rating": 5, "desc": " " }
+      ]
+    },
+    { 
+      "group": "Agriculture / Automotive",
+      "skills": [
+        { "name": "CAN-BUS", "rating": 4, "desc": " " },
+        { "name": "ISOBUS 11783", "rating": 5, "desc": " " },
+        { "name": "KWP2000",  "rating": 4,  "desc": " " },
+        { "name": "J1939", "rating": 3, "desc": " " }
+      ]
+    },    
+    {
+      "group": "Test- Tools & Frameworks",
       "skills": [
         {
           "name": "Selenium / Playwright / Cypress",
           "rating": 5,
-          "desc": "Experienced in E2E test automation, screenshots, traces and GitHub Actions CI/CD."
-        },
-        {
-          "name": "Git / GitHub / GitLab",
-          "rating": 4.5,
-          "desc": "Version control, branching, pull requests and CI/CD pipelines."
+          "desc": "Erfahren in E2E-Testautomatisierung, Screenshots, Traces und GitHub Actions CI/CD."
         },
         {
           "name": "Postman / Newman",
           "rating": 4,
-          "desc": "API test automation, reporting and GitHub Actions integration."
+          "desc": "API-Testautomatisierung, Reporting und Integration in GitHub Actions."
         },
-        {
-          "name": "Maven / Gradle",
-          "rating": 3.5,
-          "desc": "Build management and dependency handling in Java projects."
-        }
       ]
     },
     {
-      "group": "Databases & Persistence",
+      "group": "Datenbanken & Persistenz",
       "skills": [
-        { "name": "MariaDB / MySQL", "rating": 4, "desc": "JDBC connection and SQL scripting." },
-        { "name": "SQLite", "rating": 4, "desc": "Local data storage and testing environments." },
-        { "name": "CSV", "rating": 5, "desc": "Structured data persistence in console projects." }
+        { "name": "MariaDB / MySQL", "rating": 4, "desc": "Anbindung über JDBC und SQL-Scripting." },
+        { "name": "SQLite", "rating": 4, "desc": "Lokale Datenhaltung und Testing-Umgebungen." },
+        { "name": "CSV", "rating": 5, "desc": "Strukturierte Datenspeicherung in Konsolenprojekten." }
       ]
     }
   ]
