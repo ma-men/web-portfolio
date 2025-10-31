@@ -1,0 +1,23 @@
+{
+  "title": "Berufliche Highlights",
+  "stories": [
+    {
+      "title": "Testautomatisierung mit Playwright",
+      "summary": "Aufbau eines vollständigen E2E-Testframeworks mit GitHub Actions.",
+      "details": "Automatisierte End-to-End-Tests für saucedemo.com, mit Reporting, Screenshots, Traces und CI/CD-Integration.",
+      "year": 2024
+    },
+    {
+      "title": "ERP-Mini-System mit JavaFX",
+      "summary": "Entwicklung einer modularen Warenwirtschaftssoftware.",
+      "details": "GUI mit JavaFX, persistente Datenhaltung in MariaDB & SQLite, strukturierte OOP-Architektur mit MVC.",
+      "year": 2024
+    },
+    {
+      "title": "API-Testautomatisierung mit Postman",
+      "summary": "CI/CD-Integration von API-Tests mit Reports.",
+      "details": "Postman Collections, Newman-Ausführung in GitHub Actions, HTML-Reporting und Versionsverwaltung über Git.",
+      "year": 2023
+    }
+  ]
+}

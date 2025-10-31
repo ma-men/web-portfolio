@@ -1,0 +1,497 @@
+         
+ 
+/* Container für alle Skill-Cards */
+.skills-grid {
+  column-width: 320px;   /* minimale Spaltenbreite */
+  column-gap: 1.5rem;    /* Abstand zwischen Spalten */
+}
+
+/* Einzelkarte */
+.skill-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1.5rem;
+  break-inside: avoid;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.skill-card h3 {
+  margin: 0 0 0.8rem 0;
+  color: #0d6efd;
+  font-size: 1.1rem;
+  font-weight: 600;
+ /* border-bottom: 1px solid rgba(13,110,237,0.3);*/
+  padding-bottom: 0.5rem;
+}
+
+/* Skill Item (label + stars) */
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  border-top: 1px solid rgba(125, 125, 132, 0.3);
+}
+
+.skill-item:last-child {
+  border-bottom: 1px solid rgba(125, 125, 132, 0.3);
+}
+
+.skill-item span {
+  font-weight: bold;
+  color: #222;
+  margin-right: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+/* ======= Stars - robustes Overlay (Font Awesome) ======= */
+/* Stars */
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  color: #f0ad4e; /* Goldene Farbe für Sterne */
+}
+
+
+.stars i {
+  font-size: 0.95rem; /* kleiner machen, damit mehr Zeilen sichtbar sind */
+  line-height: 1;
+}
+
+
+/* Responsive Feinheiten */
+@media (max-width: 700px) {
+  .skill-item span {
+    font-size: 0.95rem;
+  }
+  .stars i { font-size: 0.9rem; }
+}
+
+/**********************************************************/
+/*     Zertifikatsliste                                   */
+/**********************************************************/
+.cert-list {
+  list-style: none;
+  margin: 0.3rem 0 0.8rem 1.2rem; /* eingerückt unter dem Skill */
+  padding: 0;
+}
+
+.cert-list li {
+  margin: 0.2rem 0;
+}
+
+.cert-list a {
+ /* text-decoration: none;*/
+  color: #0d6efd;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cert-list a:hover {
+  color: #0b5ed7;
+  text-decoration: underline;
+}
+
+.cert-list i {
+  color: #dc3545; /* PDF-Icon in rot */
+}
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+         
+         
+         <div class="skills-grid">
+
+            <!-- Programmiersprachen -->
+            <div class="skill-card">
+              <h3>Programmier-, Script- und Markup-Sprachen</h3>
+
+              <div class="skill-item">
+                <span>C</span>
+                <div class="stars skill" data-rating="3.5" data-name="C">
+                  <!-- <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i> -->
+                </div>
+              </div>
+              <!-- Berufserfahrung -->
+              <ul class="cert-list">
+                <li>
+                  18 Jahre Berufserfahrung als embedded C&#8209;Programmierer
+                </li>
+              </ul>
+
+              <div class="skill-item">
+                <span>Java</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+              <!-- Zertifikate zu Java -->
+              <ul class="cert-list">
+                <li>
+                  <a href="assets/certs/Java.pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> 8-wöchiger Java Lehrgang
+                  </a>
+                </li>
+                <li>
+                  <a href="assets/certs/Java Praktikum.pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> 7-wöchiges Java Praktikum
+                  </a>
+                </li>
+              </ul>
+
+
+              <div class="skill-item">
+                <span>Python</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+              <!-- Zertifikate zu Python -->
+              <ul class="cert-list">
+                <li>
+                  <a href="assets/certs/Python.pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> 4-wöchiger Python Lehrgang
+                  </a>
+                </li>
+                <li>
+                  <a href="assets/certs/Python PCEP.pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> Python PCEP Exam
+                  </a>
+                </li>
+              </ul>
+
+
+              <div class="skill-item">
+                <span>C#</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>JavaScript</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Html / CSS</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+            </div> <!-- Ende skill-card: Programmiersprachen -->
+
+
+            <!-- Kollaborationstools -->
+            <div class="skill-card">
+              <h3>Kollaborationstools</h3>
+
+              <div class="skill-item">
+                <span>Jira</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Zephyr for Jira</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Confluence</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Bitbucket</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Git / GitHub</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Rational Synergy</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Polarion</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Doors</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Google Workspace</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+            </div> <!-- Ende skill-card: Frameworks & Tools -->
+
+
+            <!-- Datenbanken -->
+            <div class="skill-card">
+              <h3>Datenbanken</h3>
+
+              <div class="skill-item">
+                <span>SQL</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>MariaDB</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div> <!-- Ende skill-card: Datenbanken -->
+
+
+
+            <!-- Elektronik -->
+            <div class="skill-card">
+              <h3>Elektronik</h3>
+
+              <div class="skill-item">
+                <span>skill 1</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>Skill 2</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div> <!-- Ende skill-card: Elektronik -->
+
+
+            <!-- Protokolle -->
+            <div class="skill-card">
+              <h3>Protokolle</h3>
+
+              <div class="skill-item">
+                <span>ISOBUS 11783</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>KWP2000</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>J1939</span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <span>T=0 </span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <!-- Zertifikate zu Python -->
+              <ul class="cert-list">
+                <li>Chipkartenkommunikation</li>
+              </ul>
+
+              <div class="skill-item">
+                <span>TCP/IP </span>
+                <div class="stars" aria-hidden="true">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+
+
+
+
+            </div> <!-- Ende skill-card: Automotive -->
+          </div> Ende: skill-grid

@@ -1,0 +1,38 @@
+{
+  "title": "Resume",
+  "timeline": [
+    {
+      "company": "PTx Trimble GmbH",
+      "from": "04/2021",
+      "to": "Present",
+      "positions": [
+        {
+          "role": "Software Tester / Test Lead",
+          "details": "Test planning, automation and safety testing in agricultural systems."
+        }
+      ]
+    },
+    {
+      "company": "Müller Elektronik GmbH & Co. KG",
+      "from": "03/2007",
+      "to": "03/2021",
+      "positions": [
+        {
+          "role": "C Developer",
+          "details": "Embedded systems for automotive and agricultural electronics, CAN communication."
+        }
+      ]
+    },
+    {
+      "company": "NovaTec Communication Technology GmbH",
+      "from": "09/2002",
+      "to": "09/2006",
+      "positions": [
+        {
+          "role": "C Developer",
+          "details": "Development of communication software for mobile networks and TCP/IP."
+        }
+      ]
+    }
+  ]
+}

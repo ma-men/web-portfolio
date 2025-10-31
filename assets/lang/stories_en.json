@@ -1,0 +1,24 @@
+{
+  "title": "Professional Highlights",
+  "stories": [
+    {
+      "title": "Playwright Test Automation",
+      "summary": "Created a complete E2E testing framework integrated with GitHub Actions.",
+      "details": "Automated end-to-end tests for saucedemo.com, including screenshots, traces and CI/CD integration.",
+      "year": 2024
+    },
+    {
+      "title": "ERP Mini System with JavaFX",
+      "summary": "Developed a modular warehouse management system.",
+      "details": "GUI built with JavaFX, persistent storage using MariaDB and SQLite, structured OOP design with MVC.",
+      "year": 2024
+    },
+    {
+      "title": "API Test Automation with Postman",
+      "summary": "Integrated automated API tests into CI/CD pipelines.",
+      "details": "Postman Collections executed with Newman via GitHub Actions, HTML reports and version control through Git.",
+      "year": 2023
+    }
+  ]
+}
+

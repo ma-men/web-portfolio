@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Martin Mengersen</title>
 
-  <!-- Font Awesome (Sterne & Hamburger) -->
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -17,7 +15,11 @@
   <link rel="stylesheet" href="assets/css/cv.css">
 
   <!-- JS -->
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/global.js" defer></script>
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/skills.js" defer></script>
+  <script src="assets/js/cv.js" defer></script>
+  <script src="assets/js/stories.js" defer></script>
 
 
 </head>
@@ -25,7 +27,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="nav">
     <div class="container nav-container">
       <!-- Hamburger Button -->
       <div class="hamburger">
@@ -33,31 +35,43 @@
       </div>
       <!-- Normale Navigation -->
       <ul class="nav-links">
-        <li><a href="#">Über mich</a></li>
-        <li><a href="#skills">Fähigkeiten</a></li>
-        <li><a href="#cv">Lebenslauf</a></li>
-        <li><a href="#stories">Projekte</a></li>
-        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#about-section" data-i18n="menu-about">Über mich</a></li>
+        <li><a href="#skills-section" data-i18n="menu-skills">Fähigkeiten</a></li>
+        <li><a href="#cv-section" data-i18n="menu-cv">Lebenslauf</a></li>
+        <li><a href="#stories-section" data-i18n="menu-stories">Stories</a></li>
+        <li><a href="#contact" data-i18n="menu-contact">Kontakt</a></li>
       </ul>
     </div>
+
+    <div class="lang-switcher">
+      <label for="lang">🌐</label>
+      <select id="lang">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
   </nav>
 
 
   <!-- Inhalt -->
   <div class="main-wrapper">
-    <main>
 
-      <!-- Hero -->
-      <header class="hero">
-        <div class="hero-content">
-          <img src="assets/img/ich-reverse-2.jpg" alt="Portrait" class="img_responsive">
-        </div>
-      </header>
+    <main>
+   
 
       <!-- Über mich -->
-      <section id="about" class="section">
-        <div class="container">
-          <h2>Über mich</h2>
+      <section id="about-section">
+
+        <!-- Hero -->
+        <header class="hero">
+          <div class="hero-content">
+            <img src="assets/img/ich-reverse-2.jpg" alt="Portrait" class="img_responsive">
+          </div>
+        </header>
+
+        <div id="about-text">
+          <h2 id="about-title">Über mich</h2>
           <p>
             Ich bin auf dem Weg zu einem Test Automation Engineer mit starkem Hintergrund in Embedded Systems,
             Softwaretesting und moderner Testautomatisierung. Meine Expertise umfasst Java, Python,
@@ -67,607 +81,26 @@
       </section>
 
 
-
       <!-- Skills / Fähigkeiten -->
-      <section id="skills" class="section bg-light">
-        <div class="container">
-          <h2>Skills</h2>
-          <div class="skills-grid">
-
-            <!-- Programmiersprachen -->
-            <div class="skill-card">
-              <h3>Programmier-, Script- und Markup-Sprachen</h3>
-
-              <div class="skill-item">
-                <span>C</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-              <!-- Berufserfahrung -->
-              <ul class="cert-list">
-                <li>
-                  18 Jahre Berufserfahrung als embedded C&#8209;Programmierer
-                </li>
-              </ul>
-
-              <div class="skill-item">
-                <span>Java</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-              <!-- Zertifikate zu Java -->
-              <ul class="cert-list">
-                <li>
-                  <a href="assets/certs/Java.pdf" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> 8-wöchiger Java Lehrgang
-                  </a>
-                </li>
-                <li>
-                  <a href="assets/certs/Java Praktikum.pdf" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> 7-wöchiges Java Praktikum
-                  </a>
-                </li>
-              </ul>
-
-
-              <div class="skill-item">
-                <span>Python</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-              <!-- Zertifikate zu Python -->
-              <ul class="cert-list">
-                <li>
-                  <a href="assets/certs/Python.pdf" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> 4-wöchiger Python Lehrgang
-                  </a>
-                </li>
-                <li>
-                  <a href="assets/certs/Python PCEP.pdf" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> Python PCEP Exam
-                  </a>
-                </li>
-              </ul>
-
-
-              <div class="skill-item">
-                <span>C#</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>JavaScript</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Html / CSS</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-            </div> <!-- Ende skill-card: Programmiersprachen -->
-
-
-            <!-- Kollaborationstools -->
-            <div class="skill-card">
-              <h3>Kollaborationstools</h3>
-
-              <div class="skill-item">
-                <span>Jira</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Zephyr for Jira</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Confluence</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Bitbucket</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Git / GitHub</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Rational Synergy</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Polarion</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Doors</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Google Workspace</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-            </div> <!-- Ende skill-card: Frameworks & Tools -->
-
-
-            <!-- Datenbanken -->
-            <div class="skill-card">
-              <h3>Datenbanken</h3>
-
-              <div class="skill-item">
-                <span>SQL</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>MariaDB</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div> <!-- Ende skill-card: Datenbanken -->
-
-
-
-            <!-- Elektronik -->
-            <div class="skill-card">
-              <h3>Elektronik</h3>
-
-              <div class="skill-item">
-                <span>skill 1</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>Skill 2</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div> <!-- Ende skill-card: Elektronik -->
-
-
-            <!-- Protokolle -->
-            <div class="skill-card">
-              <h3>Protokolle</h3>
-
-              <div class="skill-item">
-                <span>ISOBUS 11783</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>KWP2000</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>J1939</span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-              <div class="skill-item">
-                <span>T=0 </span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-              <!-- Zertifikate zu Python -->
-              <ul class="cert-list">
-                <li>Chipkartenkommunikation</li>
-              </ul>
-
-              <div class="skill-item">
-                <span>TCP/IP </span>
-                <div class="stars" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-
-
-
-
-
-            </div> <!-- Ende skill-card: Automotive -->
-          </div> <!-- Ende: skill-grid -->
-
-        </div>
+      <section id="skills-section">
+        <h2 id="skills-title">Skills</h2>
+          <div id="skills-grid"> <!-- content per JavaScript --> </div>
       </section>
 
-      <!-- Lebenslauf -->
-      <section id="cv" class="section">
-        <h2>Lebenslauf</h2>
-
-        <div class="timeline">
-
-          <!-- PTx Trimble / Mueller Elektronik -->
-          <div class="timeline-item left">
-            <div class="timeline-content">
-
-              <span class="timeline-year">04/2021 – heute</span>
-              <h3>PTx Trimble GmbH</h3>
-              <h4>Softwaretester / Test Lead</h4>
-              <div class="positions">
-                <div class="position">
-                  <span class="period">2021 – 2023</span>
-                  <span class="role">Softwaretester</span>
-                  <p class="desc">Verantwortlich für Teststrategie, CI/CD, Python-Playwright-Automatisierung.</p>
-                </div>
-                <div class="position">
-                  <span class="period">2023 – heute</span>
-                  <span class="role">Test Lead</span>
-                  <p class="desc">Leitung des QA-Teams, Coaching, Definition von Teststandards.</p>
-                </div>
-              </div>
-
-              <h3>Müller Elektronik GmbH & Co. KG</h3>
-              <h4>Softwareentwickler (C)</h4>
-              <div class="positions">
-                <div class="position">
-                  <span class="period">2007 – 2014</span>
-                  <span class="role">Entwickler Embedded Systems</span>
-                  <p class="desc">C-Entwicklung, Steuergeräte, Protokolle für Agrartechnik.</p>
-                </div>
-                <div class="position">
-                  <span class="period">2014 – 2021</span>
-                  <span class="role">Senior Developer</span>
-                  <p class="desc">Systemdesign, Safety-Features, Betreuung von Testingenieuren.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="timeline-item right">
-            <div class="timeline-content">
-              <span class="timeline-year">09/2000 – 09/2002</span>
-              <h3>arbeitssuchen</h3>
-              <h4>xxxx</h4>
-              <p>xxxxx</p>
-            </div>
-          </div>
-
-          <div class="timeline-item left">
-            <div class="timeline-content">
-              <span class="timeline-year">09/2002 – 09/2006</span>
-              <h3>NovaTec Kommunikationstechnik GmbH</h3>
-              <h4>Softwareentwickler (C)</h4>
-              <p>Mobilfunk · TCP/IP · ISDN · Protokollentwicklung</p>
-            </div>
-          </div>
-
-          <div class="timeline-item right">
-            <div class="timeline-content">
-              <span class="timeline-year">09/2000 – 09/2002</span>
-              <h3>arbeitssuchend</h3>
-              <h4>xxxx</h4>
-              <p>xxxxx</p>
-            </div>
-          </div>
-
-          <div class="timeline-item left">
-            <div class="timeline-content">
-              <span class="timeline-year">09/2000 – 09/2002</span>
-              <h3>b.i.b international College</h3>
-              <h4>Fortbildung (Sonderurlaub)</h4>
-              <p>IT-Weiterbildung und berufliche Qualifizierung</p>
-            </div>
-          </div>
-
-          <div class="timeline-item right">
-            <div class="timeline-content">
-              <span class="timeline-year">03/2007 – 03/2021</span>
-              <h3>Deutsche Telekom AG</h3>
-              <h4>xxxxxxx</h4>
-              <div class="positions">
-
-                <div class="position">
-                  <span class="period">2007 – 2014</span>
-                  <span class="role">Student</span>
-                  <p class="desc">unbezahlter Sonderurlaub zum Zweck der beruflichen Weiterbildung</p>
-                </div>
-
-
-
-                <div class="position">
-                  <span class="period">2014 – 2021</span>
-                  <span class="role">Senior Developer</span>
-                  <p class="desc">Systemdesign, Safety-Features, Betreuung von Testingenieuren.</p>
-                </div>
-
-                <div class="position">
-                  <span class="period">06/1996 – 09/2000</span>
-                  <span class="role">Kundenberatung Customer Care</span>
-                  <p class="desc">Technischer Support · Kundenservice · ISDN · Datenkommunikation</p>
-                </div>
-
-                <div class="position">
-                  <span class="period">03/1992 – 06/1996</span>
-                  <span class="role">Kundenberatung Customer Care</span>
-                  <p class="desc">Technischer Support · Kundenservice · ISDN · Datenkommunikation</p>
-                </div>
-
-                <div class="position">
-                  <span class="period">03/1992 – 06/1996</span>
-                  <span class="role">Kundenberatung Customer Care</span>
-                  <h3>Deutsche Bundespost FTZ</h3>
-                  <h4>Support & Netzwerkadministration</h4>
-                  <p class="desc">Novell NetWare · Mitteldisposition · Technischer Service</p>
-                </div>
-
-                <div class="position">
-                  <span class="period">08/1987 – 03/1992</span>
-                  <span class="role">Techniker für Übertragungstechnik</span>
-                  <h3>Deutsche Bundespost Fernmeldewesen</h3>
-                  <h4>Support & Netzwerkadministration</h4>
-                  <p class="desc">Wartung · Betrieb von Puls-Code-Modulierten Übertragungssystemen</p>
-                </div>
-
-                <a href="assets/cv.pdf" target="_blank" class="btn">Lebenslauf als PDF herunterladen</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <!-- CV / Lebenslauf -->
+      <section id="cv-section">
+          <h2 id="cv-title">Lebenslauf</h2>
+          <div id="cv-timeline"></div>
       </section>
 
-      <!-- Stories -->
-      <section id="stories" class="section bg-light">
-        <div class="container">
-          <h2>Stories / Projekte</h2>
-
-          <div class="stories-grid">
-
-            <div class="story-card">
-              <button class="toggle-btn">Mehr anzeigen</button>
-
-              <h3>Mini-WWS (JavaFX)</h3>
-              <div class="story-content">
-                <p>
-                  ERP-ähnliches Projekt zur Lagerverwaltung mit Artikeln, Lagerabgängen und GUI in JavaFX.
-                  Unterstützt sowohl MariaDB als auch SQLite.
-                  <strong>Technologien:</strong> Java, JavaFX, MariaDB, SQLite
-                </p>
-
-                <a href="https://github.com/deinusername/miniwss-javafx" target="_blank" class="btn">GitHub Repo</a>
-
-                <div class="fade-out"></div>
-              </div> <!--end: story-content-->
-            </div> <!--end: story-card-->
-
-
-            <div class="story-card">
-              <button class="toggle-btn">Mehr anzeigen</button>
-
-              <h3>Story .....</h3>
-              <div class="story-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore
-                  et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                  rebum.
-                  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                  sit amet,
-                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                  erat,
-                  sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-
-                <div class="fade-out"></div>
-
-              </div> <!--end: story-content-->
-            </div> <!--end: story-card-->
-
-            <div class="story-card">
-              <button class="toggle-btn">Mehr anzeigen</button>
-
-              <h3>Story .....</h3>
-              <div class="story-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore
-                  et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                  rebum.
-                  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                  sit amet,
-                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                  erat,
-                  sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-
-                <div class="fade-out"></div>
-              </div> <!--end: story-content-->
-            </div> <!--end: story-card-->
-
-
-            <div class="story-card">
-              <button class="toggle-btn">Mehr anzeigen</button>
-
-              <h3>Python Konsolenanwendungen</h3>
-              <div class="story-content">
-                <p>
-                  Mini-Bibliothekssystem und andere Konsolenprojekte mit CSV-Persistenz und OOP-Design.
-                </p>
-                <p><strong>Technologien:</strong> Python, CSV, OOP</p>
-                <a href="https://github.com/deinusername/python-apps" target="_blank" class="btn">GitHub Repo</a>
-
-                <div class="fade-out"></div>
-              </div> <!--end: story-content-->
-            </div> <!--end: story-card-->
-
-            <div class="story-card">
-              <button class="toggle-btn">Mehr anzeigen</button>
-
-              <h3>Story .....</h3>
-              <div class="story-content">
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore
-                  et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                  rebum.
-                  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                  sit amet,
-                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                  erat,
-                  sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-
-                <div class="fade-out"></div>
-              </div> <!--end: story-content-->
-            </div> <!--end: story-card-->
-
-
-          </div> <!-- end: stories-grid-->
-        </div>
+      <!-- Stories / Projects -->
+      <section id="stories-section">
+          <h2 id="stories-title">Stories</h2>
+          <div id="stories-grid"></div>
       </section>
+         
 
-      <!-- Kontakt -->
+      <!-- Kontakt -->     
       <section id="contact" class="section">
         <div class="container">
           <h2>Kontakt</h2>
@@ -685,9 +118,9 @@
 
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <p>© 2025 Martin Mengersen – Portfolio</p>
-      </div>
+      <p data-i18n="footer-copy">© 2025 Martin Mengersen – Portfolio</p>
+      <a href="#" data-i18n="footer-imprint">Impressum</a> |
+      <a href="#" data-i18n="footer-privacy">Datenschutz</a>
     </footer>
   </div>
 

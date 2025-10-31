@@ -1,0 +1,17 @@
+{
+  "header": {
+    "menu": {
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "cv": "Lebenslauf",
+      "stories": "Stories",
+      "contact": "Kontakt"
+    },
+    "language": "Sprache"
+  },
+  "footer": {
+    "copyright": "© 2025 Martin Mengersen – Portfolio",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  }
+}

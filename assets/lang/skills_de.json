@@ -1,0 +1,80 @@
+{
+  "groups": [
+    {
+      "group": "Programmier-, Skript- und Markupsprachen",
+      "skills": [
+        {
+          "name": "Java",
+          "rating": 3.5,
+          "desc": "Solide Kenntnisse in OOP, JavaFX und Datenbankanbindung. Vorbereitung auf Oracle-Zertifizierung.",
+          "certs": [
+            { "label": "8-wöchiger Java-Lehrgang", "file": "java-lehrgang.pdf" },
+            { "label": "7-wöchiges Java-Praktikum", "file": "java-praktikum.pdf" }
+          ]
+        },
+        {
+          "name": "Python",
+          "rating": 3,
+          "desc": "Erfahrung mit Automatisierung, Playwright, CSV-Handling und Konsolenanwendungen.",
+          "certs": [
+            { "label": "Python PCEP-Prüfung", "file": "python-pcep.pdf" },
+            { "label": "4-wöchiger Python-Lehrgang", "file": "python-lehrgang.pdf" }
+          ]
+        },
+        {
+          "name": "C",
+          "rating": 5,
+          "desc": "18 Jahre Berufserfahrung als Embedded-C-Programmierer für Automotive und Agrartechnik."
+        },
+        {
+          "name": "C#",
+          "rating": 2.5,
+          "desc": "Grundkenntnisse in OOP, GUI-Entwicklung und Testautomatisierung."
+        },
+        {
+          "name": "JavaScript",
+          "rating": 3,
+          "desc": "Grundkenntnisse in Frontend-Interaktivität, DOM-Manipulation und JSON-Datenverarbeitung."
+        },
+        {
+          "name": "HTML & CSS",
+          "rating": 4,
+          "desc": "Responsive Webdesign, CSS-Grid, Flexbox, GitHub Pages."
+        }
+      ]
+    },
+    {
+      "group": "Tools & Frameworks",
+      "skills": [
+        {
+          "name": "Selenium / Playwright / Cypress",
+          "rating": 5,
+          "desc": "Erfahren in E2E-Testautomatisierung, Screenshots, Traces und GitHub Actions CI/CD."
+        },
+        {
+          "name": "Git / GitHub / GitLab",
+          "rating": 4.5,
+          "desc": "Versionsverwaltung, Branching, Pull Requests und CI/CD-Pipelines."
+        },
+        {
+          "name": "Postman / Newman",
+          "rating": 4,
+          "desc": "API-Testautomatisierung, Reporting und Integration in GitHub Actions."
+        },
+        {
+          "name": "Maven / Gradle",
+          "rating": 3.5,
+          "desc": "Build-Management und Dependency Handling in Java-Projekten."
+        }
+      ]
+    },
+    {
+      "group": "Datenbanken & Persistenz",
+      "skills": [
+        { "name": "MariaDB / MySQL", "rating": 4, "desc": "Anbindung über JDBC und SQL-Scripting." },
+        { "name": "SQLite", "rating": 4, "desc": "Lokale Datenhaltung und Testing-Umgebungen." },
+        { "name": "CSV", "rating": 5, "desc": "Strukturierte Datenspeicherung in Konsolenprojekten." }
+      ]
+    }
+  ]
+}
