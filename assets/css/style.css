@@ -155,6 +155,7 @@ nav a:hover {
 /* Container für alle Skill-Cards */
 /* === GRID === */
 .skills-grid {
+    display: block !important;    /* erzwingt block statt flex/grid */
     column-count: 3;              /* 3 Spalten im Desktop */
     column-gap: 1.5rem;
     width: 100%;
