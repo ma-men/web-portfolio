@@ -80,7 +80,7 @@
           "name": "Postman / Newman",
           "rating": 4,
           "desc": "API-Testautomatisierung, Reporting und Integration in GitHub Actions."
-        },
+        }
       ]
     },
     {
