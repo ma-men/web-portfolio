@@ -165,6 +165,7 @@ nav a:hover {
 /* Einzelkarte */
 /* === CARD === */
 .skill-card {
+    display: inline-block;
     background: #fff;
     border-radius: 14px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
