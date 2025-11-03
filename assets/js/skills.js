@@ -80,7 +80,7 @@ const renderSkills = (groups) => {
         skill.certs.forEach((cert) => {
           const li = document.createElement("li");
           const a = document.createElement("a");
-          a.href = `assets/cert/${cert.file}`;
+          a.href = `assets/certs/${cert.file}`;
           a.target = "_blank";
           a.textContent = cert.label;
           li.appendChild(a);
