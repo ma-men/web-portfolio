@@ -1,7 +1,7 @@
 {
    "groups":[
       {
-         "group":"Programming, Scripting, and Markup Languages",
+         "group":"Programming, Scripting and Markup Languages",
          "skills":[
             {
                "name":"Java",
@@ -57,11 +57,88 @@
             {
                "name":"HTML & CSS",
                "rating":4,
-               "desc":"Good knowledge including responsive web design",
+               "desc":"Good knowledge, including responsive web design",
+                "certs":[                 
+                  {
+                     "label":"8-week web design course",
+                     "file":"webdesign-alfatraining.pdf"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "group":"Software Testing",
+         "skills":[
+             {
+               "name":"ISTQB",
+               "rating":3.5,
+               "desc":" ",
                "certs":[                 
                   {
-                     "label":"8-week Web Design course",
-                     "file":"webdesign-alfatraining.pdf"
+                     "label":"ISTQB Foundation Level",
+                     "file":"istqb-foundation-level.pdf"
+                  }
+               ]
+            },
+             {
+               "name":"Embedded Software Testing for C",
+               "rating":3.5,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"Best Practices Unit Testing in C",
+                     "file":"unit-test-c.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"Selenium",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Playwright",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Cypress",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Postman",
+               "rating":0,
+               "desc":" "
+            }
+         ]
+      },
+        {
+         "group":"Requirements Management",
+         "skills":[
+           {
+               "name":"Rational DOORS Classic",
+               "rating":1.5,
+               "desc":" "
+            },
+            {
+               "name":"Polarion",
+               "rating":3,
+               "desc":"Lead responsibility for introducing Polarion for requirements management into an existing system."
+            },
+            {
+               "name":"Requirements Management",
+               "rating":3,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"CPRE - Foundation Level",
+                     "file":"cpre-foundation-level.pdf"
+                  },
+                  {
+                     "label":"Rational DOORS Classic",
+                     "file":"doors.pdf"
                   }
                ]
             }
@@ -88,27 +165,17 @@
             {
                "name":"Git / GitHub",
                "rating":3,
-               "desc":"7 years of professional experience in source code management"
+               "desc":"7 years of professional experience in source code management."
             },
             {
                "name":"Rational Synergy",
                "rating":4,
-               "desc":"Years of experience as a key user supporting developers and testers."
-            },
-            {
-               "name":"Rational DOORS Classic",
-               "rating":1.5,
-               "desc":" "
-            },
-            {
-               "name":"Polarion",
-               "rating":3,
-               "desc":"Introduction of Polarion for requirements management into an existing system."
-            },
+               "desc":"Many years of experience as a key user supporting developers and testers."
+            },            
             {
                "name":"Google Workspace",
                "rating":4,
-               "desc":"Years of use in an international work environment."
+               "desc":"Many years of use in an international work environment."
             }
          ]
       },
@@ -118,7 +185,7 @@
             {
                "name":"CAN-BUS",
                "rating":4,
-               "desc":"Good analytical affinity for CAN traces"
+               "desc":"Strong analytical affinity for CAN traces."
             },
             {
                "name":"ISOBUS 11783",
@@ -138,37 +205,12 @@
          ]
       },
       {
-         "group":"Test Tools & Frameworks",
-         "skills":[
-            {
-               "name":"Selenium",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Playwright",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Cypress",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Postman",
-               "rating":0,
-               "desc":" "
-            }
-         ]
-      },
-      {
          "group":"Databases & Persistence",
          "skills":[
             {
                "name":"MariaDB / MySQL",
                "rating":4,
-               "desc":"Connection via JDBC and SQL scripting."
+               "desc":"Integration via JDBC and SQL scripting."
             },
             {
                "name":"JSON",
@@ -183,12 +225,12 @@
             {
                "name":"Electronics",
                "rating":3.5,
-               "desc":"Solid knowledge in electrical engineering/electronics: confident use of multimeter and oscilloscope, understanding of basic circuits and electronic components."
+               "desc":"Solid knowledge in electrical engineering/electronics: proficient with multimeter and oscilloscope, understanding of basic circuits and electronic components."
             },
             {
                "name":"ESD",
                "rating":4,
-               "desc":"Familiarity with ESD protection measures and procedures in electronics development."
+               "desc":"Familiar with ESD protection measures and procedures in electronics development."
             },
             {
                "name":"Embedded Systems",

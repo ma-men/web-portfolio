@@ -68,6 +68,83 @@
          ]
       },
       {
+         "group":"Softwaretest",
+         "skills":[
+             {
+               "name":"ISTQB",
+               "rating":3.5,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"ISTQB Foundation Level",
+                     "file":"istqb-foundation-level.pdf"
+                  }
+               ]
+            },
+             {
+               "name":"Embedded Software-Test für C",
+               "rating":3.5,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"Best Practices Unit Testing in C",
+                     "file":"unit-test-c.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"Selenium",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Playwright",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Cypress",
+               "rating":0,
+               "desc":" "
+            },
+            {
+               "name":"Postman",
+               "rating":0,
+               "desc":" "
+            }
+         ]
+      },
+        {
+         "group":"Anforderungsmanagement",
+         "skills":[
+           {
+               "name":"Rational DOORS Classic",
+               "rating":1.5,
+               "desc":" "
+            },
+            {
+               "name":"Polarion",
+               "rating":3,
+               "desc":"Leitende Verantwortung für die Einführung von Polarion zur Anforderungsverwaltung in ein bestehendes System."
+            },
+            {
+               "name":"Anforderungsmanagement",
+               "rating":3,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"CPRE - Foundation Level",
+                     "file":"cpre-foundation-level.pdf"
+                  },
+                  {
+                     "label":"Rational DOORS Classic",
+                     "file":"doors.pdf"
+                  }
+               ]
+            }
+         ]
+      },
+      {
          "group":"Kollaborationstools",
          "skills":[
             {
@@ -94,17 +171,7 @@
                "name":"Rational Synergy",
                "rating":4,
                "desc":"jahrelange Tätigkeit als Keyuser zur Unterstützung von Entwicklern und Testern."
-            },
-            {
-               "name":"Rational DOORS Classic",
-               "rating":1.5,
-               "desc":" "
-            },
-            {
-               "name":"Polarion",
-               "rating":3,
-               "desc":"Einführung von Polarion zur Anforderungsverwaltung in ein bestehendes System."
-            },
+            },            
             {
                "name":"Google Workspace",
                "rating":4,
@@ -133,31 +200,6 @@
             {
                "name":"J1939",
                "rating":3,
-               "desc":" "
-            }
-         ]
-      },
-      {
-         "group":"Test- Tools & Frameworks",
-         "skills":[
-            {
-               "name":"Selenium",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Playwright",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Cypress",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Postman",
-               "rating":0,
                "desc":" "
             }
          ]
