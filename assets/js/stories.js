@@ -1,6 +1,7 @@
-
-
-
+'use strict';
+/* stories.js
+   Lädt und rendert die Stories-Sektion basierend auf der ausgewählten Sprache.
+*/
 
 const loadStories = async (lang) => {
   const container = document.getElementById("stories-grid");

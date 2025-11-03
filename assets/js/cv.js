@@ -1,3 +1,4 @@
+'use strict';
 /* cv.js
    Lädt und rendert die Lebenslauf-Sektion basierend auf der ausgewählten Sprache.
 */

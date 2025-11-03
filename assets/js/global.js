@@ -1,6 +1,7 @@
-
-
-
+'use strict';
+/* global.js
+   Enthält allgemeine Funktionen für die Website, einschließlich Navigation und Sprachumschaltung.
+*/
 
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");

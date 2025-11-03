@@ -1,3 +1,4 @@
+'use strict';
 /* Sills.js
    Lädt und rendert die Fähigkeiten-Sektion basierend auf der ausgewählten Sprache.
 */

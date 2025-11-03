@@ -1,3 +1,8 @@
+'use strict';
+/* i18n.js
+   Lädt und rendert die UI-Elemente basierend auf der ausgewählten Sprache.
+*/
+
 const loadUI = async (lang) => {
   try {
     const res = await fetch(`assets/lang/ui_${lang}.json`);

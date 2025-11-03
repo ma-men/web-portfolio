@@ -10,7 +10,7 @@
                "certs":[
                   {
                      "label":"8-wöchiger Java-Lehrgang",
-                     "file":"java-lehrgang.pdf"
+                     "file":"java.pdf"
                   },
                   {
                      "label":"7-wöchiges Java-Praktikum",
@@ -29,7 +29,7 @@
                   },
                   {
                      "label":"4-wöchiger Python-Lehrgang",
-                     "file":"python-lehrgang.pdf"
+                     "file":"python.pdf"
                   }
                ]
             },
@@ -61,7 +61,7 @@
                 "certs":[                 
                   {
                      "label":"8-wöchiger Webdesign-Lehrgang",
-                     "file":"Webdesign.pdf"
+                     "file":"webdesign.pdf"
                   }
                ]
             }
