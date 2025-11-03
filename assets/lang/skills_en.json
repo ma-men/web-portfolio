@@ -10,7 +10,7 @@
                "certs":[
                   {
                      "label":"8-week Java course",
-                     "file":"java-lehrgang.pdf"
+                     "file":"java-alfatraining.pdf"
                   },
                   {
                      "label":"7-week Java internship",
@@ -29,7 +29,7 @@
                   },
                   {
                      "label":"4-week Python course",
-                     "file":"python-lehrgang.pdf"
+                     "file":"python-alfatraining.pdf"
                   }
                ]
             },
@@ -61,7 +61,7 @@
                "certs":[                 
                   {
                      "label":"8-week Web Design course",
-                     "file":"Webdesign.pdf"
+                     "file":"webdesign-alfatraining.pdf"
                   }
                ]
             }
