@@ -1,7 +1,7 @@
 {
    "groups":[
       {
-         "group":"Programming, Scripting and Markup Languages",
+         "group":"Programming, Scripting, and Markup Languages",
          "skills":[
             {
                "name":"Java",
@@ -14,7 +14,7 @@
                   },
                   {
                      "label":"7-week Java internship",
-                     "file":"java-praktikum.pdf"
+                     "file":"ca-praktikum.pdf"
                   }
                ]
             },
@@ -24,7 +24,7 @@
                "desc":"Knowledge at PCEP exam level",
                "certs":[
                   {
-                     "label":"Python PCEP exam",
+                     "label":"Python PCEP Exam",
                      "file":"python-pcep.pdf"
                   },
                   {
@@ -57,8 +57,8 @@
             {
                "name":"HTML & CSS",
                "rating":4,
-               "desc":"Good knowledge, including responsive web design",
-                "certs":[                 
+               "desc":"Good knowledge including responsive web design",
+               "certs":[                 
                   {
                      "label":"8-week web design course",
                      "file":"webdesign-alfatraining.pdf"
@@ -80,7 +80,7 @@
                      "file":"istqb-foundation-level.pdf"
                   }
                ]
-            },
+             },
              {
                "name":"Embedded Software Testing for C",
                "rating":3.5,
@@ -89,6 +89,17 @@
                   {
                      "label":"Best Practices Unit Testing in C",
                      "file":"unit-test-c.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"Static Code Analysis / Review for C",
+               "rating":3.5,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"Polyspace for Embedded Software in C",
+                     "file":"polyspace-for-c.pdf"
                   }
                ]
             },
@@ -170,7 +181,7 @@
             {
                "name":"Rational Synergy",
                "rating":4,
-               "desc":"Many years of experience as a key user supporting developers and testers."
+               "desc":"Many years of experience as key user supporting developers and testers."
             },            
             {
                "name":"Google Workspace",
@@ -185,7 +196,7 @@
             {
                "name":"CAN-BUS",
                "rating":4,
-               "desc":"Strong analytical affinity for CAN traces."
+               "desc":"Strong analytical skills for CAN trace analysis."
             },
             {
                "name":"ISOBUS 11783",
@@ -215,7 +226,7 @@
             {
                "name":"JSON",
                "rating":3,
-               "desc":"Local data storage and testing environments."
+               "desc":"Local data storage and test environments."
             }
          ]
       },
@@ -225,12 +236,12 @@
             {
                "name":"Electronics",
                "rating":3.5,
-               "desc":"Solid knowledge in electrical engineering/electronics: proficient with multimeter and oscilloscope, understanding of basic circuits and electronic components."
+               "desc":"Solid knowledge in electrical engineering/electronics: proficient use of multimeter and oscilloscope, understanding of basic circuits and electronic components."
             },
             {
                "name":"ESD",
                "rating":4,
-               "desc":"Familiar with ESD protection measures and procedures in electronics development."
+               "desc":"Familiar with ESD protection measures and procedures in electronic development."
             },
             {
                "name":"Embedded Systems",
