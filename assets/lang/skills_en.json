@@ -104,6 +104,11 @@
                ]
             },
             {
+               "name":"Zephyr for Jira",
+               "rating":4,
+               "desc":"testmanagement tool integrated into Jira"
+            },
+            {
                "name":"Selenium",
                "rating":0,
                "desc":" "

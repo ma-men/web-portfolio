@@ -104,6 +104,11 @@
                ]
             },
             {
+               "name":"Zephyr für Jira",
+               "rating":4,
+               "desc":"Testmanagement-Tool als Jira-Plugin."
+            },
+            {
                "name":"Selenium",
                "rating":0,
                "desc":" "
@@ -125,7 +130,7 @@
             }
          ]
       },
-        {
+      {
          "group":"Anforderungsmanagement",
          "skills":[
            {
