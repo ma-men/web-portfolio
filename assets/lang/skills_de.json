@@ -93,6 +93,17 @@
                ]
             },
             {
+               "name":"Statische Codeanalyse / Review für C",
+               "rating":3.5,
+               "desc":" ",
+               "certs":[                 
+                  {
+                     "label":"Polyspace für Embedded Software in C",
+                     "file":"polyspace-for-c.pdf"
+                  }
+               ]
+            },
+            {
                "name":"Selenium",
                "rating":0,
                "desc":" "
