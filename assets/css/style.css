@@ -63,9 +63,9 @@ h2 {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  height: 2000px; /* nur zum Scroll-Test */
 }
 
-/* Haupt-Navigation */
 nav {
   max-width: 1200px;
   margin: auto;
@@ -148,11 +148,9 @@ nav {
 .hamburger span:nth-child(1) {
   top: 0;
 }
-
 .hamburger span:nth-child(2) {
   top: 7px;
 }
-
 .hamburger span:nth-child(3) {
   top: 14px;
 }
@@ -162,11 +160,9 @@ nav {
   transform: rotate(45deg);
   top: 7px;
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg);
   top: 7px;
