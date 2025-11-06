@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Martin Mengersen</title>
 
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -16,6 +16,7 @@
 
   <!-- JS -->
   <script src="assets/js/global.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/skills.js" defer></script>
   <script src="assets/js/cv.js" defer></script>
@@ -27,39 +28,13 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="container nav-container">
-      <!-- Hamburger Button -->
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-      <!-- Normale Navigation -->
-      <ul class="nav-links">
-        <li><a href="#about-section" data-i18n="menu-about">Über mich</a></li>
-        <li><a href="#skills-section" data-i18n="menu-skills">Fähigkeiten</a></li>
-        <li><a href="#cv-section" data-i18n="menu-cv">Lebenslauf</a></li>
-        <li><a href="#stories-section" data-i18n="menu-stories">Stories</a></li>
-        <li><a href="#contact" data-i18n="menu-contact">Kontakt</a></li>
-      </ul>
-    </div>
-
-    <div class="lang-switcher">
-      <label for="lang">🌐</label>
-      <select id="lang">
-        <option value="de">Deutsch</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-
-  </nav>
+  <div id="nav-container"></div>
 
 
   <!-- Inhalt -->
   <div class="main-wrapper">
 
     <main>
-   
-
       <!-- Über mich -->
       <section id="about-section">
 
@@ -84,23 +59,23 @@
       <!-- Skills / Fähigkeiten -->
       <section id="skills-section">
         <h2 id="skills-title">Skills</h2>
-          <div id="skills-grid"> <!-- content per JavaScript --> </div>
+        <div id="skills-grid"> <!-- content per JavaScript --> </div>
       </section>
 
       <!-- CV / Lebenslauf -->
       <section id="cv-section">
-          <h2 id="cv-title">Lebenslauf</h2>
-          <div id="cv-timeline"></div>
+        <h2 id="cv-title">Lebenslauf</h2>
+        <div id="cv-timeline"></div>
       </section>
 
       <!-- Stories / Projects -->
       <section id="stories-section">
-          <h2 id="stories-title">Stories</h2>
-          <div id="stories-grid"></div>
+        <h2 id="stories-title">Stories</h2>
+        <div id="stories-grid"></div>
       </section>
-         
 
-      <!-- Kontakt -->     
+
+      <!-- Kontakt -->
       <section id="contact" class="section">
         <div class="container">
           <h2>Kontakt</h2>
@@ -131,7 +106,7 @@
       <div class="story-modal-body"></div>
     </div>
   </div>
- 
+
 </body>
 
 </html>

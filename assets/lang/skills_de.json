@@ -21,7 +21,7 @@
             {
                "name":"Python",
                "rating":3,
-               "desc":"Kenntnisse auf PCEP-Prüfung-Niveau",
+               "desc":"gute Grundkenntnisse auf PCEP-Prüfung-Niveau",
                "certs":[
                   {
                      "label":"Python PCEP-Prüfung",
@@ -46,7 +46,7 @@
             {
                "name":"JavaScript",
                "rating":3,
-               "desc":"inkl. AJAX",
+               "desc":"gute Grundkenntnisse inkl. AJAX und JQuery",
                "certs":[                 
                   {
                      "label":"4-wöchiger JavaScript-Lehrgang",
@@ -217,6 +217,11 @@
                "name":"J1939",
                "rating":3,
                "desc":" "
+            },
+            {
+               "name":"PCAN Explorer",
+               "rating":4.5,
+               "desc":" "
             }
          ]
       },
@@ -231,7 +236,12 @@
             {
                "name":"JSON",
                "rating":3,
-               "desc":"Lokale Datenhaltung und Testing-Umgebungen."
+               "desc":" "
+            },
+            {
+               "name":"XML",
+               "rating":2.5,
+               "desc":" "
             }
          ]
       },
@@ -241,7 +251,7 @@
             {
                "name":"Elektronik",
                "rating":3.5,
-               "desc":"Solide Kenntnisse in Elektrotechnik/Elektronik: sicherer Umgang mit Multimeter und Oszilloskop, Verständnis grundlegender Schaltungen und elektronischer Bauelemente."
+               "desc":"Solide Kenntnisse in Elektrotechnik/Elektronik: sicherer Umgang mit Multimeter, Signalgenerator und Oszilloskop, Verständnis grundlegender Schaltungen und elektronischer Bauelemente."
             },
             {
                "name":"ESD",
