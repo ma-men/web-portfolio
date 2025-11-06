@@ -91,22 +91,24 @@ nav {
 
 /* === Sticky Navigation Styling === */
 #nav-container {
+  max-width: 1200px;
+  margin: auto;
   position: sticky;
   top: 0;
   z-index: 50; /* über allem anderen */
 }
 
 /* Falls dein JS eine .navbar oder ähnliche Klasse hinzufügt */
-#nav-container .navbar {
+#nav-container .nav{
   position: relative; /* wichtig für Pseudo-Elemente */
-  background: #ffffff;
+  background: #3882f3;
   border-radius: 10px 10px 0 0;
   box-shadow: none; /* kein Standardschatten */
   overflow: visible;
 }
 
 /* Weißer "Füllbereich" oben, um Border-Radius abzudecken */
-#nav-container .navbar::before {
+#nav-container .nav::before {
   content: "";
   position: absolute;
   top: -10px; /* gleiche Höhe wie border-radius */
@@ -118,7 +120,7 @@ nav {
 }
 
 /* Schatten nur unten, seitlich begrenzt */
-#nav-container .navbar::after {
+#nav-container .nav::after {
   content: "";
   position: absolute;
   left: 10px;
