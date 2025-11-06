@@ -63,6 +63,7 @@ h2 {
   max-width: 1200px;
   position: sticky;
   top: 0;
+  align-items: center;
   background: #fff;
   z-index: 999;
  }
