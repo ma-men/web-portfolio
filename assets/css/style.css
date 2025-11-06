@@ -61,9 +61,11 @@ h2 {
 /**********************************************************/
 #nav-container {
   max-width: 1200px;
+  margin: auto;
+
   position: sticky;
   top: 0;
-  align-items: center;
+  
   background: #fff;
   z-index: 999;
  }
