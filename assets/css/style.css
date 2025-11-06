@@ -85,6 +85,7 @@ nav {
   border-radius: 10px;
   z-index: 1000;
   padding: 0.8rem 1rem;
+  overflow: visible;
 }
 
 /* Menülinks */
