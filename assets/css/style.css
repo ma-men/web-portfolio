@@ -60,14 +60,14 @@ h2 {
 /*         Navbar                                         */
 /**********************************************************/
 #nav-container {
-  max-width: 1170px;
+  max-width: 1300px;
   margin: auto;
 
   position: sticky;
   top: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #c2c3c5;
+  background-color: #c2c3c5;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   z-index: 999;
  }
@@ -80,7 +80,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #3882f3;
+  background-color: #3882f3;
   border: 5px solid #3882f3;
   border-radius: 10px;
   z-index: 1000;
