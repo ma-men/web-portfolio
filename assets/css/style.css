@@ -60,7 +60,7 @@ h2 {
 /*         Navbar                                         */
 /**********************************************************/
 #nav-container {
-  max-width: 1300px;
+  max-width: 1170px;
   margin: auto;
 
   position: sticky;
@@ -68,20 +68,8 @@ h2 {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: #c2c3c5;
-  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);*/
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   z-index: 999;
- }
-
- #nav-container::after {
-  content: "";
-  position: absolute;
-  left: 10px;      /* Schatten 10px vor linker Ecke */
-  right: 10px;     /* Schatten 10px vor rechter Ecke */
-  bottom: 0;       /* direkt unter der Navbar */
-  height: 15px;    /* Höhe des Schattenbereichs */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  z-index: 998;     /* hinter der Navbar */
  }
 
 nav {
