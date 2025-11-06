@@ -3,85 +3,72 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navContainer = document.getElementById("nav-container");
 
-    // Menüstruktur (Texte kommen aus JSON, siehe unten)
+    // Menüstruktur
     const menuItems = [
-        { id: "about-section", i18n: "menu-about" },
-        { id: "skills-section", i18n: "menu-skills" },
-        { id: "cv-section", i18n: "menu-cv" },
-        { id: "stories-section", i18n: "menu-stories" },
-        { id: "contact", i18n: "menu-contact" }
+        { id: "about-section", text: "Über mich", en: "About" },
+        { id: "skills-section", text: "Fähigkeiten", en: "Skills" },
+        { id: "cv-section", text: "Lebenslauf", en: "CV" },
+        { id: "stories-section", text: "Stories", en: "Stories" },
+        { id: "contact", text: "Kontakt", en: "Contact" }
     ];
 
     // Navigation erzeugen
     const nav = document.createElement("nav");
-    nav.classList.add("nav");
 
-    const container = document.createElement("div");
-    container.classList.add("container", "nav-container");
-
-    // Hamburger
+    // Hamburger-Icon (3 Linien)
     const hamburger = document.createElement("div");
     hamburger.classList.add("hamburger");
-    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    hamburger.innerHTML = "<span></span><span></span><span></span>";
 
     // UL-Element
     const ul = document.createElement("ul");
     ul.classList.add("nav-links");
 
-    // Menüpunkte einfügen
     menuItems.forEach(item => {
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.href = `#${item.id}`;
-        a.dataset.i18n = item.i18n;
-        a.textContent = item.i18n; // Platzhalter, wird später durch i18n ersetzt
+        a.textContent = item.text;
         li.appendChild(a);
         ul.appendChild(li);
     });
 
-    // Sprachumschalter (modern, z. B. Icons)
+    // Sprachumschalter (DE | EN)
     const langSwitcher = document.createElement("div");
     langSwitcher.classList.add("lang-switcher");
-
     langSwitcher.innerHTML = `
-    <div class="lang-toggle">
-      <span class="lang-option" data-lang="de">🇩🇪</span>
-      <span class="lang-option" data-lang="en">🇬🇧</span>
-    </div>
-  `;
+                                    <span class="lang-option" data-lang="de">DE</span>
+                                    <span class="lang-separator">|</span>
+                                    <span class="lang-option" data-lang="en">EN</span>
+     `;
 
     // Zusammenbauen
-    container.appendChild(hamburger);
-    container.appendChild(ul);
-    container.appendChild(langSwitcher);
-    nav.appendChild(container);
+    nav.appendChild(hamburger);
+    nav.appendChild(ul);
+    nav.appendChild(langSwitcher);
     navContainer.appendChild(nav);
 
-    // Hamburger-Logik
+    // Hamburger-Menü-Logik
     hamburger.addEventListener("click", () => {
         ul.classList.toggle("active");
+        hamburger.classList.toggle("active");
     });
 
-    // Sprachwechsel
-    langSwitcher.querySelectorAll(".lang-option").forEach(opt => {
+    // Sprachumschalter-Logik
+    const langOptions = langSwitcher.querySelectorAll(".lang-option");
+    langOptions.forEach(opt => {
         opt.addEventListener("click", () => {
             const lang = opt.dataset.lang;
-            loadLanguage(lang);
+            langOptions.forEach(o => (o.style.fontWeight = "500"));
+            opt.style.fontWeight = "900";
+            updateLanguage(lang);
         });
     });
 
-    // Sprachdateien laden (Beispiel)
-    function loadLanguage(lang) {
-        fetch(`ui_${lang}.json`)
-            .then(res => res.json())
-            .then(data => {
-                document.querySelectorAll("[data-i18n]").forEach(el => {
-                    const key = el.dataset.i18n;
-                    if (data[key]) el.textContent = data[key];
-                });
-            });
+    function updateLanguage(lang) {
+        menuItems.forEach((item, index) => {
+            const link = ul.children[index].querySelector("a");
+            link.textContent = lang === "en" ? item.en : item.text;
+        });
     }
-
-    // Standardmäßig Deutsch laden
-    loadLanguage("de");
 });
