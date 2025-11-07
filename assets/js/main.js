@@ -13,20 +13,16 @@ import { footer } from './footer.js';
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Main initialized...");
 
-    /*************************************************************************************
-     *  globale Funktionen registrieren, damit i18n.js sie aufrufen kann
-     * 
-     *  window.loadXYZ ist notwendig, weil i18n.js dynamisch diese Funktionen aufruft,
-     *  ohne sie direkt zu importieren (damit bleibt i18n.js unabhängig von allen Modulen).
-     *************************************************************************************/
-    window.nav = nav;
-    window.skills = skills;
-    window.cv = cv;
-    window.stories = stories;
-    window.footer = footer;
+    // DOM-Struktur einmalig:
+    nav.init();
+    skills.init();
 
     // Sprache initialisieren und alle Bereiche laden
-    language.init();
+    language.init();  // // lädt ui/cv/… in i18n.js
+
+    // <- Default-Sprache für Skills
+    nav.load(language.current);
+    skills.load(language.current);   
 
 });
 
