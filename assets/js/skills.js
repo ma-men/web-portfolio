@@ -10,6 +10,22 @@ export const skills = {
     _basePath: 'assets/lang/',
     _data: null,
 
+    // JSON-Struktur-Konfiguration
+    structure: {
+        root: 'groups',       // oberste Liste in der JSON-Datei
+        subgroup: 'skills',   // Unterliste innerhalb jeder Gruppe
+        fields: {
+            groupName: 'group', // Name der Skillgruppe
+            skillName: 'name',  // Skillbezeichnung
+            rating: 'rating',   // Bewertung (0–5)
+            desc: 'desc',       // Beschreibungstext
+            certs: 'certs',     // Zertifikate-Liste
+            certLabel: 'label', // Text der Zertifikatsbeschreibung
+            certFile: 'file'    // Dateiname
+        }
+    },
+
+
     // Pfade zu Stern-Icons 
     starIcons: {
         full: 'assets/icons/star-full.svg',
@@ -67,96 +83,120 @@ export const skills = {
         return null;
     },
 
-    // Karten aus den geladenen Daten zeichnen
+    // 4. _render() → Daten anzeigen
     _render() {
+        const cfg = skills.structure; // Kürzerer Zugriff
         const grid = document.getElementById(skills._gridId);
         if (!grid || !skills._data) return;
-        // Vorherigen Inhalt löschen
+
         grid.innerHTML = '';
 
-        const data = skills._data;
-        const categories = Array.isArray(data.categories) ? data.categories : [];
+        const groups = Array.isArray(skills._data[cfg.root]) ? skills._data[cfg.root] : [];
 
-        // Titel aus skills_<lang>.json, falls vorhanden
-        if (data.title) {
-            const titleEl = document.querySelector(`#${skills._containerId} h2`);
-            if (titleEl) {
-                titleEl.textContent = data.title;
-            }
-        }
-        
-        if (categories.length === 0) {
+        if (groups.length === 0) {
             const p = document.createElement('p');
             p.classList.add('skills-empty');
             p.textContent = 'Keine Skill-Daten gefunden.';
             grid.appendChild(p);
             return;
         }
-       
 
-        for (let i = 0; i < categories.length; i++) {
-            const cat = categories[i];
+        for (let i = 0; i < groups.length; i++) {
+            const g = groups[i];
 
-            const card = document.createElement('div');
-            card.classList.add('skill-card');
+            const groupCard = document.createElement('div');
+            groupCard.classList.add('skill-group');
 
-            // Kategoriename
-            const catTitle = document.createElement('h3');
-            catTitle.textContent = cat.name || '';
-            card.appendChild(catTitle);
+            const groupTitle = document.createElement('h3');
+            groupTitle.textContent = g[cfg.fields.groupName] || 'Gruppe';
+            groupCard.appendChild(groupTitle);
 
-            // Liste von Items
             const ul = document.createElement('ul');
             ul.classList.add('skill-list');
 
-            for (let j = 0; j < items.length; j++) {
-                const item = cat.items[j];
+            const skillsArr = Array.isArray(g[cfg.subgroup]) ? g[cfg.subgroup] : [];
+            
+            for (let j = 0; j < skillsArr.length; j++) {
+                const s = skillsArr[j];
                 const li = document.createElement('li');
+                li.classList.add('skill-item');
 
-                const nameSpan = document.createElement('span');
-                nameSpan.classList.add('skill-name');
-                nameSpan.textContent = item.name || '';
+                const header = document.createElement('div');
+                header.classList.add('skill-header');
 
-                const starsSpan = skills._renderStars(item.level || 0);
+                const name = document.createElement('span');
+                name.classList.add('skill-name');
+                name.textContent = s[cfg.fields.skillName] || '';
 
-                li.appendChild(nameSpan);
-                li.appendChild(starsSpan);
+                const stars = skills._renderStars(Number(s[cfg.fields.rating]) || 0);
+                header.appendChild(name);
+                header.appendChild(stars);
+
+                const desc = document.createElement('p');
+                desc.classList.add('skill-desc');
+                desc.textContent = s[cfg.fields.desc] || '';
+
+                li.appendChild(header);
+                li.appendChild(desc);
+
+                // Zertifikate
+                const certList = s[cfg.fields.certs];
+                if (Array.isArray(certList) && certList.length > 0) {
+                    const ulCert = document.createElement('ul');
+                    ulCert.classList.add('cert-list');
+
+                    for (let k = 0; k < certList.length; k++) {
+                        const c = certList[k];
+                        const liCert = document.createElement('li');
+
+                        const label = c[cfg.fields.certLabel] || '';
+                        const file = c[cfg.fields.certFile] || '';
+
+                        if (file.trim() !== '') {
+                            const link = document.createElement('a');
+                            link.href = `assets/certs/${file}`;
+                            link.target = '_blank';
+                            link.textContent = label;
+                            liCert.appendChild(link);
+                        } else {
+                            liCert.textContent = label;
+                        }
+
+                        ulCert.appendChild(liCert);
+                    }
+
+                    li.appendChild(ulCert);
+                }
+
                 ul.appendChild(li);
             }
 
-            card.appendChild(ul);
-            grid.appendChild(card);
+            groupCard.appendChild(ul);
+            grid.appendChild(groupCard);
         }
     },
 
-    // Sterne-Rendering (unterstützt Ganzzahl und .5 → halb)
-    _renderStars(levelNumber) {
+    _renderStars(level) {
         const span = document.createElement('span');
         span.classList.add('skill-stars');
 
-        const fullCount = Math.floor(levelNumber);
-        const hasHalf = levelNumber - fullCount >= 0.5;
+        const full = Math.floor(level);
+        const half = level - full >= 0.5;
         const total = 5;
 
         for (let i = 0; i < total; i++) {
             const img = document.createElement('img');
             img.classList.add('star');
-
-            if (i < fullCount) {
+            if (i < full) {
                 img.src = skills.starIcons.full;
-                img.alt = '★';
-            } else if (i === fullCount && hasHalf) {
+            } else if (i === full && half) {
                 img.src = skills.starIcons.half;
-                img.alt = '☆'; // optional: '½'
             } else {
                 img.src = skills.starIcons.empty;
-                img.alt = '☆';
             }
-
             span.appendChild(img);
         }
 
         return span;
     }
 };
-
