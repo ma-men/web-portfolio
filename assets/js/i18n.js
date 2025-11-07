@@ -17,7 +17,7 @@ export const language = {
 
     // Lädt alle JSON-Sprachdateien (synchron)
     loadLanguage(lang) {
-        const namespaces = ['ui', 'skills', 'cv', 'stories', 'footer'];
+        const namespaces = ['ui', 'skills', 'cv', 'stories'];
         const basePath = 'assets/lang/';
         language.data = {};
 
@@ -34,6 +34,7 @@ export const language = {
                     language.data[ns] = {};
                 }
             } catch {
+                console.warn(`Fehler beim Laden: ${path}`);
                 language.data[ns] = {};
             }
         }
