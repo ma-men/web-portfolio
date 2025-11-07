@@ -9,7 +9,8 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #c2c3c5;
+  background: #f7f8fa;
+  padding: 2rem;
 }
 
 h2 {
