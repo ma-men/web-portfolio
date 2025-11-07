@@ -57,15 +57,27 @@ export const language = {
             const key = el.getAttribute('data-i18n');
             if (!key) continue;
 
-            // Beispiel-Key: "ui.menu_about"
-            const [ns, item] = key.split('.');
-            const text = language.data[ns]?.[item];
+            // Beispiel-Key: ui.header.menu.about
+            const parts = key.split('.');
+            const ns = parts.shift(); // "ui"
+            let textObj = language.data[ns];
 
-            if (text) {
-                el.textContent = text;
+            // gehe rekursiv tiefer durch das JSON-Objekt
+            for (let j = 0; j < parts.length; j++) {
+                if (textObj && typeof textObj === 'object') {
+                    textObj = textObj[parts[j]];
+                } else {
+                    textObj = null;
+                    break;
+                }
+            }
+
+            if (typeof textObj === 'string') {
+                el.textContent = textObj;
             }
         }
     },
+
 
     // Sprache wechseln
     setLanguage(newLang) {
