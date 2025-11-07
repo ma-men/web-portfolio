@@ -83,7 +83,7 @@ export const skills = {
         return null;
     },
 
-    // 4. _render() → Daten anzeigen
+    // Daten anzeigen
     _render() {
         const cfg = skills.structure; // Kürzerer Zugriff
         const grid = document.getElementById(skills._gridId);
@@ -104,42 +104,42 @@ export const skills = {
         for (let i = 0; i < groups.length; i++) {
             const g = groups[i];
 
-            const groupCard = document.createElement('div');
-            groupCard.classList.add('skill-group');
+            // Skill-Card (entspricht .skill-card im CSS)
+            const card = document.createElement('div');
+            card.classList.add('skill-card');
 
+            // Überschrift der Gruppe
             const groupTitle = document.createElement('h3');
             groupTitle.textContent = g[cfg.fields.groupName] || 'Gruppe';
-            groupCard.appendChild(groupTitle);
+            card.appendChild(groupTitle);
 
-            const ul = document.createElement('ul');
-            ul.classList.add('skill-list');
 
             const skillsArr = Array.isArray(g[cfg.subgroup]) ? g[cfg.subgroup] : [];
-            
             for (let j = 0; j < skillsArr.length; j++) {
                 const s = skillsArr[j];
-                const li = document.createElement('li');
-                li.classList.add('skill-item');
 
-                const header = document.createElement('div');
-                header.classList.add('skill-header');
+                // Skill-Zeile (.skill-row)
+                const row = document.createElement('div');
+                row.classList.add('skill-row');
 
                 const name = document.createElement('span');
                 name.classList.add('skill-name');
                 name.textContent = s[cfg.fields.skillName] || '';
 
                 const stars = skills._renderStars(Number(s[cfg.fields.rating]) || 0);
-                header.appendChild(name);
-                header.appendChild(stars);
+                stars.classList.add('stars');
 
+                row.appendChild(name);
+                row.appendChild(stars);
+                card.appendChild(row);
+
+                // Beschreibung
                 const desc = document.createElement('p');
                 desc.classList.add('skill-desc');
                 desc.textContent = s[cfg.fields.desc] || '';
+                card.appendChild(desc);
 
-                li.appendChild(header);
-                li.appendChild(desc);
-
-                // Zertifikate
+                // Zertifikate (cert-list)
                 const certList = s[cfg.fields.certs];
                 if (Array.isArray(certList) && certList.length > 0) {
                     const ulCert = document.createElement('ul');
@@ -161,32 +161,23 @@ export const skills = {
                         } else {
                             liCert.textContent = label;
                         }
-
                         ulCert.appendChild(liCert);
                     }
-
-                    li.appendChild(ulCert);
+                    card.appendChild(ulCert);
                 }
-
-                ul.appendChild(li);
             }
-
-            groupCard.appendChild(ul);
-            grid.appendChild(groupCard);
+            grid.appendChild(card);
         }
     },
 
     _renderStars(level) {
         const span = document.createElement('span');
-        span.classList.add('skill-stars');
-
         const full = Math.floor(level);
         const half = level - full >= 0.5;
         const total = 5;
 
         for (let i = 0; i < total; i++) {
             const img = document.createElement('img');
-            img.classList.add('star');
             if (i < full) {
                 img.src = skills.starIcons.full;
             } else if (i === full && half) {
