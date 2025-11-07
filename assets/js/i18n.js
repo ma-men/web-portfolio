@@ -3,6 +3,128 @@
 
 export const language = {
     currentLang: localStorage.getItem('lang') || 'de',
+    data: {},
+
+    // Einstiegspunkt
+    init() {
+        language.loadLanguage(language.currentLang);
+        language.appendEventListeners();
+        language.updateActiveSwitcher(language.currentLang);
+
+        // Nach dem Laden einmal Texte einfügen
+        language.applyTexts();
+    },
+
+    // Lädt alle JSON-Sprachdateien (synchron)
+    loadLanguage(lang) {
+        const namespaces = ['ui', 'skills', 'cv', 'stories', 'footer'];
+        const basePath = 'assets/lang/';
+        language.data = {};
+
+        for (let i = 0; i < namespaces.length; i++) {
+            const ns = namespaces[i];
+            const xhr = new XMLHttpRequest();
+            const path = basePath + ns + '_' + lang + '.json';
+            xhr.open('GET', path, false);
+            try {
+                xhr.send();
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    language.data[ns] = JSON.parse(xhr.responseText);
+                } else {
+                    language.data[ns] = {};
+                }
+            } catch {
+                language.data[ns] = {};
+            }
+        }
+
+        console.log('Sprache geladen:', lang);
+    },
+
+    // Setzt alle Texte basierend auf data-i18n
+    // Wenn ein containerId angegeben ist, nur in diesem Bereich
+    applyTexts(containerId) {
+        const root = containerId
+            ? document.getElementById(containerId)
+            : document;
+
+        if (!root) return;
+
+        const elements = root.querySelectorAll('[data-i18n]');
+        for (let i = 0; i < elements.length; i++) {
+            const el = elements[i];
+            const key = el.getAttribute('data-i18n');
+            if (!key) continue;
+
+            // Beispiel-Key: "ui.menu_about"
+            const [ns, item] = key.split('.');
+            const text = language.data[ns]?.[item];
+
+            if (text) {
+                el.textContent = text;
+            }
+        }
+    },
+
+    // Sprache wechseln
+    setLanguage(newLang) {
+        if (newLang === language.current) return;
+
+        language.current = newLang;
+        localStorage.setItem('lang', newLang);
+
+        // Sprachdateien laden
+        language.loadLanguage(newLang);
+        language.updateActiveSwitcher(newLang);
+
+        // Texte auf ganzer Seite aktualisieren
+        language.applyTexts();
+
+        // Zusätzlich Module nachladen (z. B. Skills neu rendern)
+        if (window.skills && typeof window.skills.load === 'function') {
+            skills.load(newLang);
+        }
+        if (window.cv && typeof window.cv.load === 'function') {
+            cv.load(newLang);
+        }
+        if (window.stories && typeof window.stories.load === 'function') {
+            stories.load(newLang);
+        }
+        if (window.footer && typeof window.footer.load === 'function') {
+            footer.load(newLang);
+        }
+
+    },
+
+    // Aktiven Sprachschalter hervorheben
+    updateActiveSwitcher(lang) {
+        const opts = document.querySelectorAll('.lang-option');
+        for (let i = 0; i < opts.length; i++) {
+            opts[i].classList.toggle('active', opts[i].dataset.lang === lang);
+        }
+    },
+
+    // Klick-Events für Sprachumschalter
+    appendEventListeners() {
+        document.addEventListener('click', (e) => {
+            const option = e.target.closest('.lang-option');
+            if (!option) return;
+
+            const newLang = option.dataset.lang;
+
+            if (newLang) {
+                language.setLanguage(newLang);
+            }
+        });
+    }
+};
+
+
+
+
+
+/*
+
 
     appendEventListeners() {
         document.addEventListener('click', (e) => {
@@ -39,15 +161,11 @@ export const language = {
         try { if (window.footer?.load) footer.load(lang); } catch { }
     },
 
-    init() {
-        language.setActiveLang(language.currentLang);
-        language.reloadSections(language.currentLang);
-        language.appendEventListeners();
-    }
+    
 };
 
 
-
+*/
 
 /*
 const loadUI = async (lang) => {

@@ -1,37 +1,48 @@
 'use strict';
-/* Sills.js
-   Lädt und rendert die Fähigkeiten-Sektion basierend auf der ausgewählten Sprache.
-*/
 
 import { language } from './i18n.js';
 
 export const skills = {
 
-    // interne „Konstanten“ und Pfade
-    basePath: 'assets/lang/',
+    // interne Konfiguration / „Konstanten“
+    _containerId: 'skills',
+    _titleId: 'skills-title',
+    _gridId: 'skills-grid',
+    _basePath: 'assets/lang/',
+    _data: null,
+
+    // Pfade zu Stern-Icons (optional: du kannst auch Unicode-Sterne verwenden)
     starIcons: {
         full: 'assets/icons/star-full.svg',
         half: 'assets/icons/star-half.svg',
         empty: 'assets/icons/star-empty.svg'
     },
-    _containerId: 'skills',
-    _gridId: 'skills-grid',
-    _data: null,
 
+    // DOM-Struktur aufbauen 
     init() {
         const section = document.getElementById(skills._containerId);
         if (!section) return;
 
         section.innerHTML = '';
+
+        // Überschrift – kann später durch UI-JSON oder Skills-JSON überschrieben werden
         const title = document.createElement('h2');
-        title.id = 'skills-title';
+        title.id = skills._titleId;
+        // Optional: wenn du den Titel aus ui_xx.json pflegen willst, setze einen i18n-Key:
+        // title.dataset.i18n = 'ui.skills.title';
+        title.textContent = 'Skills';
         section.appendChild(title);
 
+        // Grid-Container für Karten
         const grid = document.createElement('div');
         grid.id = skills._gridId;
         grid.classList.add('skills-grid');
         section.appendChild(grid);
+
+        // spracheabhängige Texte anwenden
+        language.applyTexts(skills._containerId);
     },
+
     /* Von außen aufrufen (z. B. in i18n.js): skills.load(language.current) */
     load(lang) {
         const path = skills.basePath + 'skills_' + lang + '.json';
@@ -49,39 +60,58 @@ export const skills = {
         skills._render();
     },
 
+    // Karten aus den geladenen Daten zeichnen
     _render() {
         const grid = document.getElementById(skills._gridId);
-        if (!grid) return;
+        const titleEl = document.getElementById(skills._titleId);
+        if (!grid || !titleEl) return;
 
         grid.innerHTML = '';
 
-        const data = skills._data;
-        if (!data || !Array.isArray(data.categories)) {
-            grid.textContent = 'Keine Daten gefunden.';
+        const data = skills._data || {};
+        // Titel aus skills_<lang>.json, falls vorhanden
+        if (typeof data.title === 'string' && data.title.trim().length > 0) {
+            titleEl.textContent = data.title;
+        }
+
+        const categories = Array.isArray(data.categories) ? data.categories : [];
+        if (categories.length === 0) {
+            const p = document.createElement('p');
+            p.classList.add('skills-empty');
+            p.textContent = 'Keine Skill-Daten gefunden.';
+            grid.appendChild(p);
             return;
         }
 
-        for (let i = 0; i < data.categories.length; i++) {
-            const cat = data.categories[i];
+        for (let i = 0; i < categories.length; i++) {
+            const cat = categories[i];
+
             const card = document.createElement('div');
             card.classList.add('skill-card');
 
-            const h3 = document.createElement('h3');
-            h3.textContent = cat.name;
-            card.appendChild(h3);
+            // Kategoriename
+            const catTitle = document.createElement('h3');
+            catTitle.textContent = typeof cat.name === 'string' ? cat.name : 'Kategorie';
+            card.appendChild(catTitle);
 
+            // Liste von Items
             const ul = document.createElement('ul');
-            for (let j = 0; j < cat.items.length; j++) {
-                const it = cat.items[j];
+            ul.classList.add('skill-list');
+
+            const items = Array.isArray(cat.items) ? cat.items : [];
+            for (let j = 0; j < items.length; j++) {
+                const it = items[j];
+
                 const li = document.createElement('li');
 
                 const nameSpan = document.createElement('span');
-                nameSpan.textContent = it.name;
                 nameSpan.classList.add('skill-name');
+                nameSpan.textContent = typeof it.name === 'string' ? it.name : 'Skill';
 
-                const stars = skills._renderStars(it.level);
+                const starsSpan = skills._renderStars(typeof it.level === 'number' ? it.level : 0);
+
                 li.appendChild(nameSpan);
-                li.appendChild(stars);
+                li.appendChild(starsSpan);
                 ul.appendChild(li);
             }
 
@@ -90,25 +120,98 @@ export const skills = {
         }
     },
 
-    _renderStars(level) {
+    // Sterne-Rendering (unterstützt Ganzzahl und .5 → halb)
+    _renderStars(levelNumber) {
         const span = document.createElement('span');
         span.classList.add('skill-stars');
 
-        for (let i = 0; i < 5; i++) {
+        const fullCount = Math.floor(levelNumber);
+        const hasHalf = levelNumber - fullCount >= 0.5;
+        const total = 5;
+
+        for (let i = 0; i < total; i++) {
             const img = document.createElement('img');
-            img.src = i < level
-                ? skills.starIcons.full
-                : skills.starIcons.empty;
-            img.alt = i < level ? '★' : '☆';
             img.classList.add('star');
+
+            if (i < fullCount) {
+                img.src = skills.starIcons.full;
+                img.alt = '★';
+            } else if (i === fullCount && hasHalf) {
+                img.src = skills.starIcons.half;
+                img.alt = '☆'; // optional: '½'
+            } else {
+                img.src = skills.starIcons.empty;
+                img.alt = '☆';
+            }
+
             span.appendChild(img);
         }
 
         return span;
     }
-
 };
 
+/*
+   _render() {
+       const grid = document.getElementById(skills._gridId);
+       if (!grid) return;
+
+       grid.innerHTML = '';
+
+       const data = skills._data;
+       if (!data || !Array.isArray(data.categories)) {
+           grid.textContent = 'Keine Daten gefunden.';
+           return;
+       }
+
+       for (let i = 0; i < data.categories.length; i++) {
+           const cat = data.categories[i];
+           const card = document.createElement('div');
+           card.classList.add('skill-card');
+
+           const h3 = document.createElement('h3');
+           h3.textContent = cat.name;
+           card.appendChild(h3);
+
+           const ul = document.createElement('ul');
+           for (let j = 0; j < cat.items.length; j++) {
+               const it = cat.items[j];
+               const li = document.createElement('li');
+
+               const nameSpan = document.createElement('span');
+               nameSpan.textContent = it.name;
+               nameSpan.classList.add('skill-name');
+
+               const stars = skills._renderStars(it.level);
+               li.appendChild(nameSpan);
+               li.appendChild(stars);
+               ul.appendChild(li);
+           }
+
+           card.appendChild(ul);
+           grid.appendChild(card);
+       }
+   },
+
+   _renderStars(level) {
+       const span = document.createElement('span');
+       span.classList.add('skill-stars');
+
+       for (let i = 0; i < 5; i++) {
+           const img = document.createElement('img');
+           img.src = i < level
+               ? skills.starIcons.full
+               : skills.starIcons.empty;
+           img.alt = i < level ? '★' : '☆';
+           img.classList.add('star');
+           span.appendChild(img);
+       }
+
+       return span;
+   }
+
+};
+*/
 /*
 const loadSkills = async (lang) => {
 const container = document.getElementById("skills-grid");

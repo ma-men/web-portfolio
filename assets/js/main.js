@@ -4,9 +4,9 @@
 import { language } from './i18n.js';
 import { navigation } from './nav.js';
 import { skills } from './skills.js';
-//import { cv } from './cv.js';
-//import { stories } from './stories.js';
-//import { footer } from './footer.js';
+import { cv } from './cv.js';
+import { stories } from './stories.js';
+import { footer } from './footer.js';
 
 
 
@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // DOM-Struktur einmalig:
     navigation.init();
     skills.init();
+    cv.init();
+    stories.init();
+    footer.init();
 
     // Sprache initialisieren und alle Bereiche laden
     language.init();  // // lädt ui/cv/… in i18n.js
@@ -23,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // <- Default-Sprache für Skills
     navigation.load(language.current);
     skills.load(language.current);   
+    cv.load(language.current);
+    stories.load(language.current);
+    footer.load(language.current);
 
 });
 
