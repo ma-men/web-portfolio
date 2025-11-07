@@ -2,7 +2,7 @@
 
 
 import { language } from './i18n.js';
-import { nav } from './nav.js';
+import { navigation } from './nav.js';
 import { skills } from './skills.js';
 //import { cv } from './cv.js';
 //import { stories } from './stories.js';
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Main initialized...");
 
     // DOM-Struktur einmalig:
-    nav.init();
+    navigation.init();
     skills.init();
 
     // Sprache initialisieren und alle Bereiche laden
     language.init();  // // lädt ui/cv/… in i18n.js
 
     // <- Default-Sprache für Skills
-    nav.load(language.current);
+    navigation.load(language.current);
     skills.load(language.current);   
 
 });
