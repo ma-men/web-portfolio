@@ -4,9 +4,9 @@
 import { language } from './i18n.js';
 import { nav } from './nav.js';
 import { skills } from './skills.js';
-import { cv } from './cv.js';
-import { stories } from './stories.js';
-import { footer } from './footer.js';
+//import { cv } from './cv.js';
+//import { stories } from './stories.js';
+//import { footer } from './footer.js';
 
 
 
