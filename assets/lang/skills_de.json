@@ -20,7 +20,7 @@
             },
             {
                "name":"Python",
-               "rating":3,
+               "rating":1.5,
                "desc":"gute Grundkenntnisse auf PCEP-Prüfung-Niveau",
                "certs":[
                   {
@@ -45,7 +45,7 @@
             },
             {
                "name":"JavaScript",
-               "rating":3,
+               "rating":1.5,
                "desc":"gute Grundkenntnisse inkl. AJAX und JQuery",
                "certs":[                 
                   {
