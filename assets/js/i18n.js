@@ -1,8 +1,55 @@
 'use strict';
-/* i18n.js
-   Lädt und rendert die UI-Elemente basierend auf der ausgewählten Sprache.
-*/
 
+
+export const language = {
+    currentLang: localStorage.getItem('lang') || 'de',
+
+    appendEventListeners() {
+        document.addEventListener('click', (e) => {
+            const option = e.target.closest('.lang-option');
+            if (!option) return;
+
+            const newLang = option.dataset.lang;
+            if (!newLang || newLang === language.currentLang) return;
+
+            language.setLanguage(newLang);
+        });
+    },
+
+    setLanguage(newLang) {
+        language.currentLang = newLang;
+        localStorage.setItem('lang', newLang);
+        language.setActiveLang(newLang);
+        language.reloadSections(newLang);
+    },
+
+    setActiveLang(lang) {
+        document.querySelectorAll('.lang-option').forEach((el) => {
+            el.classList.toggle('active', el.dataset.lang === lang);
+        });
+    },
+
+    reloadSections(lang) {
+        console.log('🔄 Sprache wechseln auf:', lang);
+
+        try { if (window.nav?.load) nav.load(lang); } catch { }
+        try { if (window.skills?.load) skills.load(lang); } catch { }
+        try { if (window.stories?.load) stories.load(lang); } catch { }
+        try { if (window.cv?.load) cv.load(lang); } catch { }
+        try { if (window.footer?.load) footer.load(lang); } catch { }
+    },
+
+    init() {
+        language.setActiveLang(language.currentLang);
+        language.reloadSections(language.currentLang);
+        language.appendEventListeners();
+    }
+};
+
+
+
+
+/*
 const loadUI = async (lang) => {
   try {
     const res = await fetch(`assets/lang/ui_${lang}.json`);
@@ -27,3 +74,4 @@ const loadUI = async (lang) => {
 document.addEventListener("languageChanged", (e) => {
   loadUI(e.detail);
 });
+*/
