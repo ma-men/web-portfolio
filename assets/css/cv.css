@@ -51,6 +51,8 @@
   transform: translateX(-50%);
   width: var(--timeline-width);
   background: var(--timeline-color);
+  margin-left: 0 !important;
+  border: none;
   opacity: 0.2;
   z-index: 1;
 }
@@ -75,7 +77,7 @@
 
 /* ===== CARD ===== */
 .cv-card {
-  margin-left: 3rem;
+  margin-left: 0;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 0.5rem;
@@ -199,6 +201,7 @@
   }
 
   .cv-card {
+    
     width: calc(50% - 2.5rem);
   }
 
