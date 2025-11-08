@@ -5,7 +5,7 @@ import { language } from './i18n.js';
 export const skills = {
 
     // interne Konfiguration 
-    _containerId: 'skills',
+    _containerId: 'skills-section',
     _gridId: 'skills-grid',
     _basePath: 'assets/lang/',
     _data: null,
