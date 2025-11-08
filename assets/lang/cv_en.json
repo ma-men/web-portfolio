@@ -1,38 +1,94 @@
 {
-  "title": "Resume",
-  "timeline": [
-    {
-      "company": "PTx Trimble GmbH",
-      "from": "04/2021",
-      "to": "Present",
-      "positions": [
+    "name": "Martin Mengersen",
+    "subtitle": "Software Tester / Software Developer",
+    "experience": [
         {
-          "role": "Software Tester / Test Lead",
-          "details": "Test planning, automation and safety testing in agricultural systems."
-        }
-      ]
-    },
-    {
-      "company": "Müller Elektronik GmbH & Co. KG",
-      "from": "03/2007",
-      "to": "03/2021",
-      "positions": [
+            "year": "06/2025-01/2026",
+            "company": "alafatraining GmbH",
+            "title": " ",
+            "description": "Advanced training in Python, Java, HTML / CSS, JavaScript, and C#"
+        },
         {
-          "role": "C Developer",
-          "details": "Embedded systems for automotive and agricultural electronics, CAN communication."
-        }
-      ]
-    },
-    {
-      "company": "NovaTec Communication Technology GmbH",
-      "from": "09/2002",
-      "to": "09/2006",
-      "positions": [
+            "year": "03/2007–06/2025",
+            "company": "PTx Trimble GmbH (formerly Müller Elektronik GmbH & Co. KG) in Salzkotten",
+            "title": " ",
+            "description": " ",
+            "subroles": [
+                {
+                    "year": "04/2021–06/2025",
+                    "title": "Project-specific responsibility as Test Lead for the planning, execution, and evaluation of software tests"
+                },
+                {
+                    "year": "04/2021–06/2025",
+                    "title": "Software Tester for control units and terminals in the agricultural technology sector"
+                },
+                {
+                    "year": "03/2007-03/2021",
+                    "title": "Software Development in C in the field of agricultural electronics and automotive systems (control units and operator terminals)"
+                }
+            ],
+            "certificate": {
+                "label": "Work Certificate",
+                "file": "zeugnis_ptx.pdf"
+            }
+        },
         {
-          "role": "C Developer",
-          "details": "Development of communication software for mobile networks and TCP/IP."
+            "year": "10/2006–02/2007",
+            "company": " ",
+            "title": "Job Seeking",
+            "description": " "
+        },
+        {
+            "year": "09/2002–09/2006",
+            "company": "NovaTec Kommunikationstechnik GmbH in Paderborn",
+            "title": "Software Developer",
+            "description": "Software development in C in the field of mobile communications (GSM routers, domain name services, TCP/IP, and ISDN Layer 3)",
+            "certificate": {
+                "label": "Work Certificate",
+                "file": "zeugnis_novatec.pdf"
+            }
+        },
+        {
+            "year": "10/2000–03/2002",
+            "company": "b.i.b. International College in Paderborn",
+            "title": " ",
+            "description": "Advanced training as a State-certified Computer Scientist with successfully passed final examination",
+            "certificate": {
+                "label": "Final Certificate",
+                "file": "zeugnis_bib.pdf"
+            }
+        },
+        {
+            "year": "08/1984-09/2002",
+            "company": "Deutsche Telekom AG in Detmold",
+            "title": "Employee in telecommunications operations and sales",
+            "description": " ",
+            "subroles": [
+                 {
+                    "year": "09/2000–09/2002",
+                    "title": "Special leave without pay for the purpose of further training as a State-certified Computer Scientist at BiB in Paderborn"
+                },
+                 {
+                    "year": "06/1996–09/2000",
+                    "title": "Private and business customer consultant in Customer Care Management"
+                },
+                {
+                    "year": "03/1992–06/1996",
+                    "title": "Establishment and operation of a nationwide support system for software for resource scheduling and Novell NetWare server infrastructure"
+                },
+                {
+                    "year": "08/1987–03/1992",
+                    "title": "Maintenance and operation of transmission systems in the plesiochronous and synchronous digital hierarchy (PDH, SDH), line networks, and telecommunications connections"
+                },
+                {
+                    "year": "08/1984-07/1987",
+                    "title": "Apprenticeship as a Telecommunications Technician with successfully passed final examination (additional qualification: Assistant in Electrical Installation)"
+                }
+            ],
+            "certificate": {
+                "label": "Work Certificate",
+                "file": "zeugnis_telekom.pdf"
+            }
         }
-      ]
-    }
-  ]
+    ]
 }

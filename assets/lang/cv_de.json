@@ -1,38 +1,94 @@
 {
-  "title": "Lebenslauf",
-  "timeline": [
-    {
-      "company": "PTx Trimble GmbH",
-      "from": "04/2021",
-      "to": "heute",
-      "positions": [
+    "name": "Martin Mengersen",
+    "subtitle": "Softwaretester / Softwareentwickler",
+    "experience": [
         {
-          "role": "Softwaretester / Test Lead",
-          "details": "Testplanung, Automatisierung und Safety-Tests im Agrartechnikbereich."
-        }
-      ]
-    },
-    {
-      "company": "Müller Elektronik GmbH & Co. KG",
-      "from": "03/2007",
-      "to": "03/2021",
-      "positions": [
+            "year": "06/2025-01/2026",
+            "company": "alafatraining GmbH",
+            "title": " ",
+            "description": "Weiterbildung in Python, Java, HTML / CSS, JavaScript und C#"
+        },
         {
-          "role": "Softwareentwickler C",
-          "details": "Embedded Systems für Automotive & Agrartechnik, CAN-Kommunikation."
-        }
-      ]
-    },
-    {
-      "company": "NovaTec Kommunikationstechnik GmbH",
-      "from": "09/2002",
-      "to": "09/2006",
-      "positions": [
+            "year": "03/2007–06-2025",
+            "company": "PTx Trimble GmbH (früher Müller Elektronik GmbH & Co. KG) in Salzkotten",
+            "title": " ",
+            "description": " ",
+            "subroles": [
+                {
+                    "year": "04/2021–06/2025",
+                    "title": "Projektspezifische Verantwortung als Test Lead für die Planung, Durchführung und Auswertung von Softwaretests"
+                },
+                {
+                    "year": "04/2021–06/2025",
+                    "title": "Softwaretester für Steuergeräte und Terminals im Agrartechnischen Umfeld"
+                },
+                {
+                    "year": "03/2007-03/2021",
+                    "title": "Software Entwicklung in C im Bereich Agrarelektronik und im Automotive Umfeld (Steuergeräte und Bedien-Terminals"
+                }
+            ],
+            "certificate": {
+                "label": "Arbeitszeugnis",
+                "file": "zeugnis_ptx.pdf"
+            }
+        },
         {
-          "role": "C-Entwickler",
-          "details": "Entwicklung von Kommunikationssoftware im Mobilfunk- und TCP/IP-Umfeld."
+            "year": "10/2006–02/2007",
+            "company": " ",
+            "title": "Arbeitssuchend",
+            "description": " "
+        },
+        {
+            "year": "09/2002–09/2006",
+            "company": "NovaTec Kommunikationstechnik GmbH in Paderborn",
+            "title": "Softwareentwickler",
+            "description": "Software Entwicklung in C im Bereich Mobilfunk (GSM-Router, Domain Name Services, TCP/IP und ISDN Layer 3) ",
+            "certificate": {
+                "label": "Arbeitszeugnis",
+                "file": "zeugnis_novatec.pdf"
+            }
+        },
+        {
+            "year": "10/2000–03/2002",
+            "company": "b.i.b. International College in Paderborn",
+            "title": " ",
+            "description": "Fortbildung zum Staatlich geprüften Informatiker mit erfolgreich bestandener Abschlussprüfung",
+            "certificate": {
+                "label": "Abschlusszeugnis",
+                "file": "zeugnis_bib.pdf"
+            }
+        },
+        {
+            "year": "08/1984-09/2002",
+            "company": "Deutsche telekom AG in Detmold",
+            "title": "Angestellter im fernmeldetechnischen Betriebsdienst und im Vertrieb",
+            "description": " ",
+            "subroles": [
+                 {
+                    "year": "09/2000–09/2002",
+                    "title": "Sonderurlaub unter Wegfall der Bezüge zum Zwecke der Fortbildung zum Staatlich geprüften Informatiker beim BiB in Paderborn "
+                },
+                 {
+                    "year": "06/1996–09/2000",
+                    "title": "Privat- und Geschäftskundenberater im Customer Care Management"
+                },
+                {
+                    "year": "03/1992–06/1996",
+                    "title": "Aufbau und Betrieb eines bundesweiten Supports für eine Software zur Mitteldisposition und Novell Netware Server Struktur"
+                },
+                {
+                    "year": "08/1987–03/1992",
+                    "title": "Wartung und Betrieb von Anlagen der Übertragungstechnik in der plesiochronen und synchronen digitalen Hierarchie (PDH, SDH), Leitungsnetzen und Telekommunikationsanschlüssen"
+                },
+                {
+                    "year": "08/1984-07/1987",
+                    "title": "Berufsausbildung zum Fernmeldehandwerker mit erfolgreich bestandener Abschlussprüfung (Zusatzqualifikation: Fachgehilfe in der Elektroinstallation)"
+                }
+            ],
+            "certificate": {
+                "label": "Arbeitszeugnis",
+                "file": "zeugnis_telekom.pdf"
+            }
         }
-      ]
-    }
-  ]
+    ]
 }
