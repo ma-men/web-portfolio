@@ -359,7 +359,7 @@ nav {
 
 /* CV Timeline */
 .cv-timeline {
-  border-left: 3px solid #0d6efd;
+  /*border-left: 3px solid #0d6efd;*/
   margin: 2rem 0;
   padding-left: 2rem;
 }
