@@ -1,3 +1,7 @@
+'use strict';
+
+import { language } from './i18n.js';
+
 export const stories = {
 
      // === Grundkonfiguration ===
