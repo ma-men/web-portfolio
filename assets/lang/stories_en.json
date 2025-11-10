@@ -1,56 +1,69 @@
 {
-  "section": {
-    "title": "Stories / Projects",
-    "labels": {
-      "more": "more…",
-      "less": "less…"
-    }
-  },
-  "stories": [
-    {
-      "id": "story1",
-      "title": "Merging Two Software Worlds",
-      "body": [
-        "As Test Lead, I was responsible for testing a seeder software that existed in two variants – for Europe and for the US.",
-        "Both versions had evolved independently. The goal was to merge the EU codebase with the US user interface.",
-        "After the first integration, almost nothing worked. Through agile testing cycles, clear prioritization, and close collaboration with development, I managed to stabilize the merged software in a short time. The result was a robust global release that combined the strengths of both systems."
-      ]
+    "section": {
+        "title": "Stories / Projects",
+        "labels": {
+            "more": "more…",
+            "less": "less…"
+        }
     },
-    {
-      "id": "story2",
-      "title": "Establishing Structured Testing and Requirements Engineering",
-      "body": [
-        "In a newly established software department, I introduced Zephyr for Jira together with two colleagues to create, execute, and document test cases systematically.",
-        "This enabled traceable testing and direct integration of bug fixes into development.",
-        "In parallel, I promoted the use of Polarion for requirements engineering to replace unstructured Confluence pages with version-controlled, traceable specifications. The result was a clear, transparent development process."
-      ]
-    },
-    {
-      "id": "story3",
-      "title": "SIM Card Surfer (Telecommunication)",
-      "body": [
-        "I developed an embedded system called SIM Card Surfer as a one-person project.",
-        "In developing countries, SIM cards with free minutes were used. The system could read up to 30 SIM cards and transmit their data via TCP/IP to clients abroad – for example, in London.",
-        "Since SIM keys could not be extracted, authentication was performed in real time between devices. The result was a stable, cross-border virtual SIM usage solution."
-      ]
-    },
-    {
-      "id": "story4",
-      "title": "My First Contact with Software Testing",
-      "body": [
-        "During my time at Deutsche Telekom, I helped establish a support system for a nationwide dispatch application.",
-        "The system ran under DOS, was written in Clipper, and used DBASE databases.",
-        "I was responsible for support, hotline, and software testing – my first professional contact with software quality and structured testing."
-      ]
-    },
-    {
-      "id": "story5",
-      "title": "Technical Look Behind the Scenes",
-      "body": [
-        "This portfolio website is fully built with JavaScript.",
-        "All content – navigation, skills, CV, and stories – is dynamically loaded from JSON files. This ensures a clear separation of content, logic, and presentation.",
-        "The site is bilingual: all texts are dynamically updated based on the selected language. The underlying HTML is minimal, while the entire layout is rendered client-side."
-      ]
-    }
-  ]
+    "stories": [
+        {
+            "id": "story1",
+            "title": "Merging Two Software Worlds",
+            "body": [
+                "At PTx Trimble GmbH, I was involved for many years in the development of control units for various agricultural machines, most recently working on the highly complex control system of a seed drill.",
+                "This system existed in two variants – one for the European market and one for the US market. Both versions had been developed independently for years by different teams, with separate codebases, specific OEM requirements, and different user interfaces.",
+                "At some point, however, a shift in thinking occurred, with an ambitious goal: two separate systems were to be merged into a single, global version combining the strengths of both – the stable, proven codebase of the EU version and the more modern, user-friendly UI of the US version. What sounded logical on paper turned out in practice to be a massive integration project with many unknown variables.",
+                "Soon after merging the two software branches, the scale of the challenge became apparent: nothing worked as planned. Interfaces failed, logics conflicted, and even fundamental functions that had previously been stable suddenly behaved unpredictably. The schedule was tight, expectations were high – and so was the pressure.",
+                "In this situation, I took over the lead of the testing process. I organized agile test procedures in short iterations, prioritized the most critical functions, and ensured that defects were systematically documented and immediately fed back into development. Through close coordination between testing and development, we were able to gradually stabilize the code with each iteration.",
+                "After several intense weeks, we finally reached our goal: a stable, working release that combined the robust EU logic with the modern US interface. The seed drill was not only operational again – it was better, more consistent, and globally deployable.",
+                "This experience showed me how crucial structured testing, clear communication, and agile collaboration are – especially when a project is under high pressure. It also confirmed to me that quality emerges above all when it is actively shaped."
+            ]
+        },
+        {
+            "id": "story2",
+            "title": "Building Structured Testing and Requirements Engineering",
+            "body": [
+                "Around five years ago, my former employer established a new software department. Up to that point, there had been no real software testing – tests were performed unsystematically and rarely documented. I joined this department and, together with two colleagues, was responsible for establishing structured testing for a central project.",
+                "One key step was the introduction of the Zephyr plugin in Jira, which allowed us for the first time to create, execute, and document test cases in a structured way. This made testing processes traceable, and bug fixes could be directly fed back into development. I played an active role in this, made the new tool accessible to all project members, and ensured a smooth rollout.",
+                "In parallel, I strongly advocated switching requirements engineering to Polarion. This replaced the previously unstructured documentation in Confluence with clean, versioned requirements management.",
+                "This project was a key milestone – moving from unstructured testing to a professional testing and development environment."
+            ]
+        },
+        {
+            "id": "story3",
+            "title": "SIM Card Server (GSM Mobile Network)",
+            "body": [
+                "As a one-person project, I developed a client-server system serving as central management for a large number of SIM cards.",
+                "The SIM card server consisted of an embedded unit with up to 30 SIM cards, which I accessed via the T=0 protocol.",
+                "The SIM card data – including their internal folder structure – was transmitted in real time via TCP/IP to a client that hosted the required GSM engine.",
+                "An automatic assignment of SIM cards to GSM channels was performed depending on the selected network, tariff, prepaid credit, etc.",
+                "A particular challenge was secure authentication, as the cryptographic keys of the SIM cards were not readable. Instead, authentication processes had to be handled in real time between locations.",
+                "The result was a functioning, stable system that enabled virtual SIM card usage across national borders – including dynamic replacement of used cards.",
+                "This project was technically demanding and a valuable experience in embedded systems, network communication, and authentication over TCP/IP."
+            ]
+        },
+        {
+            "id": "story4",
+            "title": "My First Contact with Software Testing",
+            "body": [
+                "During my time at Deutsche Telekom, I was involved in building a support system for a nationwide dispatching system for employee and order management in transmission technology.",
+                "The system was based on the then-current Clipper programming language and dBase databases and was initiated by the Central Telecommunications Office in Darmstadt.",
+                "Within this working group, I was responsible for support and hotline operations for small Novell NetWare 5 networks.",
+                "Additionally, I was responsible for testing new software versions and for nationwide rollout to the former telecommunications offices. (Fun fact: this was still done using 3.5-inch floppy disks sent by mail. 😉)",
+                "This was when I first learned how crucial structured testing and clean delivery processes are for software quality. Looking back – several decades later – this was my very first direct contact with software testing and quality assurance.",
+                "This experience has had a lasting impact on my professional interest in testing, structure, and process quality."
+            ]
+        },
+        {
+            "id": "story5",
+            "title": "A Technical Look Behind the Scenes",
+            "body": [
+                "My portfolio website is far more than a static HTML page. The entire structure is based on JavaScript, which dynamically generates almost all visible elements – from the menu to the content sections. The actual HTML base consists of only a few lines of code.",
+                "The content itself – such as texts, stories, or project data – is loaded from JSON files. This allows me to easily add new content or translations without changing the code itself. This concept provides a clean separation between content, logic, and presentation, making the site highly flexible.",
+                "Another key aspect was bilingualism (German / English). Here too, the JSON-based data model ensures that texts are dynamically loaded and displayed in both languages – depending on the selected language setting.",
+                "In short: behind a very slim HTML shell lies a completely JavaScript-driven structure that is modular, maintainable, and easily extensible – serving as a reference for my web development skills."
+            ]
+        }
+    ]
 }

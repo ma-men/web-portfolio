@@ -1,56 +1,71 @@
 {
-  "section": {
-    "title": "Stories / Projekte",
-    "labels": {
-      "more": "mehr…",
-      "less": "weniger…"
-    }
-  },
-  "stories": [
-    {
-      "id": "story1",
-      "title": "Zusammenführung zweier Softwarewelten",
-      "body": [
-        "Als Testlead war ich verantwortlich für das Testen der Software einer Sämaschine, die in zwei Varianten existierte – für Europa und die USA.",
-        "Beide Versionen waren unabhängig entwickelt worden. Ziel war, die EU-Codebasis mit der US-Benutzeroberfläche zu vereinen.",
-        "Nach der ersten Zusammenführung funktionierte kaum etwas. Durch agile Tests in kurzen Iterationen, gezielte Priorisierung und enge Zusammenarbeit mit der Entwicklung gelang es mir, in kurzer Zeit eine stabile, lauffähige Version zu erreichen. Das Ergebnis war ein globaler Release, der die Stärken beider Systeme vereinte."
-      ]
+    "section": {
+        "title": "Stories / Projekte",
+        "labels": {
+            "more": "mehr…",
+            "less": "weniger…"
+        }
     },
-    {
-      "id": "story2",
-      "title": "Aufbau von strukturiertem Testen und Requirements Engineering",
-      "body": [
-        "In einer neu gegründeten Softwareabteilung führte ich gemeinsam mit zwei Kollegen Zephyr für Jira ein, um erstmals strukturiert Testfälle anzulegen, auszuführen und zu dokumentieren.",
-        "Dadurch wurden Testprozesse nachvollziehbar und Bugfixes direkt in die Entwicklung integriert.",
-        "Parallel setzte ich mich dafür ein, Polarion für das Requirements Engineering zu etablieren, um unstrukturierte Confluence-Dokumente durch versionierte, nachvollziehbare Anforderungen zu ersetzen. So entstand ein klarer, transparenter Entwicklungsprozess."
-      ]
-    },
-    {
-      "id": "story3",
-      "title": "SIM-Karten-Surfer (Telekommunikation)",
-      "body": [
-        "Ich entwickelte als Ein-Mann-Projekt ein Embedded-System namens SIM-Karten-Surfer.",
-        "In Schwellenländern wurden SIM-Karten mit Freiminuten genutzt. Das System konnte bis zu 30 SIM-Karten auslesen und ihre Daten per TCP/IP weltweit an Clients übertragen – beispielsweise nach London.",
-        "Da die SIM-Schlüssel nicht ausgelesen werden durften, erfolgte die Authentifizierung in Echtzeit zwischen den Geräten. Das Ergebnis war eine stabile, grenzüberschreitende virtuelle SIM-Nutzung."
-      ]
-    },
-    {
-      "id": "story4",
-      "title": "Mein erster Kontakt mit Softwaretest",
-      "body": [
-        "Während meiner Zeit bei der Telekom war ich am Aufbau eines Supportsystems für ein bundesweites Dispositionssystem beteiligt.",
-        "Die Anwendung lief unter DOS, war in Clipper entwickelt und nutzte DBASE-Datenbanken.",
-        "Ich war verantwortlich für Support, Hotline und Tests – mein erster Kontakt mit Softwarequalität und Testprozessen, lange bevor das Thema offiziell in meiner Laufbahn eine zentrale Rolle spielte."
-      ]
-    },
-    {
-      "id": "story5",
-      "title": "Technischer Blick hinter die Kulissen",
-      "body": [
-        "Diese Portfolio-Webseite basiert vollständig auf JavaScript.",
-        "Alle Inhalte – Navigation, Skills, Lebenslauf und Stories – werden dynamisch aus JSON-Dateien geladen. Dadurch sind Inhalt, Logik und Darstellung klar getrennt.",
-        "Die Seite unterstützt außerdem Zweisprachigkeit: Texte werden je nach gewählter Sprache dynamisch nachgeladen und aktualisiert. Das zugrunde liegende HTML ist minimal – der gesamte Aufbau erfolgt clientseitig."
-      ]
-    }
-  ]
+    "stories": [
+        {
+            "id": "story1",
+            "title": "Zusammenführung zweier Softwarewelten",
+            "body": [
+                "Bei der PTx Trimble GmbH war ich jahrelang an der Entwicklung von Steuergeräten für diverse landwirtschaftliche Maschinen tätig, zuletzt an der sehr komplexen Steuerung einer Sämaschine.",
+                "Diese existierte in zwei Varianten – eine für den europäischen Markt und eine für den US-Markt. Beide Versionen wurden über Jahre, von unterschiedlichen Teams, unabhängig entwickelt, mit unterschiedlichen Codebasen, speziellen Anforderungen der jeweiligen OEM´s und unterschiedlichen Benutzeroberflächen.",
+                "Wie es denn mal nun vorkommt, gab es Umdenken mit einem sehr ambitionierten Ziel: Aus zwei unterschiedlichen Systemen sollte eine gemeinsame, globale Version entstehen, die die Stärken beider vereint – die stabile, bewährte Codebasis der EU-Variante und die modernere, benutzerfreundlichere UI der US-Version. Was auf dem Papier wie ein logischer Schritt klang, entpuppte sich in der Praxis als ein massives Integrationsprojekt mit vielen unbekannten Variablen. ",
+                "Schon kurz nach der Zusammenführung der beiden Softwarestränge zeigte sich das Ausmaß der Herausforderung: Nichts funktionierte wie geplant. Schnittstellen griffen ins Leere, Logiken kollidierten, und selbst grundlegende Funktionen, die zuvor stabil liefen, verhielten sich plötzlich unvorhersehbar. Der Zeitplan war eng, die Erwartungen hoch – und der Druck entsprechend groß. ",
+                "In dieser Situation übernahm ich die Leitung des Testprozesses. Ich organisierte das agile Testvorgehen in kurzen Iterationen, priorisierte kritischste Funktionen und sorgte dafür, dass Fehler systematisch dokumentiert und sofort in die Entwicklung einflossen. Durch enge Abstimmung zwischen Test und Entwicklung konnten wir mit jeder Iteration den Code schrittweise stabilisieren.",
+                "Nach einigen intensiven Wochen erreichten wir schließlich unser Ziel: Ein stabiler, lauffähiger Release, der sowohl die robuste EU-Logik als auch das moderne US-Interface vereinte. Die Sämaschine lief nicht nur wieder – sie war besser, konsistenter und international einsetzbar.",
+                "Diese Erfahrung hat mir gezeigt, wie entscheidend strukturierte Tests, klare Kommunikation und agile Zusammenarbeit sind – besonders, wenn ein Projekt unter hohem Druck steht. Und sie hat mir bestätigt, dass Qualität vor allem dann entsteht, wenn man sie aktiv gestaltet."
+            ]
+        },
+        {
+            "id": "story2",
+            "title": "Aufbau von strukturiertem Testen und Requirements Engineering",
+            "body": [
+                "Vor rund fünf Jahren wurde bei meinem letzten Arbeitgeber eine neue Softwareabteilung gegründet. Bis dahin gab es keinen echten Softwaretest – Tests wurden unsystematisch und kaum dokumentiert durchgeführt. Ich wechselte in diese Abteilung und war gemeinsam mit zwei Kollegen dafür verantwortlich, strukturiertes Testen für ein zentrales Projekt aufzubauen.",
+                "Ein wichtiger Schritt war die Einführung des Zephyr-Plugins in Jira, mit dem wir erstmals Testfälle sauber anlegen, ausführen und dokumentieren konnten. Dadurch wurden Testprozesse nachvollziehbar, und Bugfixes konnten direkt in die Entwicklung zurückfließen. Ich übernahm dabei eine aktive Rolle, machte das neue Tool allen Projektbeteiligten zugänglich und sorgte für eine reibungslose Einführung.",
+                "Parallel dazu setzte ich mich stark dafür ein, das Requirements Engineering auf Polarion umzustellen. Damit ersetzten wir die zuvor unstrukturierte Dokumentation in Confluence durch ein sauberes, versioniertes Anforderungsmanagement.",
+                "Dieses Projekt war ein wichtiger Meilenstein – vom unstrukturierten Testen hin zu einer professionellen Test- und Entwicklungsumgebung."
+            ]
+        },
+        {
+            "id": "story3",
+            "title": "SIM-Karten Server (GSM-Mobilfunk)",
+            "body": [
+
+                "In einem Ein-Mann-Projekt im entwickelte ich eine Client-Server System als zentrales Management für eine große Anzahl von SIM-Karten.",
+                "Der SIM-Karten Server bestand aus einer Embedded-Einheit mit bis zu 30 SIM-Karten, die ich softwareseitig über das T=0-Protokoll auslas.",
+                "Die Daten der SIM-Karten – einschließlich ihrer internen Ordnerstruktur – wurden in Echtzeit per TCP/IP an einen Client übertragen, der die nötigen GSM-Engine vorhielt.",
+                "Hierbei erfolgte eine automatische Zuordnung von SIM-Karten zu GSM-Kanälen abhängig von gewähltem Netz, Tarif, Prepaid-Gesprächsguthaben etc.",
+                "Eine besondere Herausforderung bestand in der sicheren Authentifizierung, da die kryptografischen Schlüssel der SIM-Karten nicht auslesbar waren. Stattdessen mussten Authentifizierungsprozesse in Echtzeit zwischen den Standorten abgewickelt werden.",
+                "Das Ergebnis war ein funktionierendes, stabiles System, das virtuelle SIM-Karten Nutzung über Ländergrenzen hinweg ermöglichte – inklusive dynamischem Austausch verbrauchter Karten.",
+                "Dieses Projekt war technisch anspruchsvoll und zugleich eine wertvolle Erfahrung in den Bereichen Embedded Systems, Netzwerkkommunikation und Authentifizierung über TCP/IP."
+            ]
+        },
+        {
+            "id": "story4",
+            "title": "Mein erster Kontakt mit Softwaretest",
+            "body": [
+                "Während meiner Zeit bei der Deutschen Telekom war ich am Aufbau eines Support-Systems für ein bundesweites Dispositionssystem zur Mitarbeiter- und Auftragsverwaltung in der Übertragungstechnik beteiligt.",
+                "Das System basierte auf der damalig noch aktuellen Programmiersprache Clipper und dBase-Datenbanken und wurde vom Fernmeldetechnischen Zentralamt in Darmstadt initiiert.",
+                "Ich war in dieser Arbeitsgruppe verantwortlich für den Support und Hotline-Betrieb von kleinen Novell NetWare 5 Netzwerken.",
+                "Zusätzlich war ich auch für das Testen neuer Softwarestände zuständig und die bundesweite Ausrollung zu den damaligen Fernmeldeämtern. (Kleiner Fun-Fact: das geschah noch mit Hilfe von 3,5 Zoll Disketten auf postalischem Weg. 😉) ",
+                "Dabei lernte ich erstmals, wie entscheidend strukturierte Tests und saubere Auslieferungsprozesse für die Softwarequalität sind.Rückblickend war dies – vor inzwischen mehreren Jahrzehnten – mein erster direkter Kontakt mit Softwaretest und Qualitätssicherung.",
+                "Diese Erfahrung hat mein späteres berufliches Interesse an Testing, Struktur und Prozessqualität nachhaltig geprägt."
+            ]
+        },
+        {
+            "id": "story5",
+            "title": "Technischer Blick hinter die Kulissen",
+            "body": [
+                "Meine Portfolio-Webseite ist weit mehr als eine statische HTML-Seite. Der gesamte Aufbau basiert auf JavaScript, das nahezu alle sichtbaren Elemente dynamisch erzeugt – vom Menü bis zu den Inhaltsbereichen. Die eigentliche HTML-Grundstruktur besteht aus nur wenigen Zeilen Code.",
+   
+                "Die Inhalte selbst – wie Texte, Stories oder Projektdaten – werden aus JSON-Dateien eingelesen. Dadurch kann ich neue Inhalte oder Übersetzungen sehr einfach ergänzen, ohne am eigentlichen Code etwas zu ändern. Dieses Konzept erlaubt eine saubere Trennung von Inhalt, Logik und Darstellung und macht die Seite besonders flexibel.",
+                "Ein weiterer Schwerpunkt war die Zweisprachigkeit (Deutsch / Englisch). Auch hier sorgt das JSON-basierte Datenmodell dafür, dass Texte dynamisch in beiden Sprachen geladen und angezeigt werden können – je nach gewählter Spracheinstellung.",
+                "Kurz gesagt: hinter einer sehr schlanken HTML-Hülle steckt eine komplett JavaScript-gesteuerte Struktur, die modular, wartbar und leicht erweiterbar ist und als Referenz meiner Webentwicklungs-Kenntnisse dient."
+            ]
+        }
+    ]
 }
