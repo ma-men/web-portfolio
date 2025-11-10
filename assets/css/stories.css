@@ -139,15 +139,18 @@
   position: relative;
   width: 80%;
   max-width: 900px;
-  max-height: 85vh;
-  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
   transform: scale(0.95);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   z-index: 60;
+  padding: 1.5rem;
+  overflow: visible; /* Standard: kein interner Scroll */
 }
 
+/* Aktiviert (Einblendung mit sanfter Animation) */
 .story-overlay.active .story-card {
   transform: scale(1);
   opacity: 1;
@@ -200,8 +203,16 @@
   }
 
   .story-overlay .story-card {
+    width: 90%;
+    padding: 1.2rem;
+    font-size: 0.95rem; /* leicht kleinere Schrift */
+  }
+}
+
+@media (max-width: 600px) {
+  .story-overlay .story-card {
     width: 95%;
-    height: 85vh;
-    max-height: none;
+    padding: 1rem;
+    font-size: 0.9rem; /* nochmal kleiner für Smartphones */
   }
 }
