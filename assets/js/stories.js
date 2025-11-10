@@ -6,7 +6,6 @@ export const stories = {
 
      // === Grundkonfiguration ===
     _containerId: 'stories-section', // ID des HTML-Elements, in dem die Stories erscheinen sollen
-    _gridId: 'stories-grid',         // ID des Grid-Containers für die Story-Karten
     _basePath: 'assets/lang/',       // Pfad zum Ordner mit den Sprachdateien (JSON)
     _data: null,                     // Variable für die geladenen JSON-Daten
       
@@ -41,7 +40,7 @@ export const stories = {
 
         // Grid-Container für Karten
         const grid = document.createElement('div');
-        grid.id = stories._gridId;
+        grid.id = `${stories._containerId}-grid`;
         container.appendChild(grid);
 
         // spracheabhängige Texte anwenden
