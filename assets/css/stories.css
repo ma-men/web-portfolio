@@ -1,14 +1,14 @@
 /**********************************************************
- * STORIES / PROJEKTE – FINALVERSION
+ * STORIES / PROJEKTE – FINALE VERSION
  **********************************************************/
 
-/* === Haupt-Container für Stories-Bereich === */
+/* === Haupt-Container === */
 #stories-section {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 1rem;
-  background: #fff;            /* neutrale Fläche, keine graue Box */
-  border: none;                /* kein doppelter Rahmen */
+  background: #fff;
+  border: none;
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -17,17 +17,17 @@
  * GRID-LAYOUT
  **********************************************************/
 
-#stories-section .stories-grid {
+#stories-section-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);  /* exakt zwei Spalten */
   column-gap: 1.5rem;                     /* horizontaler Abstand */
   row-gap: 1.5rem;                        /* vertikaler Abstand */
-  justify-content: start;                 /* letzte Card linksbündig bei ungerader Anzahl */
-  align-items: start;                     /* gleichmäßig oben ausgerichtet */
+  justify-content: start;                 /* letzte Card linksbündig */
+  align-items: start;
 }
 
 /**********************************************************
- * STORY-CARDS
+ * STORY-CARDS – Grundlayout & Animation
  **********************************************************/
 
 .story-card {
@@ -36,19 +36,35 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1.2rem;
-  height: 300px;               /* Standardhöhe */
-  overflow: hidden;            /* Text begrenzen */
-  transition: height 0.4s ease, box-shadow 0.2s ease;
+  height: 300px;                          /* Standardhöhe */
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    height 0.35s ease,
+    box-shadow 0.25s ease;
+  transform-origin: center bottom;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Beim Aufklappen (mehr...) */
+/* Linke Spalte → klappt nach rechts/unten */
+.story-card:nth-child(2n+1) {
+  transform-origin: left bottom;
+}
+
+/* Rechte Spalte → klappt nach links/unten */
+.story-card:nth-child(2n) {
+  transform-origin: right bottom;
+}
+
+/* Aufgeklappter Zustand */
 .story-card.expanded {
   height: auto;
   overflow: visible;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);                 /* leicht vergrößern */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 5;                             /* über Nachbarn */
 }
 
 /**********************************************************
@@ -68,13 +84,13 @@
   transition: opacity 0.3s ease;
 }
 
-/* Fade verschwindet, wenn Card aufgeklappt ist */
+/* Fade verschwindet beim Aufklappen */
 .story-card.expanded::after {
   opacity: 0;
 }
 
 /**********************************************************
- * CARD-INHALT
+ * INHALT
  **********************************************************/
 
 .story-card__title {
@@ -110,7 +126,7 @@
   border-radius: 4px;
   padding: 2px 6px;
   transition: background 0.2s;
-  z-index: 2;
+  z-index: 10;
 }
 
 .story-card__toggle:hover {
@@ -122,14 +138,15 @@
  **********************************************************/
 
 @media (max-width: 900px) {
-  #stories-section .stories-grid {
+  #stories-section-grid {
     grid-template-columns: 1fr;   /* 1 Spalte unter 900px */
-    row-gap: 1.2rem;              /* etwas kleinerer Abstand */
+    row-gap: 1.2rem;
   }
 
   .story-card {
     height: auto;
     overflow: visible;
+    transform: none;
   }
 
   .story-card::after {
