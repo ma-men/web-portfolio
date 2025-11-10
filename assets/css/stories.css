@@ -1,5 +1,5 @@
 /**********************************************************
- * STORIES / PROJEKTE – FINALE VERSION
+ * STORIES / PROJEKTE – ENDVERSION (mit Overlay)
  **********************************************************/
 
 /* === Haupt-Container === */
@@ -19,15 +19,15 @@
 
 #stories-section-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* exakt zwei Spalten */
-  column-gap: 1.5rem;                     /* horizontaler Abstand */
-  row-gap: 1.5rem;                        /* vertikaler Abstand */
-  justify-content: start;                 /* letzte Card linksbündig */
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  justify-content: start;
   align-items: start;
 }
 
 /**********************************************************
- * STORY-CARDS – erweitertes Aufklappen (volle Breite)
+ * STORY-CARDS (Standardzustand)
  **********************************************************/
 
 .story-card {
@@ -39,204 +39,23 @@
   height: 300px;
   overflow: hidden;
   transition:
-    all 0.4s ease;
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   transform-origin: center bottom;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Standardhöhen- und Fadeverhalten */
-.story-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
-
-/**********************************************************
- * AUFKLAPPEN ALS ÜBERLAGERUNG (SOFT ZOOM)
- **********************************************************/
-
-.story-card {
-  position: relative;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.2rem;
-  height: 300px;
-  overflow: hidden;
-  transition: 
-    transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-    box-shadow 0.4s ease,
-    opacity 0.4s ease;
-  transform-origin: center center;
-  z-index: 1;
-}
-
-/* Fade unten */
-.story-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-/* Overlay (Hintergrundabdunkelung beim Aufklappen) */
-#stories-section::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0);
-  opacity: 0;
-  pointer-events: none;
-  transition: background 0.5s ease, opacity 0.5s ease;
-  z-index: 4;
-}
-
-/**********************************************************
- * AUFGEKLAPPTER ZUSTAND – ÜBERLAGERUNG
- **********************************************************/
-
-.story-card.expanded {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  max-width: 900px;
-  max-height: 80vh;
-  height: auto;
-  transform: translate(-50%, -50%) scale(1);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  overflow-y: auto;
-  z-index: 10;
-  transition: 
-    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-    box-shadow 0.4s ease,
-    opacity 0.4s ease;
-}
-
-/* Fade verschwindet */
-.story-card.expanded::after {
-  opacity: 0;
-}
-
-/**********************************************************
- * Overlay aktivieren, wenn Card geöffnet
- **********************************************************/
-
-.story-card.expanded ~ .story-card,
-.story-card.expanded ~ #stories-section::before {
-  pointer-events: none;
-}
-
-.story-card.expanded::backdrop,
-#stories-section.expanded::before {
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/**********************************************************
- * RESPONSIVE
- **********************************************************/
-
-@media (max-width: 900px) {
-  .story-card.expanded {
-    width: 95%;
-    max-height: 85vh;
-  }
-}
-
-
-/**********************************************************
- * INHALT & LINK
- **********************************************************/
-
-.story-card__title {
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #222;
-}
-
-.story-card__body {
-  line-height: 1.5;
-  color: #333;
-}
-
-.story-card__body p {
-  margin: 0 0 0.6rem 0;
-}
-
-.story-card__toggle {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 0.85rem;
-  color: #0066cc;
-  text-decoration: none;
-  cursor: pointer;
-  background: rgba(255,255,255,0.9);
-  border-radius: 4px;
-  padding: 2px 6px;
-  transition: background 0.2s;
-  z-index: 10;
-}
-
-.story-card__toggle:hover {
-  background: #e6f0ff;
-}
-
-/**********************************************************
- * RESPONSIVE ANPASSUNG
- **********************************************************/
-
-@media (max-width: 900px) {
-  #stories-section-grid {
-    grid-template-columns: 1fr;
-    row-gap: 1.2rem;
-  }
-
-  .story-card {
-    height: auto;
-    overflow: visible;
-    width: 100%;
-  }
-
-  .story-card.expanded {
-    grid-column: auto;
-    width: 100%;
-    margin: 0;
-  }
-
-  .story-card::after {
-    display: none;
-  }
-
-  .story-card__toggle {
-    display: none;
-  }
-}
-
 
 /**********************************************************
  * FADE-EFFEKT UNTEN
  **********************************************************/
 
-/* Standardhöhen- und Fadeverhalten */
 .story-card::after {
   content: "";
   position: absolute;
@@ -248,11 +67,6 @@
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
-
-/* Fade verschwindet beim Aufklappen */
-.story-card.expanded::after {
-  opacity: 0;
 }
 
 /**********************************************************
@@ -300,19 +114,91 @@
 }
 
 /**********************************************************
+ * STORY OVERLAY – echte Überlagerung
+ **********************************************************/
+
+.story-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 9999;
+}
+
+/* sichtbar */
+.story-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Card im Overlay */
+.story-overlay .story-card {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  transform: scale(0.9);
+  opacity: 0;
+  transition:
+    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.6s ease;
+}
+
+/* sanft aufzoomen */
+.story-overlay.active .story-card {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* X-Schließen-Button */
+.story-overlay .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 20;
+}
+
+.story-overlay .close-btn:hover {
+  background: #ddd;
+  transform: scale(1.1);
+}
+
+/**********************************************************
  * RESPONSIVE DESIGN
  **********************************************************/
 
 @media (max-width: 900px) {
   #stories-section-grid {
-    grid-template-columns: 1fr;   /* 1 Spalte unter 900px */
+    grid-template-columns: 1fr;
     row-gap: 1.2rem;
   }
 
   .story-card {
     height: auto;
     overflow: visible;
-    transform: none;
   }
 
   .story-card::after {
@@ -321,5 +207,11 @@
 
   .story-card__toggle {
     display: none;
+  }
+
+  .story-overlay .story-card {
+    width: 95%;
+    height: 85vh;
+    max-height: none;
   }
 }

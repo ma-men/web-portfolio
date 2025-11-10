@@ -117,21 +117,47 @@ export const stories = {
             // Klick-Event → Card auf-/zuklappen
            toggle.addEventListener('click', function (e) {
                 e.preventDefault();
-                const expanded = card.classList.toggle('expanded');
 
-                toggle.textContent = expanded
-                    ? sectionData.labels.less
-                    : sectionData.labels.more;
+                // Overlay-Container finden
+                const overlay = document.getElementById('story-overlay');
 
-                const section = document.getElementById(stories._containerId);
-                if (expanded) {
-                    section.classList.add('expanded');
-                    document.body.style.overflow = 'hidden'; // scroll lock
-                } else {
-                    section.classList.remove('expanded');
-                    document.body.style.overflow = ''; // wieder aktivieren
-                }
+                // Card duplizieren
+                const overlayCard = card.cloneNode(true);
+                overlayCard.classList.add('expanded');
+
+                // Schließen-Button hinzufügen
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'close-btn';
+                closeBtn.textContent = '×';
+                overlayCard.appendChild(closeBtn);
+
+                // Overlay sichtbar machen
+                overlay.innerHTML = ''; // alten Inhalt entfernen
+                overlay.appendChild(overlayCard);
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Scroll lock
+
+                // Schließen-Logik
+                closeBtn.addEventListener('click', () => {
+                    overlay.classList.remove('active');
+                    setTimeout(() => {
+                        overlay.innerHTML = '';
+                        document.body.style.overflow = '';
+                    }, 400);
+                });
+
+                // Klick außerhalb der Card schließt ebenfalls
+                overlay.addEventListener('click', (ev) => {
+                    if (ev.target === overlay) {
+                        overlay.classList.remove('active');
+                        setTimeout(() => {
+                            overlay.innerHTML = '';
+                            document.body.style.overflow = '';
+                        }, 400);
+                    }
+                });
             });
+
 
 
             // --- Story-Titel ---
