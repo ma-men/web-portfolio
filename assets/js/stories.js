@@ -78,16 +78,17 @@ export const stories = {
 
     _render() {
         // === Kürzel für die JSON-Struktur-Definition ===
-        const cfg = stories.structure;      
-        
+        const cfg = stories.structure;      // z. B. { root: 'stories', fields: { ... } }
+        const f = cfg.fields;               // Felder wie title, body usw.
+
         // === Metadaten aus JSON laden (Titel, Labels) ===
-        const sectionData = stories._data[cfg.fields.section];
+        const sectionData = stories._data[f.section];
 
         // === Array der einzelnen Stories holen ===
         const storiesArr = stories._data[cfg.root];
 
         // === Ziel-Container im DOM finden ===
-        const grid = document.getElementById(stories._gridId);
+        const grid = document.getElementById(`${stories._containerId}-grid`);
 
         // === Sicherheitsprüfung: Wenn keine Daten oder kein Container, Abbruch ===
         if (!grid || !storiesArr) return;
@@ -96,10 +97,8 @@ export const stories = {
         grid.innerHTML = '';
 
         // === Haupttitel der Sektion setzen ===
-        const titleElem = document.getElementById(stories._containerId + '-title');
-        if (titleElem && sectionData?.title) {
-            titleElem.textContent = sectionData.title;
-        }
+        const titleElem = document.getElementById(`${stories._containerId}-title`);
+        if (titleElem && sectionData?.title) titleElem.textContent = sectionData.title;
 
         // === Jede Story-Card erzeugen ===
         for (let i = 0; i < storiesArr.length; i++) {
@@ -124,7 +123,6 @@ export const stories = {
                     : sectionData.labels.more;
             });
 
-
             // --- Story-Titel ---
             const title = document.createElement('h3');
             title.className = 'story-card__title';
@@ -140,4 +138,5 @@ export const stories = {
             grid.appendChild(card);
         }
     }
+
 };
