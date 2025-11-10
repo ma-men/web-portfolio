@@ -1,3 +1,7 @@
+/**********************************************************
+ * Stories Layout
+ **********************************************************/
+
 #stories-section {
   max-width: 1200px;
   margin: 2rem auto;
@@ -9,13 +13,14 @@
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
 }
 
+/* === GRID === */
 .stories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
+  gap: 1.5rem; /* Abstand zwischen den Cards */
 }
 
-/* Story Cards */
+/* === Cards === */
 .story-card {
   position: relative;
   background: #fff;
@@ -27,11 +32,12 @@
   transition: height 0.3s ease;
 }
 
+/* Aufgeklappte Karte wird automatisch höher */
 .story-card.expanded {
   height: auto;
 }
 
-/* Fade unten */
+/* Visueller Fade unten für „mehr…“-Hinweis */
 .story-card::after {
   content: "…";
   position: absolute;
@@ -49,25 +55,29 @@
   transition: opacity 0.3s;
 }
 
+/* Fade verschwindet, wenn Card aufgeklappt ist */
 .story-card.expanded::after {
   opacity: 0;
 }
 
-/* Titel */
+/* === Inhalt === */
 .story-card__title {
   margin-top: 0;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-/* Text */
 .story-card__body {
   line-height: 1.5;
   color: #333;
+}
+
+/* Abstand zwischen Absätzen */
+.story-card__body p {
   margin: 0 0 0.6rem 0;
 }
 
-/* Toggle oben */
+/* === Toggle-Link oben rechts === */
 .story-card__toggle {
   position: absolute;
   top: 8px;
@@ -85,4 +95,27 @@
 
 .story-card__toggle:hover {
   background: #f0f0f0;
+}
+
+/**********************************************************
+ * Responsive Verhalten
+ **********************************************************/
+
+/* Unter 900 px → nur 1 Spalte */
+@media (max-width: 900px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    height: auto; /* lieber voll anzeigen auf Mobilgeräten */
+  }
+
+  .story-card::after {
+    display: none; /* Fade auf Handy ausblenden */
+  }
+
+  .story-card__toggle {
+    display: none; /* „mehr…“-Link ausblenden auf kleinen Screens */
+  }
 }
