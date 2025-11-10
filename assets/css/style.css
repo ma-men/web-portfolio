@@ -39,17 +39,6 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* ===== Wrapper ===== */
 .main-wrapper {
   max-width: 1200px;
@@ -73,10 +62,10 @@ p {
 
 
 /* sections */
-.about-section,
-.skills-section,
-.cv-section,
-.stories-section {
+#about-section,
+#skills-section,
+#cv-section,
+#stories-section {
   width: 90%;
   max-width: 1100px;
   margin: auto;
