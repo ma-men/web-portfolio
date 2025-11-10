@@ -2,8 +2,7 @@
     "section": {
         "title": "Stories / Projects",
         "labels": {
-            "more": "more…",
-            "less": "less…"
+            "readMore": "more…"
         }
     },
     "stories": [

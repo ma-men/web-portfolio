@@ -108,11 +108,11 @@ export const stories = {
             const card = document.createElement('article');
             card.className = 'story-card';
 
-            // --- Toggle-Link („mehr…“ / „weniger…“) ---
+            // --- Toggle-Link ("Mehr...") ---
             const toggle = document.createElement('a');
             toggle.href = '#';
             toggle.className = 'story-card__toggle';
-            toggle.textContent = sectionData.labels.more;
+            toggle.textContent = sectionData.labels.readMore; 
 
             // Klick-Event → Card auf-/zuklappen
            toggle.addEventListener('click', function (e) {
@@ -130,9 +130,9 @@ export const stories = {
                 const toggleLink = clone.querySelector('.story-card__toggle');
                 if (toggleLink) toggleLink.style.display = 'none';
 
-                // === Close-Button ===
+                // === Fester Close-Button (×) ===
                 const closeBtn = document.createElement('button');
-                closeBtn.textContent = sectionData.labels.close || '×';
+                closeBtn.textContent = '×';
                 closeBtn.className = 'story-close';
                 clone.appendChild(closeBtn);
 
@@ -140,12 +140,10 @@ export const stories = {
                 overlay.appendChild(clone);
                 document.body.appendChild(overlay);
 
-                // === Aktivieren mit leichtem Delay (für Transition) ===
-                setTimeout(() => {
-                    overlay.classList.add('active');
-                }, 10);
+                // === Overlay sanft einblenden ===
+                setTimeout(() => overlay.classList.add('active'), 10);
 
-                // === Body-Scroll deaktivieren ===
+                // === Scrollen im Hintergrund deaktivieren ===
                 document.body.style.overflow = 'hidden';
 
                 // === Schließen-Funktion ===
@@ -155,11 +153,23 @@ export const stories = {
                     setTimeout(() => overlay.remove(), 400);
                 };
 
+                // === Button schließt Overlay ===
                 closeBtn.addEventListener('click', close);
+
+                // === Klick auf Hintergrund schließt ===
                 overlay.addEventListener('click', (e) => {
-                    if (e.target === overlay) close(); // Klick außerhalb schließt
+                    if (e.target === overlay) close();
+                });
+
+                // === ESC-Taste schließt Overlay ===
+                document.addEventListener('keydown', function escClose(evt) {
+                    if (evt.key === 'Escape') {
+                        close();
+                        document.removeEventListener('keydown', escClose);
+                    }
                 });
             });
+
 
 
 
