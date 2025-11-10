@@ -91,7 +91,7 @@
 }
 
 /**********************************************************
- * „MEHR…“ / „WENIGER…“ LINK
+ * „MEHR…“ LINK
  **********************************************************/
 
 .story-card__toggle {
@@ -130,10 +130,15 @@
   transition: opacity 0.4s ease;
 }
 
+/* Sichtbar aktiv */
 .story-overlay.active {
   opacity: 1;
   pointer-events: all;
 }
+
+/**********************************************************
+ * OVERLAY-CARD (Desktop + Mobile)
+ **********************************************************/
 
 .story-overlay .story-card {
   position: relative;
@@ -147,7 +152,8 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   z-index: 60;
   padding: 1.5rem;
-  overflow: visible; /* Standard: kein interner Scroll */
+  overflow-y: visible;    /* ✅ kein Scroll auf Desktop */
+  max-height: none;       /* volle Höhe erlaubt */
 }
 
 /* Aktiviert (Einblendung mit sanfter Animation) */
@@ -156,7 +162,21 @@
   opacity: 1;
 }
 
-/* fester Close-Button */
+/* Scroll nur bei kleinen Viewports aktivieren */
+@media (max-height: 850px), (max-width: 900px) {
+  .story-overlay .story-card {
+    max-height: 90vh;     /* begrenze Höhe */
+    overflow-y: auto;     /* Scroll nur bei Bedarf */
+    width: 90%;
+    padding: 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/**********************************************************
+ * CLOSE-BUTTON (×)
+ **********************************************************/
+
 .story-close {
   position: absolute;
   top: 8px;
@@ -177,7 +197,6 @@
   background: #e6f0ff;
   transform: scale(1.1);
 }
-
 
 /**********************************************************
  * RESPONSIVE DESIGN
@@ -201,18 +220,12 @@
   .story-card__toggle {
     display: none;
   }
-
-  .story-overlay .story-card {
-    width: 90%;
-    padding: 1.2rem;
-    font-size: 0.95rem; /* leicht kleinere Schrift */
-  }
 }
 
 @media (max-width: 600px) {
   .story-overlay .story-card {
     width: 95%;
     padding: 1rem;
-    font-size: 0.9rem; /* nochmal kleiner für Smartphones */
+    font-size: 0.9rem;
   }
 }
