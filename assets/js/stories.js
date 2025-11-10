@@ -115,36 +115,21 @@ export const stories = {
             toggle.textContent = sectionData.labels.more;
 
             // Klick-Event → Card auf-/zuklappen
-            toggle.addEventListener('click', function (e) {
+           toggle.addEventListener('click', function (e) {
                 e.preventDefault();
-
-                // Zustand umschalten
                 const expanded = card.classList.toggle('expanded');
 
-                // Text im Button anpassen
                 toggle.textContent = expanded
                     ? sectionData.labels.less
                     : sectionData.labels.more;
 
-                if (window.innerWidth > 900) {
-                    // Wenn aufgeklappt → sanft scrollen
-                    if (expanded) {
-                        // kleine Verzögerung, damit die CSS-Transition schon startet
-                        setTimeout(() => {
-                            card.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-                        }, 200);
-                    } else {
-                        // Beim Zuklappen etwas nach oben, damit der Bereich wieder zentriert ist
-                        setTimeout(() => {
-                            card.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'nearest'
-                            });
-                        }, 150);
-                    }
+                const section = document.getElementById(stories._containerId);
+                if (expanded) {
+                    section.classList.add('expanded');
+                    document.body.style.overflow = 'hidden'; // scroll lock
+                } else {
+                    section.classList.remove('expanded');
+                    document.body.style.overflow = ''; // wieder aktivieren
                 }
             });
 

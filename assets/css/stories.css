@@ -61,23 +61,104 @@
 }
 
 /**********************************************************
- * AUFKLAPPEN
+ * AUFKLAPPEN ALS ÜBERLAGERUNG (SOFT ZOOM)
+ **********************************************************/
+
+.story-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  height: 300px;
+  overflow: hidden;
+  transition: 
+    transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.4s ease,
+    opacity 0.4s ease;
+  transform-origin: center center;
+  z-index: 1;
+}
+
+/* Fade unten */
+.story-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Overlay (Hintergrundabdunkelung beim Aufklappen) */
+#stories-section::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: background 0.5s ease, opacity 0.5s ease;
+  z-index: 4;
+}
+
+/**********************************************************
+ * AUFGEKLAPPTER ZUSTAND – ÜBERLAGERUNG
  **********************************************************/
 
 .story-card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 900px;
+  max-height: 80vh;
   height: auto;
-  overflow: visible;
-  grid-column: 1 / -1;        /* über beide Spalten */
-  width: 80%;                 /* 80 % der Containerbreite */
-  margin: 0 auto;             /* mittig ausrichten */
-  transform: scale(1.02);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  z-index: 5;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  z-index: 10;
+  transition: 
+    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.4s ease,
+    opacity 0.4s ease;
 }
 
+/* Fade verschwindet */
 .story-card.expanded::after {
   opacity: 0;
 }
+
+/**********************************************************
+ * Overlay aktivieren, wenn Card geöffnet
+ **********************************************************/
+
+.story-card.expanded ~ .story-card,
+.story-card.expanded ~ #stories-section::before {
+  pointer-events: none;
+}
+
+.story-card.expanded::backdrop,
+#stories-section.expanded::before {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/**********************************************************
+ * RESPONSIVE
+ **********************************************************/
+
+@media (max-width: 900px) {
+  .story-card.expanded {
+    width: 95%;
+    max-height: 85vh;
+  }
+}
+
 
 /**********************************************************
  * INHALT & LINK
