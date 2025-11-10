@@ -1,141 +1,88 @@
-/******** Stories: Grid, Cards, Modal ********/
-:root{
-  --stories-max: 1200px;
-  --stories-gap: 1.2rem;
-  --stories-radius: 12px;
-  --stories-shadow: 0 8px 20px rgba(0,0,0,.08);
-  --stories-card-h: 320px;
-  --stories-fade-h: 56px;
-}
-
-#stories {
-  max-width: var(--stories-max);
+#stories-section {
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-#stories > h2 {
-  margin: 0 0 1rem 0;
-  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+#stories-section > h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
 }
 
-.stories-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--stories-gap);
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
 }
 
-.story-card{
-  background:#fff;
-  border-radius: var(--stories-radius);
-  box-shadow: var(--stories-shadow);
-  overflow:hidden;
-  height: var(--stories-card-h);
-  display:flex;
-}
-
-.story-card__inner{
-  padding: 1rem 1rem .5rem;
-  display:flex;
-  flex-direction:column;
-  width:100%;
-}
-
-.story-card__title{
-  margin:.1rem 0 .35rem 0;
-  font-size: 1.05rem;
-}
-.story-card__subtitle{
-  margin:0 0 .6rem 0;
-  font-size:.9rem;
-  color:#666;
-}
-
-/* Excerpt mit Clamp + Fade */
-.story-card__excerpt{
-  position:relative;
-  overflow:hidden;
-  display:-webkit-box;
-  -webkit-line-clamp:7;      /* Zeilenzahl anpassen */
-  -webkit-box-orient:vertical;
-  margin:0;
-  padding-bottom: calc(var(--stories-fade-h) - .25rem);
-}
-.story-card__excerpt::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:0;
-  height: var(--stories-fade-h);
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 70%);
-  pointer-events:none;
-}
-
-.story-card__actions{
-  margin-top:auto;
-  display:flex;
-  justify-content:flex-end;
-  padding: .6rem .2rem 0;
-}
-.story-card__btn{
-  border:1px solid #222;
-  background:#111;
-  color:#fff;
-  padding:.5rem .9rem;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* Modal */
-.stories-modal{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding: 1rem;
-  z-index: 1000;
-}
-.stories-modal.is-open{ display:flex; }
-
-.stories-modal__panel{
-  max-width: min(900px, 92vw);
-  max-height: 86vh;
-  background:#fff;
-  border-radius: var(--stories-radius);
-  box-shadow: var(--stories-shadow);
-  overflow: hidden;
-  display:flex;
-  flex-direction: column;
-  padding: 1.2rem 1.2rem 1.4rem;
+/* Story Cards */
+.story-card {
   position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  height: 300px;
+  overflow: hidden;
+  transition: height 0.3s ease;
 }
 
-.stories-modal__title{
-  margin:0 0 .4rem 0;
-  font-size: 1.15rem;
+.story-card.expanded {
+  height: auto;
 }
 
-.stories-modal__close{
-  position:absolute;
-  top:.4rem;
-  right:.6rem;
-  border:none;
-  background:transparent;
-  font-size:1.6rem;
-  line-height:1;
-  padding:.2rem .4rem;
-  cursor:pointer;
+/* Fade unten */
+.story-card::after {
+  content: "…";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: bold;
+  color: #555;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 80%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
-.stories-modal__body{
-  overflow:auto;
+.story-card.expanded::after {
+  opacity: 0;
 }
-.story-modal__subtitle{
-  color:#666;
-  margin:.1rem 0 .8rem 0;
+
+/* Titel */
+.story-card__title {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
-.story-modal__bodytext{
-  margin:0;
-  white-space: pre-wrap;
+
+/* Text */
+.story-card__body {
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 0;
+}
+
+/* Toggle oben */
+.story-card__toggle {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.85rem;
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  padding: 2px 6px;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.story-card__toggle:hover {
+  background: #f0f0f0;
 }

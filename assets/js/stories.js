@@ -1,23 +1,23 @@
 export const stories = {
 
-    _containerId: 'stories-section',
-    _modalId: 'stories-modal',
-    _basePath: 'assets/lang/',
-    _data: null,
-    _lang: 'de',
-
+     // === Grundkonfiguration ===
+    _containerId: 'stories-section', // ID des HTML-Elements, in dem die Stories erscheinen sollen
+    _gridId: 'stories-grid',         // ID des Grid-Containers für die Story-Karten
+    _basePath: 'assets/lang/',       // Pfad zum Ordner mit den Sprachdateien (JSON)
+    _data: null,                     // Variable für die geladenen JSON-Daten
+      
+    // === Strukturdefinition der JSON-Datei ===
     structure: {
-        root: 'stories',
-        fields: {
-            section: 'section',
-            id: 'id',
-            title: 'title',
-            subtitle: 'subtitle',
-            excerpt: 'excerpt',
-            body: 'body'
+        root: 'stories', // oberster Schlüssel in der JSON-Datei, der das Array aller Stories enthält
+        fields: {        // interne Feldnamenzuordnung
+            section: 'section', // Schlüssel für Metadaten der Sektion (Titel, Labels)
+            id: 'id',           // Story-ID
+            title: 'title',     // Story-Titel
+            body: 'body'        // Haupttext der Story
         }
     },
 
+    // === Initialisierung der Story-Sektion ===
     init() {
         const container = document.getElementById(stories._containerId);
         if (!container) {
@@ -25,175 +25,115 @@ export const stories = {
             return;
         }
 
+        // Container-Inhalt leeren (falls zuvor schon geladen)
         container.innerHTML = '';
-        stories._createStructure(container);
-        stories.load(stories._lang);
+
+        // Überschrift (wird per i18n ersetzt)
+        const title = document.createElement('h2');
+        title.dataset.i18n = 'ui.stories.title';
+        title.id = `${stories._containerId}-title`;
+        title.textContent = 'Stories & Projekte';
+        container.appendChild(title);
+
+        // Grid-Container für Karten
+        const grid = document.createElement('div');
+        grid.id = stories._gridId;
+        container.appendChild(grid);
+
+        // spracheabhängige Texte anwenden
+        language.applyTexts(stories._containerId);
     },
 
+    /* Von außen aufrufen (z. B. in i18n.js): stories.load(language.current) */
     load(lang) {
-        stories._lang = lang;
-        const path = stories._basePath + 'stories_' + lang + '.json';
-        stories._data = stories.loadJSON(path);
-
-        if (!stories._data) {
-            console.error('[Stories] Fehler beim Laden von', path);
-            return;
-        }
-
-        stories.render();
-
-        if (typeof language !== 'undefined' && language.applyTexts) {
-            language.applyTexts(stories._containerId);
-        }
+        const path = `${stories._basePath}stories_${lang}.json`;
+        // JSON-Daten laden (Fallback auf Deutsch)
+        const data = stories._loadJSONSync(path) || stories._loadJSONSync(`${stories._basePath}stories_de.json`);
+        // In-Memory-Daten setzen
+        stories._data = data || {};
+        // Neu rendern
+        stories._render();
     },
 
-    loadJSON(path) {
+    // JSON-Datei  laden
+    _loadJSONSync(path) {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', path, false);
-        xhr.send(null);
-
-        if (xhr.status === 200) {
-            try {
+        try {
+            xhr.send();
+            if (xhr.status >= 200 && xhr.status < 300 && xhr.responseText) {
                 return JSON.parse(xhr.responseText);
-            } catch (e) {
-                console.error('[Stories] JSON-Parsing-Fehler:', e);
             }
-        } else {
-            console.error('[Stories] HTTP-Fehler beim Laden:', xhr.status);
+        } catch {
+            // Fehler ignorieren
+            console.log('Fehler beim Laden der Stories-Datei:', path);
         }
         return null;
     },
+      
 
-    _createStructure(container) {
-        const title = document.createElement('h2');
-        title.id = stories._containerId + '-title';
-        title.setAttribute('data-lang-key', 'stories_title');
-        container.appendChild(title);
+    _render() {
+        // === Kürzel für die JSON-Struktur-Definition ===
+        const cfg = stories.structure;      
+        
+        // === Metadaten aus JSON laden (Titel, Labels) ===
+        const sectionData = stories._data[cfg.fields.section];
 
-        const grid = document.createElement('div');
-        grid.id = stories._containerId + '-grid';
-        grid.className = 'stories-grid';
-        container.appendChild(grid);
+        // === Array der einzelnen Stories holen ===
+        const storiesArr = stories._data[cfg.root];
 
-        const modal = document.createElement('div');
-        modal.id = stories._containerId + '-modal';
-        modal.className = 'stories-modal';
-        document.body.appendChild(modal);
-    },
+        // === Ziel-Container im DOM finden ===
+        const grid = document.getElementById(stories._gridId);
 
-    render() {
-        const f = stories.structure.fields;
-        const sectionData = stories._data[f.section];
-        const storiesArr = stories._data[stories.structure.root];
-        const grid = document.getElementById(stories._containerId + '-grid');
+        // === Sicherheitsprüfung: Wenn keine Daten oder kein Container, Abbruch ===
+        if (!grid || !storiesArr) return;
 
-        if (!grid) return;
+        // === Vorherige Inhalte entfernen ===
         grid.innerHTML = '';
 
+        // === Haupttitel der Sektion setzen ===
         const titleElem = document.getElementById(stories._containerId + '-title');
         if (titleElem && sectionData?.title) {
             titleElem.textContent = sectionData.title;
         }
 
+        // === Jede Story-Card erzeugen ===
         for (let i = 0; i < storiesArr.length; i++) {
-            const s = storiesArr[i];
+            const s = storiesArr[i]; // aktuelle Story
+
+            // --- Card-Grundelement ---
             const card = document.createElement('article');
             card.className = 'story-card';
 
-            const inner = document.createElement('div');
-            inner.className = 'story-card__inner';
+            // --- Toggle-Link („mehr…“ / „weniger…“) ---
+            const toggle = document.createElement('a');
+            toggle.href = '#';
+            toggle.className = 'story-card__toggle';
+            toggle.textContent = sectionData.labels.more;
 
-            const h3 = document.createElement('h3');
-            h3.textContent = s[f.title];
-            h3.className = 'story-card__title';
-
-            const subtitle = document.createElement('p');
-            subtitle.className = 'story-card__subtitle';
-            subtitle.textContent = s[f.subtitle] ?? '';
-
-            const excerpt = document.createElement('p');
-            excerpt.className = 'story-card__excerpt';
-            excerpt.textContent = s[f.excerpt] ?? '';
-
-            const actions = document.createElement('div');
-            actions.className = 'story-card__actions';
-
-            const btn = document.createElement('button');
-            btn.className = 'story-card__btn';
-            btn.textContent = sectionData?.labels?.readMore || 'Mehr lesen';
-            btn.dataset.id = s[f.id];
-
-            btn.addEventListener('click', function() {
-                stories._openModal(s, sectionData);
+            // Klick-Event → Card auf-/zuklappen
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault(); // kein Seiten-Sprung
+                const expanded = card.classList.toggle('expanded'); // CSS-Klasse umschalten
+                toggle.textContent = expanded
+                    ? sectionData.labels.less
+                    : sectionData.labels.more;
             });
 
-            actions.appendChild(btn);
-            inner.append(h3, subtitle, excerpt, actions);
-            card.appendChild(inner);
+
+            // --- Story-Titel ---
+            const title = document.createElement('h3');
+            title.className = 'story-card__title';
+            title.textContent = s[f.title];
+
+            // --- Story-Text ---
+            const body = document.createElement('p');
+            body.className = 'story-card__body';
+            body.textContent = s[f.body];
+
+            // --- Zusammenbauen ---
+            card.append(toggle, title, body);
             grid.appendChild(card);
         }
-
-        const modalContainer = document.getElementById(stories._modalId);
-        if (modalContainer && !modalContainer.querySelector('.stories-modal__panel')) {
-            stories._createModal(modalContainer, sectionData);
-        }
-    },
-
-    _createModal(modalContainer, sectionData) {
-        while (modalContainer.firstChild) modalContainer.removeChild(modalContainer.firstChild);
-
-        const panel = document.createElement('div');
-        panel.className = 'stories-modal__panel';
-
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'stories-modal__close';
-        closeBtn.setAttribute('aria-label', sectionData?.labels?.close || 'Schließen');
-        closeBtn.textContent = '×';
-        closeBtn.addEventListener('click', function() {
-            stories._closeModal();
-        });
-
-        const title = document.createElement('h3');
-        title.className = 'stories-modal__title';
-
-        const body = document.createElement('div');
-        body.className = 'stories-modal__body';
-
-        panel.append(closeBtn, title, body);
-        modalContainer.appendChild(panel);
-
-        modalContainer.addEventListener('click', function(e) {
-            if (e.target === modalContainer) stories._closeModal();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') stories._closeModal();
-        });
-    },
-
-    _openModal(story, sectionData) {
-        const f = stories.structure.fields;
-        const modalContainer = document.getElementById(stories._modalId);
-        const title = modalContainer.querySelector('.stories-modal__title');
-        const body = modalContainer.querySelector('.stories-modal__body');
-
-        title.textContent = story[f.title];
-        while (body.firstChild) body.removeChild(body.firstChild);
-
-        const subtitle = document.createElement('p');
-        subtitle.className = 'story-modal__subtitle';
-        subtitle.textContent = story[f.subtitle] ?? '';
-
-        const text = document.createElement('p');
-        text.className = 'story-modal__bodytext';
-        text.textContent = story[f.body] ?? '';
-
-        body.append(subtitle, text);
-        modalContainer.classList.add('is-open');
-    },
-
-    _closeModal() {
-        const modalContainer = document.getElementById(stories._modalId);
-        if (modalContainer) modalContainer.classList.remove('is-open');
     }
 };
