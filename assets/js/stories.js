@@ -118,45 +118,49 @@ export const stories = {
            toggle.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Overlay-Container finden
-                const overlay = document.getElementById('story-overlay');
+                // === Overlay erzeugen ===
+                const overlay = document.createElement('div');
+                overlay.className = 'story-overlay';
 
-                // Card duplizieren
-                const overlayCard = card.cloneNode(true);
-                overlayCard.classList.add('expanded');
+                // === Card klonen ===
+                const clone = card.cloneNode(true);
+                clone.classList.add('expanded');
 
-                // Schließen-Button hinzufügen
+                // === "Mehr..."-Link im Klon ausblenden ===
+                const toggleLink = clone.querySelector('.story-card__toggle');
+                if (toggleLink) toggleLink.style.display = 'none';
+
+                // === Close-Button ===
                 const closeBtn = document.createElement('button');
-                closeBtn.className = 'close-btn';
-                closeBtn.textContent = '×';
-                overlayCard.appendChild(closeBtn);
+                closeBtn.textContent = sectionData.labels.close || '×';
+                closeBtn.className = 'story-close';
+                clone.appendChild(closeBtn);
 
-                // Overlay sichtbar machen
-                overlay.innerHTML = ''; // alten Inhalt entfernen
-                overlay.appendChild(overlayCard);
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Scroll lock
+                // === Card ins Overlay einfügen ===
+                overlay.appendChild(clone);
+                document.body.appendChild(overlay);
 
-                // Schließen-Logik
-                closeBtn.addEventListener('click', () => {
+                // === Aktivieren mit leichtem Delay (für Transition) ===
+                setTimeout(() => {
+                    overlay.classList.add('active');
+                }, 10);
+
+                // === Body-Scroll deaktivieren ===
+                document.body.style.overflow = 'hidden';
+
+                // === Schließen-Funktion ===
+                const close = () => {
                     overlay.classList.remove('active');
-                    setTimeout(() => {
-                        overlay.innerHTML = '';
-                        document.body.style.overflow = '';
-                    }, 400);
-                });
+                    document.body.style.overflow = '';
+                    setTimeout(() => overlay.remove(), 400);
+                };
 
-                // Klick außerhalb der Card schließt ebenfalls
-                overlay.addEventListener('click', (ev) => {
-                    if (ev.target === overlay) {
-                        overlay.classList.remove('active');
-                        setTimeout(() => {
-                            overlay.innerHTML = '';
-                            document.body.style.overflow = '';
-                        }, 400);
-                    }
+                closeBtn.addEventListener('click', close);
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) close(); // Klick außerhalb schließt
                 });
             });
+
 
 
 
