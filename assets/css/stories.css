@@ -1,5 +1,5 @@
 /**********************************************************
- * STORIES / PROJEKTE – ENDVERSION (mit Overlay)
+ * STORIES / PROJEKTE – ENDVERSION (balanciert)
  **********************************************************/
 
 /* === Haupt-Container === */
@@ -122,14 +122,14 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* 🔧 wichtig: nicht center → sonst scrollbar durch Layout */
+  justify-content: center;   /* ✅ zentriert horizontal */
+  align-items: center;       /* ✅ zentriert vertikal */
   z-index: 50;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
-  overflow-y: auto; /* Scroll nur bei Bedarf */
-  padding: 4vh 0;   /* etwas Abstand oben/unten */
+  overflow-y: auto;          /* Scroll nur, wenn zu groß */
+  padding: 3vh 0;            /* kleiner Abstand zu Navigation */
 }
 
 .story-overlay.active {
@@ -153,8 +153,8 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   z-index: 60;
   padding: 1.5rem;
-  overflow: visible;    /* ✅ Kein interner Scroll auf Desktop */
-  max-height: none;     /* Volle Höhe erlaubt */
+  overflow: visible;         /* ✅ Kein interner Scroll auf Desktop */
+  max-height: none;          /* ✅ Volle Höhe erlaubt */
 }
 
 /* Aktiviert (Einblendung mit sanfter Animation) */
@@ -215,6 +215,8 @@
     width: 90%;
     padding: 1.2rem;
     font-size: 0.95rem;
+    max-height: 90vh;       /* ⚙️ Begrenzung auf kleineren Screens */
+    overflow-y: auto;       /* Scroll nur bei Bedarf */
   }
 }
 
@@ -223,5 +225,7 @@
     width: 95%;
     padding: 1rem;
     font-size: 0.9rem;
+    max-height: 90vh;       /* ⚙️ weiterhin begrenzt */
+    overflow-y: auto;
   }
 }
