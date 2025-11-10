@@ -2,45 +2,55 @@
   "section": {
     "title": "Stories / Projekte",
     "labels": {
-      "readMore": "Mehr lesen",
-      "close": "Schließen"
+      "more": "mehr…",
+      "less": "weniger…"
     }
   },
-  "items": [
+  "stories": [
     {
       "id": "story1",
       "title": "Zusammenführung zweier Softwarewelten",
-      "subtitle": "Testlead · Sämaschine (EU-Code + US-UI)",
-      "excerpt": "Als Testlead verantwortete ich das Testen der Sämaschinen-Software (EU/USA) und die Stabilisierung nach dem Merge.",
-      "body": "Als Testlead war ich verantwortlich für das Testen zweier regionaler Varianten (EU/USA). Nach dem Merge (EU-Codebasis + US-UI) waren Kernfunktionen instabil. Ich organisierte kurze, agile Testzyklen mit klarer Priorisierung und schnellem Feedback in die Entwicklung. Ergebnis: zügig ein stabiler, lauffähiger Release, der die Stärken beider Systeme vereinte."
+      "body": [
+        "Als Testlead war ich verantwortlich für das Testen der Software einer Sämaschine, die in zwei Varianten existierte – für Europa und die USA.",
+        "Beide Versionen waren unabhängig entwickelt worden. Ziel war, die EU-Codebasis mit der US-Benutzeroberfläche zu vereinen.",
+        "Nach der ersten Zusammenführung funktionierte kaum etwas. Durch agile Tests in kurzen Iterationen, gezielte Priorisierung und enge Zusammenarbeit mit der Entwicklung gelang es mir, in kurzer Zeit eine stabile, lauffähige Version zu erreichen. Das Ergebnis war ein globaler Release, der die Stärken beider Systeme vereinte."
+      ]
     },
     {
       "id": "story2",
-      "title": "Aufbau von strukturiertem Testen & Requirements",
-      "subtitle": "Zephyr in Jira · Polarion · Team-Einführung",
-      "excerpt": "Einführung von Zephyr (Testfälle, Ausführung, Doku) und Umstellung des Requirements Engineerings auf Polarion.",
-      "body": "Gemeinsam mit zwei Kollegen führte ich Zephyr in Jira ein: testbare Artefakte, nachvollziehbare Ausführung, dokumentierte Ergebnisse, direkte Bugfix-Schleifen. Parallel trieb ich Polarion fürs Requirements Engineering voran – weg von unstrukturiertem Confluence hin zu versionierten, tracebaren Anforderungen."
+      "title": "Aufbau von strukturiertem Testen und Requirements Engineering",
+      "body": [
+        "In einer neu gegründeten Softwareabteilung führte ich gemeinsam mit zwei Kollegen Zephyr für Jira ein, um erstmals strukturiert Testfälle anzulegen, auszuführen und zu dokumentieren.",
+        "Dadurch wurden Testprozesse nachvollziehbar und Bugfixes direkt in die Entwicklung integriert.",
+        "Parallel setzte ich mich dafür ein, Polarion für das Requirements Engineering zu etablieren, um unstrukturierte Confluence-Dokumente durch versionierte, nachvollziehbare Anforderungen zu ersetzen. So entstand ein klarer, transparenter Entwicklungsprozess."
+      ]
     },
     {
       "id": "story3",
       "title": "SIM-Karten-Surfer (Telekommunikation)",
-      "subtitle": "Ein-Mann-Projekt · Embedded · TENOL · TCP/IP",
-      "excerpt": "Embedded-Software für remote nutzbare SIM-Karten; Datenübertragung und Echtzeit-Authentifizierung ohne Schlüssel-Export.",
-      "body": "Entwicklung eines SIM-Surfers mit bis zu 30 SIM-Karten in Schwellenländern. Auslesen via TENOL, Übertragung per TCP/IP an einen Client (z. B. London). Schlüssel wurden nicht ausgelesen; stattdessen Echtzeit-Authentifizierung zwischen den Standorten. Ergebnis: stabile, grenzüberschreitende virtuelle SIM-Nutzung."
+      "body": [
+        "Ich entwickelte als Ein-Mann-Projekt ein Embedded-System namens SIM-Karten-Surfer.",
+        "In Schwellenländern wurden SIM-Karten mit Freiminuten genutzt. Das System konnte bis zu 30 SIM-Karten auslesen und ihre Daten per TCP/IP weltweit an Clients übertragen – beispielsweise nach London.",
+        "Da die SIM-Schlüssel nicht ausgelesen werden durften, erfolgte die Authentifizierung in Echtzeit zwischen den Geräten. Das Ergebnis war eine stabile, grenzüberschreitende virtuelle SIM-Nutzung."
+      ]
     },
     {
       "id": "story4",
       "title": "Mein erster Kontakt mit Softwaretest",
-      "subtitle": "Telekom · Clipper · DBASE · DOS",
-      "excerpt": "Support- und Testverantwortung für ein bundesweites Dispositionssystem – Startpunkt meiner QA-Laufbahn.",
-      "body": "Im Rahmen einer zentralen Arbeitsgruppe (FTZ Darmstadt) betreute ich Support, Hotline und Pre-Release-Tests für ein Dispositionssystem (Clipper unter DOS, DBASE). Das prägte früh mein Verständnis für strukturierte Qualitätssicherung und saubere Auslieferungsprozesse."
+      "body": [
+        "Während meiner Zeit bei der Telekom war ich am Aufbau eines Supportsystems für ein bundesweites Dispositionssystem beteiligt.",
+        "Die Anwendung lief unter DOS, war in Clipper entwickelt und nutzte DBASE-Datenbanken.",
+        "Ich war verantwortlich für Support, Hotline und Tests – mein erster Kontakt mit Softwarequalität und Testprozessen, lange bevor das Thema offiziell in meiner Laufbahn eine zentrale Rolle spielte."
+      ]
     },
     {
       "id": "story5",
       "title": "Technischer Blick hinter die Kulissen",
-      "subtitle": "JavaScript · JSON · Zweisprachigkeit",
-      "excerpt": "Die Seite wird per JavaScript aufgebaut, Inhalte kommen aus JSON; Zweisprachigkeit wird dynamisch geladen.",
-      "body": "Die gesamte Portfolio-Webseite wird per JavaScript gerendert. Inhalte (Navigation, Skills, CV, Stories) kommen aus JSON-Dateien, was Inhalt/Logik/Darstellung sauber trennt. Die Zweisprachigkeit (DE/EN) wird dynamisch über applyTexts() aktualisiert; das statische HTML bleibt minimal."
+      "body": [
+        "Diese Portfolio-Webseite basiert vollständig auf JavaScript.",
+        "Alle Inhalte – Navigation, Skills, Lebenslauf und Stories – werden dynamisch aus JSON-Dateien geladen. Dadurch sind Inhalt, Logik und Darstellung klar getrennt.",
+        "Die Seite unterstützt außerdem Zweisprachigkeit: Texte werden je nach gewählter Sprache dynamisch nachgeladen und aktualisiert. Das zugrunde liegende HTML ist minimal – der gesamte Aufbau erfolgt clientseitig."
+      ]
     }
   ]
 }

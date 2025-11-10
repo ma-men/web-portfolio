@@ -64,7 +64,7 @@
 .story-card__body {
   line-height: 1.5;
   color: #333;
-  margin-bottom: 0;
+  margin: 0 0 0.6rem 0;
 }
 
 /* Toggle oben */

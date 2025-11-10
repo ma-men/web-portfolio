@@ -129,9 +129,22 @@ export const stories = {
             title.textContent = s[f.title];
 
             // --- Story-Text ---
-            const body = document.createElement('p');
+            const body = document.createElement('div');
             body.className = 'story-card__body';
-            body.textContent = s[f.body];
+
+            // Prüfen, ob body ein Array (mehrere Absätze) ist
+            if (Array.isArray(s[f.body])) {
+                s[f.body].forEach(txt => {
+                    const p = document.createElement('p');
+                    p.textContent = txt;
+                    body.appendChild(p);
+                });
+            } else {
+                // Falls kein Array, einfachen Text verwenden
+                const p = document.createElement('p');
+                p.textContent = s[f.body];
+                body.appendChild(p);
+            }
 
             // --- Zusammenbauen ---
             card.append(toggle, title, body);
