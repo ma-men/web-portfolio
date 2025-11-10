@@ -1,23 +1,46 @@
 {
-  "title": "Berufliche Highlights",
-  "stories": [
+  "section": {
+    "title": "Stories / Projekte",
+    "labels": {
+      "readMore": "Mehr lesen",
+      "close": "Schließen"
+    }
+  },
+  "items": [
     {
-      "title": "Testautomatisierung mit Playwright",
-      "summary": "Aufbau eines vollständigen E2E-Testframeworks mit GitHub Actions.",
-      "details": "Automatisierte End-to-End-Tests für saucedemo.com, mit Reporting, Screenshots, Traces und CI/CD-Integration.",
-      "year": 2024
+      "id": "story1",
+      "title": "Zusammenführung zweier Softwarewelten",
+      "subtitle": "Testlead · Sämaschine (EU-Code + US-UI)",
+      "excerpt": "Als Testlead verantwortete ich das Testen der Sämaschinen-Software (EU/USA) und die Stabilisierung nach dem Merge.",
+      "body": "Als Testlead war ich verantwortlich für das Testen zweier regionaler Varianten (EU/USA). Nach dem Merge (EU-Codebasis + US-UI) waren Kernfunktionen instabil. Ich organisierte kurze, agile Testzyklen mit klarer Priorisierung und schnellem Feedback in die Entwicklung. Ergebnis: zügig ein stabiler, lauffähiger Release, der die Stärken beider Systeme vereinte."
     },
     {
-      "title": "ERP-Mini-System mit JavaFX",
-      "summary": "Entwicklung einer modularen Warenwirtschaftssoftware.",
-      "details": "GUI mit JavaFX, persistente Datenhaltung in MariaDB & SQLite, strukturierte OOP-Architektur mit MVC.",
-      "year": 2024
+      "id": "story2",
+      "title": "Aufbau von strukturiertem Testen & Requirements",
+      "subtitle": "Zephyr in Jira · Polarion · Team-Einführung",
+      "excerpt": "Einführung von Zephyr (Testfälle, Ausführung, Doku) und Umstellung des Requirements Engineerings auf Polarion.",
+      "body": "Gemeinsam mit zwei Kollegen führte ich Zephyr in Jira ein: testbare Artefakte, nachvollziehbare Ausführung, dokumentierte Ergebnisse, direkte Bugfix-Schleifen. Parallel trieb ich Polarion fürs Requirements Engineering voran – weg von unstrukturiertem Confluence hin zu versionierten, tracebaren Anforderungen."
     },
     {
-      "title": "API-Testautomatisierung mit Postman",
-      "summary": "CI/CD-Integration von API-Tests mit Reports.",
-      "details": "Postman Collections, Newman-Ausführung in GitHub Actions, HTML-Reporting und Versionsverwaltung über Git.",
-      "year": 2023
+      "id": "story3",
+      "title": "SIM-Karten-Surfer (Telekommunikation)",
+      "subtitle": "Ein-Mann-Projekt · Embedded · TENOL · TCP/IP",
+      "excerpt": "Embedded-Software für remote nutzbare SIM-Karten; Datenübertragung und Echtzeit-Authentifizierung ohne Schlüssel-Export.",
+      "body": "Entwicklung eines SIM-Surfers mit bis zu 30 SIM-Karten in Schwellenländern. Auslesen via TENOL, Übertragung per TCP/IP an einen Client (z. B. London). Schlüssel wurden nicht ausgelesen; stattdessen Echtzeit-Authentifizierung zwischen den Standorten. Ergebnis: stabile, grenzüberschreitende virtuelle SIM-Nutzung."
+    },
+    {
+      "id": "story4",
+      "title": "Mein erster Kontakt mit Softwaretest",
+      "subtitle": "Telekom · Clipper · DBASE · DOS",
+      "excerpt": "Support- und Testverantwortung für ein bundesweites Dispositionssystem – Startpunkt meiner QA-Laufbahn.",
+      "body": "Im Rahmen einer zentralen Arbeitsgruppe (FTZ Darmstadt) betreute ich Support, Hotline und Pre-Release-Tests für ein Dispositionssystem (Clipper unter DOS, DBASE). Das prägte früh mein Verständnis für strukturierte Qualitätssicherung und saubere Auslieferungsprozesse."
+    },
+    {
+      "id": "story5",
+      "title": "Technischer Blick hinter die Kulissen",
+      "subtitle": "JavaScript · JSON · Zweisprachigkeit",
+      "excerpt": "Die Seite wird per JavaScript aufgebaut, Inhalte kommen aus JSON; Zweisprachigkeit wird dynamisch geladen.",
+      "body": "Die gesamte Portfolio-Webseite wird per JavaScript gerendert. Inhalte (Navigation, Skills, CV, Stories) kommen aus JSON-Dateien, was Inhalt/Logik/Darstellung sauber trennt. Die Zweisprachigkeit (DE/EN) wird dynamisch über applyTexts() aktualisiert; das statische HTML bleibt minimal."
     }
   ]
 }
