@@ -1,31 +1,29 @@
 /**********************************************************
- * Stories / Projekte – Finale Version
+ * STORIES / PROJEKTE – FINALVERSION
  **********************************************************/
 
+/* === Haupt-Container für Stories-Bereich === */
 #stories-section {
   max-width: 1100px;
   margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-#stories-section > h2 {
-  margin-bottom: 1.2rem;
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  text-align: left;
-  color: #1a1a1a;
+  padding: 1rem;
+  background: #fff;            /* neutrale Fläche, keine graue Box */
+  border: none;                /* kein doppelter Rahmen */
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 /**********************************************************
  * GRID-LAYOUT
  **********************************************************/
 
-.stories-grid {
+#stories-section .stories-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exakt 2 Spalten */
-  column-gap: 1.5rem; /* Abstand horizontal */
-  row-gap: 1.5rem; /* Abstand vertikal */
-  justify-content: start; /* letzte Card linksbündig */
+  grid-template-columns: repeat(2, 1fr);  /* exakt zwei Spalten */
+  column-gap: 1.5rem;                     /* horizontaler Abstand */
+  row-gap: 1.5rem;                        /* vertikaler Abstand */
+  justify-content: start;                 /* letzte Card linksbündig bei ungerader Anzahl */
+  align-items: start;                     /* gleichmäßig oben ausgerichtet */
 }
 
 /**********************************************************
@@ -38,30 +36,31 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1.2rem;
-  height: 300px; /* Standardhöhe */
-  overflow: hidden; /* Text begrenzen */
-  transition: all 0.4s ease;
+  height: 300px;               /* Standardhöhe */
+  overflow: hidden;            /* Text begrenzen */
+  transition: height 0.4s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Wenn geöffnet (per .expanded), volle Höhe */
+/* Beim Aufklappen (mehr...) */
 .story-card.expanded {
   height: auto;
   overflow: visible;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 /**********************************************************
- * FADE-EFFEKT
+ * FADE-EFFEKT UNTEN
  **********************************************************/
 
 .story-card::after {
   content: "";
   position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   height: 60px;
   background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
   pointer-events: none;
@@ -69,13 +68,34 @@
   transition: opacity 0.3s ease;
 }
 
-/* Fade verschwindet beim Aufklappen */
+/* Fade verschwindet, wenn Card aufgeklappt ist */
 .story-card.expanded::after {
   opacity: 0;
 }
 
 /**********************************************************
- * INHALT
+ * CARD-INHALT
+ **********************************************************/
+
+.story-card__title {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.story-card__body {
+  line-height: 1.5;
+  color: #333;
+}
+
+.story-card__body p {
+  margin: 0 0 0.6rem 0;
+}
+
+/**********************************************************
+ * „MEHR…“ / „WENIGER…“ LINK
  **********************************************************/
 
 .story-card__toggle {
@@ -97,31 +117,14 @@
   background: #e6f0ff;
 }
 
-.story-card__title {
-  margin-top: 0.2rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #222;
-}
-
-.story-card__body {
-  line-height: 1.5;
-  color: #333;
-  margin-top: 0.6rem;
-}
-
-.story-card__body p {
-  margin: 0 0 0.6rem 0;
-}
-
 /**********************************************************
  * RESPONSIVE DESIGN
  **********************************************************/
 
-/* Unter 900px → 1 Spalte */
 @media (max-width: 900px) {
-  .stories-grid {
-    grid-template-columns: 1fr;
+  #stories-section .stories-grid {
+    grid-template-columns: 1fr;   /* 1 Spalte unter 900px */
+    row-gap: 1.2rem;              /* etwas kleinerer Abstand */
   }
 
   .story-card {
