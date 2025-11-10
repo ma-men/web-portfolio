@@ -20,6 +20,35 @@ h2 {
   color: #0d6efd;
 }
 
+/* Sichere Wortumbrüche für längere Begriffe */
+body, h1, h2, h3, p, div, span {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ===== Wrapper ===== */
 .main-wrapper {
@@ -216,135 +245,6 @@ nav {
 }
 
 
-
-
-/**********************************************************/
-/*      Skills                                            */
-/**********************************************************/
-/* Container für alle Skill-Cards */
-/* === GRID === */
-/* Masonry Layout Fix */
-#skills-grid {
-  display: block !important;
-  /* erzwingt block statt flex/grid */
-  column-count: 3;
-  column-gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.skill-card {
-  display: inline-block;
-  /* wichtig für Spaltenfluss */
-  width: 100%;
-  margin: 0 0 1.5rem;
-  break-inside: avoid;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  vertical-align: top;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  #skills-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  #skills-grid {
-    column-count: 1;
-  }
-}
-
-
-
-/*     
-.skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-} 
-*/
-
-.skill-card h3 {
-  color: #1e5fff;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.5rem;
-}
-
-
-/* Skill Item (label + stars) */
-/* === SKILL ROWS === */
-.skill-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4rem;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
-.skill-name {
-  font-weight: 600;
-  text-align: left;
-  flex: 1 1 40%;
-}
-
-.stars {
-  display: flex;
-  gap: 3px;
-  flex-shrink: 0;
-}
-
-.stars img {
-  width: 18px;
-  height: 18px;
-  filter: invert(66%) sepia(71%) saturate(640%) hue-rotate(6deg) brightness(1.1);
-}
-
-.skill-desc {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0.3rem 0 0.4rem 0;
-  line-height: 1.4;
-}
-
-
-
-/* Zertifikate */
-
-.cert-list {
-  list-style: none;
-  padding-left: 1.4rem;
-  margin: 0.2rem 0 0.8rem;
-}
-
-.cert-list li {
-  position: relative;
-  margin-bottom: 0.25rem;
-}
-
-.cert-list li::before {
-  content: "📄";
-  position: absolute;
-  left: -1.3rem;
-  top: 0.05rem;
-}
-
-.cert-list a {
-  color: #0056d6;
-  text-decoration: none;
-}
-
-.cert-list a:hover {
-  text-decoration: underline;
-}
 
 
 
