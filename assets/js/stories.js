@@ -116,12 +116,38 @@ export const stories = {
 
             // Klick-Event → Card auf-/zuklappen
             toggle.addEventListener('click', function (e) {
-                e.preventDefault(); // kein Seiten-Sprung
-                const expanded = card.classList.toggle('expanded'); // CSS-Klasse umschalten
+                e.preventDefault();
+
+                // Zustand umschalten
+                const expanded = card.classList.toggle('expanded');
+
+                // Text im Button anpassen
                 toggle.textContent = expanded
                     ? sectionData.labels.less
                     : sectionData.labels.more;
+
+                if (window.innerWidth > 900) {
+                    // Wenn aufgeklappt → sanft scrollen
+                    if (expanded) {
+                        // kleine Verzögerung, damit die CSS-Transition schon startet
+                        setTimeout(() => {
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }, 200);
+                    } else {
+                        // Beim Zuklappen etwas nach oben, damit der Bereich wieder zentriert ist
+                        setTimeout(() => {
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+                        }, 150);
+                    }
+                }
             });
+
 
             // --- Story-Titel ---
             const title = document.createElement('h3');

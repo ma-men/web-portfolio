@@ -27,7 +27,7 @@
 }
 
 /**********************************************************
- * STORY-CARDS – Grundlayout & Animation
+ * STORY-CARDS – erweitertes Aufklappen (volle Breite)
  **********************************************************/
 
 .story-card {
@@ -36,41 +36,126 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1.2rem;
-  height: 300px;                          /* Standardhöhe */
+  height: 300px;
   overflow: hidden;
   transition:
-    transform 0.35s ease,
-    height 0.35s ease,
-    box-shadow 0.25s ease;
+    all 0.4s ease;
   transform-origin: center bottom;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Linke Spalte → klappt nach rechts/unten */
-.story-card:nth-child(2n+1) {
-  transform-origin: left bottom;
+/* Standardhöhen- und Fadeverhalten */
+.story-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-/* Rechte Spalte → klappt nach links/unten */
-.story-card:nth-child(2n) {
-  transform-origin: right bottom;
-}
+/**********************************************************
+ * AUFKLAPPEN
+ **********************************************************/
 
-/* Aufgeklappter Zustand */
 .story-card.expanded {
   height: auto;
   overflow: visible;
-  transform: scale(1.05);                 /* leicht vergrößern */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  z-index: 5;                             /* über Nachbarn */
+  grid-column: 1 / -1;        /* über beide Spalten */
+  width: 80%;                 /* 80 % der Containerbreite */
+  margin: 0 auto;             /* mittig ausrichten */
+  transform: scale(1.02);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  z-index: 5;
 }
+
+.story-card.expanded::after {
+  opacity: 0;
+}
+
+/**********************************************************
+ * INHALT & LINK
+ **********************************************************/
+
+.story-card__title {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.story-card__body {
+  line-height: 1.5;
+  color: #333;
+}
+
+.story-card__body p {
+  margin: 0 0 0.6rem 0;
+}
+
+.story-card__toggle {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.85rem;
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.9);
+  border-radius: 4px;
+  padding: 2px 6px;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.story-card__toggle:hover {
+  background: #e6f0ff;
+}
+
+/**********************************************************
+ * RESPONSIVE ANPASSUNG
+ **********************************************************/
+
+@media (max-width: 900px) {
+  #stories-section-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.2rem;
+  }
+
+  .story-card {
+    height: auto;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .story-card.expanded {
+    grid-column: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .story-card::after {
+    display: none;
+  }
+
+  .story-card__toggle {
+    display: none;
+  }
+}
+
 
 /**********************************************************
  * FADE-EFFEKT UNTEN
  **********************************************************/
 
+/* Standardhöhen- und Fadeverhalten */
 .story-card::after {
   content: "";
   position: absolute;
