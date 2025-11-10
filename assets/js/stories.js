@@ -41,6 +41,7 @@ export const stories = {
         // Grid-Container für Karten
         const grid = document.createElement('div');
         grid.id = `${stories._containerId}-grid`;
+        grid.className = 'stories-grid'; // CSS-Klasse für Layout
         container.appendChild(grid);
 
         // spracheabhängige Texte anwenden
