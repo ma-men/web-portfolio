@@ -177,24 +177,6 @@
   content: "📄 ";
 }
 
-/* ===== FOOTER ===== */
-.cv-footer {
-  margin-top: 3rem;
-  text-align: center;
-}
-.cv-links {
-  display: inline-flex;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-500);
-}
-.cv-links a {
-  color: var(--text-500);
-  text-decoration: none;
-}
-.cv-links a:hover {
-  color: var(--timeline-color);
-}
 
 /* ===== RESPONSIVE LAYOUT ===== */
 @media (min-width: 768px) {

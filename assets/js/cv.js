@@ -27,8 +27,7 @@ export const cv = {
         header: {
             name: 'name',
             subtitle: 'subtitle'
-        },
-        contact: 'contact'
+        }
     },
 
     // DOM-Struktur aufbauen
@@ -129,10 +128,6 @@ export const cv = {
         }
 
         container.appendChild(timeline);
-
-        // Footer mit Kontaktlinks
-        const footer = cv._createFooter(cv._data[cfg.contact]);
-        container.appendChild(footer);
     },
 
     _createCard(item, f) {
@@ -214,31 +209,4 @@ export const cv = {
 
         return card;
     },
-
-    _createFooter(contactList) {
-        const footer = document.createElement('footer');
-        footer.classList.add('cv-footer');
-
-        const links = document.createElement('div');
-        links.classList.add('cv-links');
-
-        const list = Array.isArray(contactList) ? contactList : [];
-        for (let i = 0; i < list.length; i++) {
-            if (i > 0) {
-                const sep = document.createElement('span');
-                sep.textContent = '•';
-                links.appendChild(sep);
-            }
-
-            const c = list[i];
-            const a = document.createElement('a');
-            a.href = c.url || '#';
-            a.target = '_blank';
-            a.textContent = c.label || '';
-            links.appendChild(a);
-        }
-
-        footer.appendChild(links);
-        return footer;
-    }
 };
