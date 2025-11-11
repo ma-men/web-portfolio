@@ -57,14 +57,16 @@ export const skills = {
     /* Von außen aufrufen (z. B. in i18n.js): skills.load(language.current) */
     load(lang) {
         const path = `${skills._basePath}skills_${lang}.json`;
+
         // JSON-Daten laden (Fallback auf Deutsch)
         const data = skills._loadJSONSync(path) || skills._loadJSONSync(`${skills._basePath}skills_de.json`);
+
         // In-Memory-Daten setzen
         skills._data = data || {};
 
         // Skill Bereich komplett aufbauen inkl. der dynamischen Strukturen aus dem JSON
-        _render()
-        
+        skills._render();
+
         // spracheabhängige Texte anwenden
         language.applyTexts(skills._containerId);
     },
