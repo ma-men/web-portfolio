@@ -6,6 +6,7 @@ import { navigation } from './nav.js';
 import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
+import { contact } from './contact.js';
 import { footer } from './footer.js';
 
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skills.init();
     cv.init();
     stories.init();
+    contact.init();
     footer.init();
 
     // Sprache initialisieren und alle Bereiche laden
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skills.load(language.currentLang);   
     cv.load(language.currentLang);
     stories.load(language.currentLang);
+    contact.load(language.currentLang);
     footer.load(language.currentLang);
 
 });

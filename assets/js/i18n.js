@@ -103,6 +103,9 @@ export const language = {
         if (window.stories && typeof window.stories.load === 'function') {
             stories.load(newLang);
         }
+        if (window.contact && typeof window.contact.load === 'function') {
+            contact.load(newLang);
+        }
         if (window.footer && typeof window.footer.load === 'function') {
             footer.load(newLang);
         }

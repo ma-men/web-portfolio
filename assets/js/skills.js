@@ -52,8 +52,7 @@ export const skills = {
         grid.classList.add('skills-grid');
         section.appendChild(grid);
 
-        // spracheabhängige Texte anwenden
-        language.applyTexts(skills._containerId);
+        
     },
 
     /* Von außen aufrufen (z. B. in i18n.js): skills.load(language.current) */
@@ -65,6 +64,9 @@ export const skills = {
         skills._data = data || {};
         // Neu rendern
         skills._render();
+
+        // spracheabhängige Texte anwenden
+        language.applyTexts(skills._containerId);
     },
 
     // JSON-Datei  laden
