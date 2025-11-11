@@ -1,7 +1,7 @@
 'use strict';
 
 
-
+import { skills } from './skills.js';
 
 
 
