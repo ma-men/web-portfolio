@@ -52,6 +52,9 @@ export const skills = {
         grid.classList.add('skills-grid');
         section.appendChild(grid);
 
+        // Neu rendern
+        skills._render();
+
         
     },
 
@@ -62,8 +65,7 @@ export const skills = {
         const data = skills._loadJSONSync(path) || skills._loadJSONSync(`${skills._basePath}skills_de.json`);
         // In-Memory-Daten setzen
         skills._data = data || {};
-        // Neu rendern
-        skills._render();
+        
 
         // spracheabhängige Texte anwenden
         language.applyTexts(skills._containerId);
