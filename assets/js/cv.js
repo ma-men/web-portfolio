@@ -48,16 +48,24 @@ export const cv = {
         container.classList.add('cv-container');
         section.appendChild(container);
 
-        // sprachabhängige Texte anwenden
-        language.applyTexts(cv._containerId);
+        
     },
 
-    // Laden des Lebenslaufs (von i18n aufgerufen)
+    /* Von außen aufrufen (z. B. in i18n.js): cv.load(language.current) */
     load(lang) {
         const path = `${cv._basePath}cv_${lang}.json`;
+
+        // JSON-Daten laden (Fallback auf Deutsch)
         const data = cv._loadJSONSync(path) || cv._loadJSONSync(`${cv._basePath}cv_de.json`);
+        
+         // In-Memory-Daten setzen
         cv._data = data || {};
+
+        // CV Bereich komplett aufbauen inkl. der dynamischen Strukturen aus dem JSON
         cv._render();
+
+        // sprachabhängige Texte anwenden
+        language.applyTexts(cv._containerId);
     },
 
     // JSON-Datei laden (synchron)

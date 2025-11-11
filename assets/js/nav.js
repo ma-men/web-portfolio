@@ -72,16 +72,15 @@ export const navigation = {
 
         // Sprachumschalter aktivieren
         navigation._activateLanguageSwitcher(langSwitcher);
-
-        // Nach dem Aufbau Texte aus JSON einsetzen
-        language.applyTexts('nav-container');
     },
+
 
     /* Von außen aufrufen (z. B. in i18n.js) */
     load(lang) {
         // Hier ist kein JSON nötig, die Texte kommen aus ui_xx.json direkt in i18n.js
         language.applyTexts(navigation._containerId);
     },
+    
 
     // Sprachumschalter erzeugen
     _createLanguageSwitcher() {

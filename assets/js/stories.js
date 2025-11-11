@@ -44,19 +44,24 @@ export const stories = {
         grid.className = 'stories-grid'; // CSS-Klasse für Layout
         container.appendChild(grid);
 
-        // spracheabhängige Texte anwenden
-        language.applyTexts(stories._containerId);
+        
     },
 
     /* Von außen aufrufen (z. B. in i18n.js): stories.load(language.current) */
     load(lang) {
         const path = `${stories._basePath}stories_${lang}.json`;
+
         // JSON-Daten laden (Fallback auf Deutsch)
         const data = stories._loadJSONSync(path) || stories._loadJSONSync(`${stories._basePath}stories_de.json`);
+
         // In-Memory-Daten setzen
         stories._data = data || {};
+
         // Neu rendern
         stories._render();
+        
+        // spracheabhängige Texte anwenden
+        language.applyTexts(stories._containerId);
     },
 
     // JSON-Datei  laden
