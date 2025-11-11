@@ -1,7 +1,12 @@
 'use strict';
 
-import { language } from './i18n.js';
 
+
+import { skills } from './skills.js';
+import { cv } from './cv.js';
+import { stories } from './stories.js';
+import { contact } from './contact.js';
+import { footer } from './footer.js';
 
 
 
