@@ -2,7 +2,7 @@
 
 
 
-import { skills } from './skills.js';
+//import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
 import { contact } from './contact.js';
