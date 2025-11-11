@@ -46,7 +46,7 @@ export const contact = {
         const form = document.createElement('form');
         form.id = 'contact-form';
         form.method = 'POST';
-        form.action = 'https://formspree.io/f/DEINE_FORM_ID';
+        form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
         form.appendChild(contact._createLabel(cfg.form.nameLabelId, 'name'));
