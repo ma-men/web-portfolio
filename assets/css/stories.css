@@ -123,9 +123,7 @@
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    /* zentriert horizontal */
     align-items: center;
-    /* zentriert vertikal */
     z-index: 50;
     opacity: 0;
     pointer-events: none;
@@ -142,16 +140,11 @@
     width: 80%;
     max-width: 900px;
     max-height: 85vh;
-    /* Card bleibt im Viewport */
     overflow-y: auto;
-    /* Scroll nur, wenn nötig */
-    background: #fff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     transform: scale(0.95);
     opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     z-index: 60;
 }
 
@@ -160,7 +153,7 @@
     opacity: 1;
 }
 
-/* fester Close-Button (×) oben rechts */
+/* fester Close-Button */
 .story-close {
     position: absolute;
     top: 8px;
@@ -171,7 +164,7 @@
     cursor: pointer;
     padding: 4px 10px;
     font-size: 1.2rem;
-    line-height: 1;
+    /*line-height: 1;*/
     color: #333;
     transition: background 0.2s, transform 0.2s;
     z-index: 100;
@@ -179,7 +172,7 @@
 
 .story-close:hover {
     background: #e6f0ff;
-    transform: scale(1.08);
+    transform: scale(1.1); 
 }
 
 /**********************************************************

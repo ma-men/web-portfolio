@@ -140,8 +140,10 @@ export const stories = {
                 overlay.appendChild(clone);
                 document.body.appendChild(overlay);
 
-                // === Overlay sanft einblenden ===
-                setTimeout(() => overlay.classList.add('active'), 10);
+                // === Overlay aktivieren mit leichtem Delay (für Transition) ===
+                setTimeout(() => {
+                    overlay.classList.add('active');
+                }, 10);
 
                 // === Scrollen im Hintergrund deaktivieren ===
                 document.body.style.overflow = 'hidden';
