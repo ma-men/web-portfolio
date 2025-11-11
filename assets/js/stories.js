@@ -47,7 +47,23 @@ export const stories = {
         
     },
 
-    /* Von außen aufrufen (z. B. in i18n.js): stories.load(language.current) */
+    // Sprache laden 
+    load(lang) {
+        // direkt auf globales i18n-Objekt zugreifen
+        const jsonData = language?.data?.stories;
+        if (!jsonData) {
+            console.warn('⚠️ Keine Sprachdaten für Stories gefunden');
+            return;
+        }
+
+        stories._data = jsonData;
+        stories._render();
+
+        // Sprache anwenden (Überschrift etc.)
+        language.applyTexts(stories._containerId);
+    },
+
+    /* Von außen aufrufen (z. B. in i18n.js): stories.load(language.current) 
     load(lang) {
         const path = `${stories._basePath}stories_${lang}.json`;
 
@@ -59,7 +75,7 @@ export const stories = {
 
         // Neu rendern
         stories._render();
-        
+
         // spracheabhängige Texte anwenden
         language.applyTexts(stories._containerId);
     },
@@ -78,7 +94,7 @@ export const stories = {
             console.log('Fehler beim Laden der Stories-Datei:', path);
         }
         return null;
-    },
+    },*/
       
 
     _render() {

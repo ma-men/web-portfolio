@@ -54,11 +54,9 @@ export const skills = {
         section.appendChild(grid);
     },
 
-    // ----------------------------------------------------
-    // Sprache laden (ruft nur noch vorhandene Daten ab)
-    // ----------------------------------------------------
+    // Sprache laden 
     load(lang) {
-        // statt eigenem JSON-Load: direkt auf globales i18n-Objekt zugreifen
+        // direkt auf globales i18n-Objekt zugreifen
         const jsonData = language?.data?.skills;
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für Skills gefunden');
