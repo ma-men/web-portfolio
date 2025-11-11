@@ -22,6 +22,32 @@ export const contact = {
             connectId: 'contact-connect',
             linkId: 'contact-linkedin'
         }
+
+        /*
+    "contact": {
+    "title": "Kontakt",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Ihr Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "submit": "Nachricht senden"
+    },
+    "social": {
+      "connect": "Vernetzen Sie sich mit mir",
+      "linkedinText": "LinkedIn-Profil",
+      "linkedinUrl": "https://www.linkedin.com/in/dein-profilname"
+    }
+*/
+
+
+
+
+
+
+
     },
 
     // DOM-Struktur aufbauen
@@ -75,17 +101,28 @@ export const contact = {
         form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
-        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId, 'name'));
+        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId, 
+                                              'name',
+                                              contact._data.form.nameLabel));
+
         form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
 
         // Email
-        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId, 'email'));
+        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId, 
+                                              'email',
+                                               contact._data.form.emailLabel));
+
         form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
 
         // Nachricht
-        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId, 'message'));
+        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId, 
+                                               'message',
+                                               contact._data.form.messageLabel));
+
         form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
 
+
+        
         // Button
         const btn = document.createElement('button');
         btn.type = 'submit';
@@ -146,10 +183,11 @@ export const contact = {
     /**************************************************************
      * Hilfsfunktionen
      **************************************************************/
-    _createLabel(id, forId) {
+    _createLabel(id, forId, text) {
         const label = document.createElement('label');
         label.id = id;
         label.htmlFor = forId;
+        label.textContent = text;
         return label;
     },
 
