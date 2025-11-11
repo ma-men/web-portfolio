@@ -2,7 +2,7 @@
 
 import { language } from './i18n.js';
 
-import { skills } from './skills.js';
+
 
 
 
