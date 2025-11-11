@@ -26,24 +26,12 @@ export const contact = {
 
     // DOM-Struktur aufbauen
     init() {
-        const cfg = contact.structure;
+        
         const section = document.getElementById(contact._containerId);
         if (!section) return;
 
         // Bestehenden Inhalt leeren
         section.innerHTML = '';
-
-        // === Titel ===
-        const title = document.createElement('h2');
-        title.id = cfg.titleId;
-        section.appendChild(title);
-
-        // === Hauptcontainer ===
-        const container = document.createElement('div');
-        container.id = 'contact-container';
-
-        
-
     },
    
     // Sprache laden 
@@ -63,16 +51,23 @@ export const contact = {
     },
 
 
-    _render() {
-        const cfg = contact.structure;
+    _render() {      
+        const cfg = contact.structure;  
         const section = document.getElementById(contact._containerId);
         if (!section || !contact._data) return;
+        
+        // Bestehenden Inhalt leeren
+        section.innerHTML = '';
 
-        // Container-Referenz
-        const container = section.querySelector('.contact-container');
-        if (!container) return;
+        // === Titel ===
+        const title = document.createElement('h2');
+        title.id = cfg.titleId;
+        section.appendChild(title);
 
-        container.innerHTML = '';
+        // === Hauptcontainer ===
+        const container = document.createElement('div');
+        container.id = 'contact-container';
+        
 
         // === Formular ===
         const form = document.createElement('form');
