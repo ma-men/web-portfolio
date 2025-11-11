@@ -43,7 +43,7 @@ export const footer = {
         language.applyTexts(footer._containerId);
     },
 
-    load(lang) {
+    load() {
         // keine eigene JSON, nur Texte aus ui_xx.json
         language.applyTexts(footer._containerId);
     }

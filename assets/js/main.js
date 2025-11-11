@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     language.init();  // // lädt ui/cv/… in i18n.js
 
     // <- Default-Sprache für Skills
-    navigation.load(language.currentLang);
-    skills.load(language.currentLang);   
-    cv.load(language.currentLang);
-    stories.load(language.currentLang);
-    contact.load(language.currentLang);
-    footer.load(language.currentLang);
+    navigation.load();
+    skills.load();   
+    cv.load();
+    stories.load();
+    contact.load();
+    footer.load();
 
 });
 

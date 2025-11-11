@@ -76,7 +76,7 @@ export const navigation = {
 
 
     /* Von außen aufrufen (z. B. in i18n.js) */
-    load(lang) {
+    load() {
         // Hier ist kein JSON nötig, die Texte kommen aus ui_xx.json direkt in i18n.js
         language.applyTexts(navigation._containerId);
     },

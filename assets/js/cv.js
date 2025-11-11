@@ -51,37 +51,22 @@ export const cv = {
         
     },
 
-    /* Von außen aufrufen (z. B. in i18n.js): cv.load(language.current) */
-    load(lang) {
-        const path = `${cv._basePath}cv_${lang}.json`;
+    // Sprache laden 
+    load() {
+        // direkt auf globales i18n-Objekt zugreifen
+        const jsonData = language?.data?.cv;
+        if (!jsonData) {
+            console.warn('⚠️ Keine Sprachdaten für den CV gefunden');
+            return;
+        }
 
-        // JSON-Daten laden (Fallback auf Deutsch)
-        const data = cv._loadJSONSync(path) || cv._loadJSONSync(`${cv._basePath}cv_de.json`);
-        
-         // In-Memory-Daten setzen
-        cv._data = data || {};
-
-        // CV Bereich komplett aufbauen inkl. der dynamischen Strukturen aus dem JSON
+        cv._data = jsonData;
         cv._render();
 
-        // sprachabhängige Texte anwenden
+        // Sprache anwenden (Überschrift etc.)
         language.applyTexts(cv._containerId);
     },
-
-    // JSON-Datei laden (synchron)
-    _loadJSONSync(path) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', path, false);
-        try {
-            xhr.send();
-            if (xhr.status >= 200 && xhr.status < 300 && xhr.responseText) {
-                return JSON.parse(xhr.responseText);
-            }
-        } catch {
-            console.log('Fehler beim Laden der CV-Datei:', path);
-        }
-        return null;
-    },
+    
 
     // Rendering der CV-Daten
     _render() {

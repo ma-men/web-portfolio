@@ -42,6 +42,38 @@ export const contact = {
         const container = document.createElement('div');
         container.id = 'contact-container';
 
+        
+
+    },
+   
+    // Sprache laden 
+    load() {
+        // direkt auf globales i18n-Objekt zugreifen
+        const jsonData = language?.data?.ui?.contact;
+        if (!jsonData) {
+            console.warn('⚠️ Keine Sprachdaten für den Kontaktbereich gefunden');
+            return;
+        }
+
+        contact._data = jsonData;
+        contact._render();
+
+        // Sprache anwenden (Überschrift etc.)
+        language.applyTexts(contact._containerId);
+    },
+
+
+    _render() {
+        const cfg = contact.structure;
+        const section = document.getElementById(contact._containerId);
+        if (!section || !contact._data) return;
+
+        // Container-Referenz
+        const container = section.querySelector('.contact-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
         // === Formular ===
         const form = document.createElement('form');
         form.id = 'contact-form';
@@ -49,21 +81,21 @@ export const contact = {
         form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
-        form.appendChild(contact._createLabel(cfg.form.nameLabelId, 'name'));
-        form.appendChild(contact._createInput('text', 'name'));
+        form.appendChild(contact._createLabel(contact._data.form.nameLabelId, 'name'));
+        form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
 
         // Email
-        form.appendChild(contact._createLabel(cfg.form.emailLabelId, 'email'));
-        form.appendChild(contact._createInput('email', 'email'));
+        form.appendChild(contact._createLabel(contact._data.form.emailLabelId, 'email'));
+        form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
 
         // Nachricht
-        form.appendChild(contact._createLabel(cfg.form.messageLabelId, 'message'));
-        form.appendChild(contact._createTextarea('message'));
+        form.appendChild(contact._createLabel(contact._data.form.messageLabelId, 'message'));
+        form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
 
         // Button
         const btn = document.createElement('button');
         btn.type = 'submit';
-        btn.id = cfg.form.buttonId;
+        btn.id = contact._data.form.buttonId;
         form.appendChild(btn);
 
         const status = document.createElement('p');
@@ -80,11 +112,11 @@ export const contact = {
         social.id = 'contact-social';
 
         const h3 = document.createElement('h3');
-        h3.id = cfg.social.connectId;
+        h3.id = contact._data.social.connectId;
         social.appendChild(h3);
 
         const link = document.createElement('a');
-        link.id = cfg.social.linkId;
+        link.id = contact._data.social.linkId;
         link.target = '_blank';
         link.className = 'linkedin-link';
         social.appendChild(link);
@@ -92,16 +124,7 @@ export const contact = {
         container.appendChild(form);
         container.appendChild(social);
         section.appendChild(container);
-
     },
-
-    /* Von außen aufrufen (z. B. in i18n.js) */
-    load(lang) {
-        // Hier ist kein JSON nötig, die Texte kommen aus ui_xx.json direkt in i18n.js
-        language.applyTexts(contact._containerId);
-    },
-
-
 
     _sendForm(form, status, btn) {
         status.textContent = 'Sende...';

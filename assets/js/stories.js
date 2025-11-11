@@ -48,7 +48,7 @@ export const stories = {
     },
 
     // Sprache laden 
-    load(lang) {
+    load() {
         // direkt auf globales i18n-Objekt zugreifen
         const jsonData = language?.data?.stories;
         if (!jsonData) {
@@ -62,40 +62,7 @@ export const stories = {
         // Sprache anwenden (Überschrift etc.)
         language.applyTexts(stories._containerId);
     },
-
-    /* Von außen aufrufen (z. B. in i18n.js): stories.load(language.current) 
-    load(lang) {
-        const path = `${stories._basePath}stories_${lang}.json`;
-
-        // JSON-Daten laden (Fallback auf Deutsch)
-        const data = stories._loadJSONSync(path) || stories._loadJSONSync(`${stories._basePath}stories_de.json`);
-
-        // In-Memory-Daten setzen
-        stories._data = data || {};
-
-        // Neu rendern
-        stories._render();
-
-        // spracheabhängige Texte anwenden
-        language.applyTexts(stories._containerId);
-    },
-
-    // JSON-Datei  laden
-    _loadJSONSync(path) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', path, false);
-        try {
-            xhr.send();
-            if (xhr.status >= 200 && xhr.status < 300 && xhr.responseText) {
-                return JSON.parse(xhr.responseText);
-            }
-        } catch {
-            // Fehler ignorieren
-            console.log('Fehler beim Laden der Stories-Datei:', path);
-        }
-        return null;
-    },*/
-      
+     
 
     _render() {
         // === Kürzel für die JSON-Struktur-Definition ===

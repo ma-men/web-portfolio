@@ -55,7 +55,7 @@ export const skills = {
     },
 
     // Sprache laden 
-    load(lang) {
+    load() {
         // direkt auf globales i18n-Objekt zugreifen
         const jsonData = language?.data?.skills;
         if (!jsonData) {
