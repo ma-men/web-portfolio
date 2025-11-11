@@ -52,7 +52,6 @@ export const contact = {
 
 
     _render() {      
-        const cfg = contact.structure;  
         const section = document.getElementById(contact._containerId);
         if (!section || !contact._data) return;
         
@@ -61,7 +60,7 @@ export const contact = {
 
         // === Titel ===
         const title = document.createElement('h2');
-        title.id = cfg.titleId;
+        title.id = contact.structure.titleId;
         section.appendChild(title);
 
         // === Hauptcontainer ===
@@ -76,15 +75,15 @@ export const contact = {
         form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
-        form.appendChild(contact._createLabel(contact._data.form.nameLabelId, 'name'));
+        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId, 'name'));
         form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
 
         // Email
-        form.appendChild(contact._createLabel(contact._data.form.emailLabelId, 'email'));
+        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId, 'email'));
         form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
 
         // Nachricht
-        form.appendChild(contact._createLabel(contact._data.form.messageLabelId, 'message'));
+        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId, 'message'));
         form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
 
         // Button
