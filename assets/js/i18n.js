@@ -1,7 +1,12 @@
 'use strict';
 
 
+
 import { skills } from './skills.js';
+import { cv } from './cv.js';
+import { stories } from './stories.js';
+import { contact } from './contact.js';
+import { footer } from './footer.js';
 
 
 
@@ -101,22 +106,11 @@ export const language = {
         language.applyTexts();
 
         // Zusätzlich Module nachladen (z. B. Skills neu rendern)
-        if (window.skills && typeof window.skills.load === 'function') {
-            skills.load(newLang);
-        }
-        if (window.cv && typeof window.cv.load === 'function') {
-            cv.load(newLang);
-        }
-        if (window.stories && typeof window.stories.load === 'function') {
-            stories.load(newLang);
-        }
-        if (window.contact && typeof window.contact.load === 'function') {
-            contact.load(newLang);
-        }
-        if (window.footer && typeof window.footer.load === 'function') {
-            footer.load(newLang);
-        }
-
+        skills.load(newLang);
+        cv.load(newLang);
+        stories.load(newLang);
+        contact.load(newLang);
+        footer.load(newLang);
     },
 
     // Aktiven Sprachschalter hervorheben
