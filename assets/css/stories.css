@@ -27,7 +27,7 @@
 }
 
 /**********************************************************
- * STORY-CARDS (Standardzustand)
+ * STORY-CARD (im Grid)
  **********************************************************/
 
 .story-card {
@@ -38,9 +38,7 @@
     padding: 1.2rem;
     height: 300px;
     overflow: hidden;
-    transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     transform-origin: center bottom;
     display: flex;
     flex-direction: column;
@@ -65,8 +63,8 @@
     height: 60px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 90%);
     pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    /*opacity: 1;
+    transition: opacity 0.3s ease;*/
 }
 
 /**********************************************************
@@ -114,7 +112,9 @@
 }
 
 /**********************************************************
- * STORY OVERLAY
+ * .story-overlay 
+ *      - Dunkler, halbtransparenter Hintergrund, 
+ *        der über die ganze Seite gelegt wird
  **********************************************************/
 
 .story-overlay {
@@ -135,25 +135,57 @@
     pointer-events: all;
 }
 
-.story-overlay .story-card {
+/**********************************************************
+ * .story-card--overlay
+ *      - die große Karte innerhalb des Overlays
+ *      - dieselbe Story aus der .story-card, aber groß dargestellt 
+ **********************************************************/
+.story-card--overlay {
     position: relative;
     width: 80%;
     max-width: 900px;
-    /*max-height: 85vh;*/
-    overflow-y: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
     transform: scale(0.95);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    z-index: 60;
+    z-index: 1010;
+    overflow: visible;
+    /* kein Scroll auf Desktop */
+    max-height: none;
 }
 
-.story-overlay.active .story-card {
+.story-overlay.active .story-card--overlay {
     transform: scale(1);
     opacity: 1;
 }
 
-/* fester Close-Button */
+/* interner Scroll nur auf kleinen Bildschirmen */
+@media (max-width: 900px),
+(max-height: 850px) {
+    .story-card--overlay {
+        max-height: 90vh;
+        overflow-y: auto;
+        width: 90%;
+        padding: 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .story-card--overlay {
+        width: 95%;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/**********************************************************
+ * CLOSE-BUTTON (×)
+ **********************************************************/
+
 .story-close {
     position: absolute;
     top: 8px;
@@ -164,19 +196,20 @@
     cursor: pointer;
     padding: 4px 10px;
     font-size: 1.2rem;
-    /*line-height: 1;*/
+    line-height: 1;
     color: #333;
     transition: background 0.2s, transform 0.2s;
-    z-index: 100;
+    z-index: 1020;
 }
 
 .story-close:hover {
     background: #e6f0ff;
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
+
 /**********************************************************
- * RESPONSIVE DESIGN
+ * RESPONSIVE GRID
  **********************************************************/
 
 @media (max-width: 900px) {
@@ -196,26 +229,5 @@
 
     .story-card__toggle {
         display: none;
-    }
-
-    .story-overlay .story-card {
-        width: 90%;
-        padding: 1.2rem;
-        font-size: 0.95rem;
-        max-height: 90vh;
-        /* ⚙️ Begrenzung auf kleineren Screens */
-        overflow-y: auto;
-        /* Scroll nur bei Bedarf */
-    }
-}
-
-@media (max-width: 600px) {
-    .story-overlay .story-card {
-        width: 95%;
-        padding: 1rem;
-        font-size: 0.9rem;
-        max-height: 90vh;
-        /* ⚙️ weiterhin begrenzt */
-        overflow-y: auto;
     }
 }

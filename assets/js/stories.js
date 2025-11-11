@@ -124,6 +124,7 @@ export const stories = {
 
                 // === Card klonen ===
                 const clone = card.cloneNode(true);
+                clone.className = 'story-card--overlay';
                 clone.classList.add('expanded');
 
                 // === "Mehr..."-Link im Klon ausblenden ===
