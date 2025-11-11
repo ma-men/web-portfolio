@@ -2,28 +2,29 @@
 
 import { language } from './i18n.js';
 
-
 export const skills = {
 
     // interne Konfiguration 
     _containerId: 'skills-section',
     _gridId: 'skills-grid',
-    _data: null, // wird später aus language.data.skills bezogen
+    _basePath: 'assets/lang/',
+    _data: null,
 
     // JSON-Struktur-Konfiguration
     structure: {
-        root: 'groups',
-        subgroup: 'skills',
+        root: 'groups',       // oberste Liste in der JSON-Datei
+        subgroup: 'skills',   // Unterliste innerhalb jeder Gruppe
         fields: {
-            groupName: 'group',
-            skillName: 'name',
-            rating: 'rating',
-            desc: 'desc',
-            certs: 'certs',
-            certLabel: 'label',
-            certFile: 'file'
+            groupName: 'group', // Name der Skillgruppe
+            skillName: 'name',  // Skillbezeichnung
+            rating: 'rating',   // Bewertung (0–5)
+            desc: 'desc',       // Beschreibungstext
+            certs: 'certs',     // Zertifikate-Liste
+            certLabel: 'label', // Text der Zertifikatsbeschreibung
+            certFile: 'file'    // Dateiname
         }
     },
+
 
     // Pfade zu Stern-Icons 
     starIcons: {
@@ -32,9 +33,7 @@ export const skills = {
         empty: 'assets/icons/star-empty.svg'
     },
 
-    // ----------------------------------------------------
-    // DOM-Struktur statisch aufbauen (einmalig)
-    // ----------------------------------------------------
+    // DOM-Struktur aufbauen 
     init() {
         const section = document.getElementById(skills._containerId);
         if (!section) return;
@@ -44,7 +43,7 @@ export const skills = {
         // Überschrift 
         const title = document.createElement('h2');
         title.dataset.i18n = 'ui.skills.title';
-        title.textContent = 'Skills'; // Fallback
+        title.textContent = 'Skills';
         section.appendChild(title);
 
         // Grid-Container für Karten
@@ -52,38 +51,51 @@ export const skills = {
         grid.id = skills._gridId;
         grid.classList.add('skills-grid');
         section.appendChild(grid);
+ 
     },
 
-    // ----------------------------------------------------
-    // Sprache laden (ruft nur noch vorhandene Daten ab)
-    // ----------------------------------------------------
+    /* Von außen aufrufen (z. B. in i18n.js): skills.load(language.current) */
     load(lang) {
-        // statt eigenem JSON-Load: direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.skills;
-        if (!jsonData) {
-            console.warn('⚠️ Keine Sprachdaten für Skills gefunden');
-            return;
-        }
+        const path = `${skills._basePath}skills_${lang}.json`;
 
-        skills._data = jsonData;
+        // JSON-Daten laden (Fallback auf Deutsch)
+        const data = skills._loadJSONSync(path) || skills._loadJSONSync(`${skills._basePath}skills_de.json`);
+
+        // In-Memory-Daten setzen
+        skills._data = data || {};
+
+        // Skill Bereich komplett aufbauen inkl. der dynamischen Strukturen aus dem JSON
         skills._render();
 
-        // Sprache anwenden (Überschrift etc.)
+        // spracheabhängige Texte anwenden
         language.applyTexts(skills._containerId);
     },
 
-    // ----------------------------------------------------
-    // Anzeige rendern
-    // ----------------------------------------------------
-    _render() {
-        const cfg = skills.structure;
-        const grid = document.getElementById(skills._gridId);
-        const data = skills._data;
+    // JSON-Datei  laden
+    _loadJSONSync(path) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', path, false);
+        try {
+            xhr.send();
+            if (xhr.status >= 200 && xhr.status < 300 && xhr.responseText) {
+                return JSON.parse(xhr.responseText);
+            }
+        } catch {
+            // Fehler ignorieren
+            console.log('Fehler beim Laden der Skills-Datei:', path);
+        }
+        return null;
+    },
 
-        if (!grid || !data) return;
+    // Daten anzeigen
+    _render() {
+        const cfg = skills.structure; // Kürzerer Zugriff
+        const grid = document.getElementById(skills._gridId);
+        if (!grid || !skills._data) return;
+
         grid.innerHTML = '';
 
-        const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
+        const groups = Array.isArray(skills._data[cfg.root]) ? skills._data[cfg.root] : [];
 
         if (groups.length === 0) {
             const p = document.createElement('p');
@@ -93,22 +105,24 @@ export const skills = {
             return;
         }
 
-        // alle Gruppen erzeugen
         for (let i = 0; i < groups.length; i++) {
             const g = groups[i];
+
+            // Skill-Card (entspricht .skill-card im CSS)
             const card = document.createElement('div');
             card.classList.add('skill-card');
 
-            // Gruppentitel
+            // Überschrift der Gruppe
             const groupTitle = document.createElement('h3');
             groupTitle.textContent = g[cfg.fields.groupName] || 'Gruppe';
             card.appendChild(groupTitle);
+
 
             const skillsArr = Array.isArray(g[cfg.subgroup]) ? g[cfg.subgroup] : [];
             for (let j = 0; j < skillsArr.length; j++) {
                 const s = skillsArr[j];
 
-                // Skill-Zeile
+                // Skill-Zeile (.skill-row)
                 const row = document.createElement('div');
                 row.classList.add('skill-row');
 
@@ -129,7 +143,7 @@ export const skills = {
                 desc.textContent = s[cfg.fields.desc] || '';
                 card.appendChild(desc);
 
-                // Zertifikate
+                // Zertifikate (cert-list)
                 const certList = s[cfg.fields.certs];
                 if (Array.isArray(certList) && certList.length > 0) {
                     const ulCert = document.createElement('ul');
@@ -156,14 +170,10 @@ export const skills = {
                     card.appendChild(ulCert);
                 }
             }
-
             grid.appendChild(card);
         }
     },
 
-    // ----------------------------------------------------
-    // Sterneanzeige rendern
-    // ----------------------------------------------------
     _renderStars(level) {
         const span = document.createElement('span');
         const full = Math.floor(level);
