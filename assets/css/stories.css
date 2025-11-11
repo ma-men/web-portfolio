@@ -139,7 +139,7 @@
     position: relative;
     width: 80%;
     max-width: 900px;
-    max-height: 85vh;
+    /*max-height: 85vh;*/
     overflow-y: auto;
     transform: scale(0.95);
     opacity: 0;
