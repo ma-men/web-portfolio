@@ -86,6 +86,8 @@ export const contact = {
 
         // === Titel ===
         const title = document.createElement('h2');
+        title.dataset.i18n = 'ui.contact.title';
+        title.textContent = 'Kontakt';
         title.id = contact.structure.titleId;
         section.appendChild(title);
 
@@ -122,7 +124,7 @@ export const contact = {
         form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
 
 
-        
+
         // Button
         const btn = document.createElement('button');
         btn.type = 'submit';
@@ -191,11 +193,12 @@ export const contact = {
         return label;
     },
 
-    _createInput(type, id) {
+    _createInput(type, id, placeholder) {
         const input = document.createElement('input');
         input.type = type;
         input.id = id;
         input.name = id;
+        input.placeholder = placeholder;
         input.required = true;
         return input;
     },
