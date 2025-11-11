@@ -1,9 +1,9 @@
 {
   "header": {
     "menu": {
-      "about": "About Me",
+      "about": "About",
       "skills": "Skills",
-      "cv": "Resume",
+      "cv": "Curriculum Vitae",
       "stories": "Stories / Projects",
       "contact": "Contact"
     },
@@ -11,7 +11,24 @@
   },
   "footer": {
     "copyright": "© 2025 Martin Mengersen – Portfolio",
-    "imprint": "Legal Notice",
+    "imprint": "Imprint",
     "privacy": "Privacy Policy"
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Your e-mail address",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send message"
+    },
+    "social": {
+      "connect": "Connect with me",
+      "linkedinText": "LinkedIn Profile",
+      "linkedinUrl": "https://www.linkedin.com/in/your-profile"
+    }
   }
 }

@@ -1,17 +1,34 @@
 {
-    "header": {
-        "menu": {
-            "about": "Über mich",
-            "skills": "Fähigkeiten",
-            "cv": "Lebenslauf",
-            "stories": "Stories / Projekte",
-            "contact": "Kontakt"
-        },
-        "language": "Sprache"
+  "header": {
+    "menu": {
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "cv": "Lebenslauf",
+      "stories": "Stories / Projekte",
+      "contact": "Kontakt"
     },
-    "footer": {
-        "copyright": "© 2025 Martin Mengersen – Portfolio",
-        "imprint": "Impressum",
-        "privacy": "Datenschutz"
+    "language": "Sprache"
+  },
+  "footer": {
+    "copyright": "© 2025 Martin Mengersen – Portfolio",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Ihr Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "submit": "Nachricht senden"
+    },
+    "social": {
+      "connect": "Vernetzen Sie sich mit mir",
+      "linkedinText": "LinkedIn-Profil",
+      "linkedinUrl": "https://www.linkedin.com/in/dein-profilname"
     }
+  }
 }
