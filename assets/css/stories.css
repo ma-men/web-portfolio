@@ -4,13 +4,13 @@
 
 /* === Haupt-Container === */
 #stories-section {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #fff;
-  border: none;
-  border-radius: 10px;
-  box-sizing: border-box;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 /**********************************************************
@@ -18,12 +18,12 @@
  **********************************************************/
 
 #stories-section-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 1.5rem;
-  justify-content: start;
-  align-items: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: start;
+    align-items: start;
 }
 
 /**********************************************************
@@ -31,25 +31,25 @@
  **********************************************************/
 
 .story-card {
-  position: relative;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.2rem;
-  height: 300px;
-  overflow: hidden;
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-  transform-origin: center bottom;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    height: 300px;
+    overflow: hidden;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+    transform-origin: center bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .story-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 /**********************************************************
@@ -57,16 +57,16 @@
  **********************************************************/
 
 .story-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 90%);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 90%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 /**********************************************************
@@ -74,20 +74,20 @@
  **********************************************************/
 
 .story-card__title {
-  margin-top: 0.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #222;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #222;
 }
 
 .story-card__body {
-  line-height: 1.5;
-  color: #333;
+    line-height: 1.5;
+    color: #333;
 }
 
 .story-card__body p {
-  margin: 0 0 0.6rem 0;
+    margin: 0 0 0.6rem 0;
 }
 
 /**********************************************************
@@ -95,22 +95,22 @@
  **********************************************************/
 
 .story-card__toggle {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 0.85rem;
-  color: #0066cc;
-  text-decoration: none;
-  cursor: pointer;
-  background: rgba(255,255,255,0.9);
-  border-radius: 4px;
-  padding: 2px 6px;
-  transition: background 0.2s;
-  z-index: 10;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 0.85rem;
+    color: #0066cc;
+    text-decoration: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px 6px;
+    transition: background 0.2s;
+    z-index: 10;
 }
 
 .story-card__toggle:hover {
-  background: #e6f0ff;
+    background: #e6f0ff;
 }
 
 /**********************************************************
@@ -118,74 +118,68 @@
  **********************************************************/
 
 .story-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;   /* ✅ zentriert horizontal */
-  align-items: center;       /* ✅ zentriert vertikal */
-  z-index: 50;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  overflow-y: auto;          /* Scroll nur, wenn zu groß */
-  padding: 3vh 0;            /* kleiner Abstand zu Navigation */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    /* zentriert horizontal */
+    align-items: center;
+    /* zentriert vertikal */
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
 .story-overlay.active {
-  opacity: 1;
-  pointer-events: all;
+    opacity: 1;
+    pointer-events: all;
 }
-
-/**********************************************************
- * OVERLAY-CARD
- **********************************************************/
 
 .story-overlay .story-card {
-  position: relative;
-  width: 80%;
-  max-width: 900px;
-  background: #fff;
-  border-radius: 10px;
-  transform: scale(0.95);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  z-index: 60;
-  padding: 1.5rem;
-  overflow: visible;         /* ✅ Kein interner Scroll auf Desktop */
-  max-height: none;          /* ✅ Volle Höhe erlaubt */
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    max-height: 85vh;
+    /* Card bleibt im Viewport */
+    overflow-y: auto;
+    /* Scroll nur, wenn nötig */
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 60;
 }
 
-/* Aktiviert (Einblendung mit sanfter Animation) */
 .story-overlay.active .story-card {
-  transform: scale(1);
-  opacity: 1;
+    transform: scale(1);
+    opacity: 1;
 }
 
-/**********************************************************
- * CLOSE-BUTTON (×)
- **********************************************************/
-
+/* fester Close-Button (×) oben rechts */
 .story-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: rgba(255,255,255,0.9);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  padding: 4px 10px;
-  font-size: 1.2rem;
-  line-height: 1;
-  color: #333;
-  transition: background 0.2s, transform 0.2s;
-  z-index: 100;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 4px 10px;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #333;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 100;
 }
 
 .story-close:hover {
-  background: #e6f0ff;
-  transform: scale(1.1);
+    background: #e6f0ff;
+    transform: scale(1.08);
 }
 
 /**********************************************************
@@ -193,39 +187,42 @@
  **********************************************************/
 
 @media (max-width: 900px) {
-  #stories-section-grid {
-    grid-template-columns: 1fr;
-    row-gap: 1.2rem;
-  }
+    #stories-section-grid {
+        grid-template-columns: 1fr;
+        row-gap: 1.2rem;
+    }
 
-  .story-card {
-    height: auto;
-    overflow: visible;
-  }
+    .story-card {
+        height: auto;
+        overflow: visible;
+    }
 
-  .story-card::after {
-    display: none;
-  }
+    .story-card::after {
+        display: none;
+    }
 
-  .story-card__toggle {
-    display: none;
-  }
+    .story-card__toggle {
+        display: none;
+    }
 
-  .story-overlay .story-card {
-    width: 90%;
-    padding: 1.2rem;
-    font-size: 0.95rem;
-    max-height: 90vh;       /* ⚙️ Begrenzung auf kleineren Screens */
-    overflow-y: auto;       /* Scroll nur bei Bedarf */
-  }
+    .story-overlay .story-card {
+        width: 90%;
+        padding: 1.2rem;
+        font-size: 0.95rem;
+        max-height: 90vh;
+        /* ⚙️ Begrenzung auf kleineren Screens */
+        overflow-y: auto;
+        /* Scroll nur bei Bedarf */
+    }
 }
 
 @media (max-width: 600px) {
-  .story-overlay .story-card {
-    width: 95%;
-    padding: 1rem;
-    font-size: 0.9rem;
-    max-height: 90vh;       /* ⚙️ weiterhin begrenzt */
-    overflow-y: auto;
-  }
+    .story-overlay .story-card {
+        width: 95%;
+        padding: 1rem;
+        font-size: 0.9rem;
+        max-height: 90vh;
+        /* ⚙️ weiterhin begrenzt */
+        overflow-y: auto;
+    }
 }
