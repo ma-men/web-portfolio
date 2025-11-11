@@ -89,7 +89,7 @@ export const contact = {
         // Button
         const btn = document.createElement('button');
         btn.type = 'submit';
-        btn.id = contact._data.form.buttonId;
+        btn.id = contact.structure.form.buttonId;
         form.appendChild(btn);
 
         const status = document.createElement('p');
@@ -106,11 +106,11 @@ export const contact = {
         social.id = 'contact-social';
 
         const h3 = document.createElement('h3');
-        h3.id = contact._data.social.connectId;
+        h3.id = contact.structure.social.connectId;
         social.appendChild(h3);
 
         const link = document.createElement('a');
-        link.id = contact._data.social.linkId;
+        link.id = contact.structure.social.linkId;
         link.target = '_blank';
         link.className = 'linkedin-link';
         social.appendChild(link);
