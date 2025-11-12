@@ -1,0 +1,51 @@
+{
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Your email address",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send message"
+    },
+    "formStatus": {
+      "sending": "Sending...",
+      "success": "✅ Message sent successfully!",
+      "error": "❌ Error sending message. Please try again later."
+    },
+    "social": {
+      "connect": "Connect with me",
+      "links": {
+        "linkedin": {
+          "text": "LinkedIn",
+          "url": "https://www.linkedin.com/in/martin-mengersen"
+        },
+        "github": {
+          "text": "GitHub",
+          "url": "https://github.com/ma-men"
+        },
+        "mail": {
+          "text": "Email",
+          "url": "mailto:m2.pb@gmx.de"
+        }
+      }
+    },
+    "legal": {
+      "impressum": "Legal Notice",
+      "datenschutz": "Privacy Policy"
+    },
+    "footer": "© 2025 Martin Mengersen – Portfolio",
+    "modals": {
+      "impressum": {
+        "title": "Legal Notice",
+        "content": "<h3>Information according to § 5 TMG</h3><p><strong>Martin Mengersen</strong><br>Paderborner Straße 13<br>33178 Borchen<br><br>Germany<br></p><h3>Responsible for the content</h3><p>Martin Mengersen</p><h3>Liability for content</h3><p>The contents of these pages were created with the utmost care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content.</p><h3>Liability for links</h3><p>This website contains links to external third-party websites over whose content I have no control. Therefore, I cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages.</p><h3>Copyright</h3><p>The content and works created by the site operator on these pages are subject to German copyright law.</p>"
+      },
+      "datenschutz": {
+        "title": "Privacy Policy",
+        "content": "<h3>Controller</h3><p>Martin Mengersen, Paderborner Straße 13, 33178 Borchen, Germany</p><h3>Processed data & purposes</h3><ul><li><strong>Contact form:</strong> Name, email, and message for processing your inquiry (Art. 6 (1) lit. b GDPR).</li><li><strong>Server/access logs:</strong> Technically necessary data processed by the hosting provider.</li></ul><h3>Form submission via Formspree</h3><p>The contact form is provided via the <em>Formspree</em> service. When submitting, the entered data is transmitted to Formspree Inc. (USA) to forward the message to me.</p><h3>Storage duration</h3><p>Personal data is only stored as long as necessary to process your request or as required by legal retention obligations.</p><h3>Your rights</h3><ul><li>Access, rectification, deletion, restriction, objection, data portability</li><li>Right to lodge a complaint with a supervisory authority</li></ul><h3>SSL/TLS encryption</h3><p>This website uses SSL/TLS encryption where possible to protect transmitted data.</p>"
+      }
+    }
+  }
+}

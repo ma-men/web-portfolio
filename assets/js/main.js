@@ -7,7 +7,6 @@ import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
 import { contact } from './contact.js';
-import { footer } from './footer.js';
 
 
 
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cv.init();
     stories.init();
     contact.init();
-    footer.init();
 
     // Sprache initialisieren und alle Bereiche laden
     language.init();  // // lädt ui/cv/… in i18n.js
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cv.load();
     stories.load();
     contact.load();
-    footer.load();
 
 });
 

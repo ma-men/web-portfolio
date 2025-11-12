@@ -6,7 +6,6 @@ import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
 import { contact } from './contact.js';
-import { footer } from './footer.js';
 
 
 
@@ -29,7 +28,7 @@ export const language = {
 
     // Lädt alle JSON-Sprachdateien (synchron)
     loadLanguage(lang) {
-        const namespaces = ['ui', 'skills', 'cv', 'stories'];
+        const namespaces = ['ui', 'skills', 'cv', 'stories', 'contact'];
         const basePath = 'assets/lang/';
         language.data = {};
 
@@ -55,6 +54,7 @@ export const language = {
     },
 
     // Setzt alle Texte basierend auf data-i18n
+    // - data-i18n ist dabei der Pfad im JSON-Objekt, z. B. "skills.section.title (für skills_de.json)"
     // Wenn ein containerId angegeben ist, nur in diesem Bereich
     applyTexts(containerId) {
         const root = containerId
@@ -62,6 +62,17 @@ export const language = {
             : document;
 
         if (!root) return;
+
+        // [data-i18n] ist ein benutzerdefiniertes Attribut, das den Schlüssel für die Übersetzung enthält
+        // - es wird in jeder section im header gesetzt:
+        //   z.B. in skills.js:
+        //                      Überschrift:
+        //                      const title = document.createElement('h2');
+        //            >>>>>>    title.dataset.i18n = 'ui.skills.title';        <<<<<<<
+        //                      title.textContent = 'Skills'; // Fallback
+        //                      section.appendChild(title);
+        //
+        //       im Html:   <div data-i18n="ui.skills.title"></div>
 
         const elements = root.querySelectorAll('[data-i18n]');
         for (let i = 0; i < elements.length; i++) {
