@@ -1,6 +1,6 @@
 {
+    "title": "Contact",
     "contact": {
-        "title": "Contact",
         "form": {
             "nameLabel": "Name",
             "namePlaceholder": "Your name",

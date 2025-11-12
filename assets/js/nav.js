@@ -36,7 +36,7 @@ export const navigation = {
             { id: 'skills-section', i18n: 'ui.header.menu.skills', default: 'Fähigkeiten' },
             { id: 'cv-section', i18n: 'ui.header.menu.cv', default: 'Lebenslauf' },
             { id: 'stories-section', i18n: 'ui.header.menu.stories', default: 'Stories' },
-            { id: 'contact-section', i18n: 'ui.header.menu.contact', default: 'Kontakt' }
+            { id: 'footer-section', i18n: 'ui.header.menu.contact', default: 'Kontakt' }
             ];
 
         for (let i = 0; i < menuItems.length; i++) {
