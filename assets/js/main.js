@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stories.init();
     contact.init();
 
-    // Sprache initialisieren und alle Bereiche laden
+    
     language.init();  // // lädt ui/cv/… in i18n.js
 
     // <- Default-Sprache für Skills
@@ -29,6 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     cv.load();
     stories.load();
     contact.load();
-
 });
 

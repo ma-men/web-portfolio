@@ -48,7 +48,11 @@ export const contact = {
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.contact;
+        const jsonData = language?.data?.contact?.contact;
+
+        // Der doppelte contact ist hier technisch korrekt, weil:
+        // im Namespace „contact“ steht (language.data.contact = JSON.parse(...)),
+        // und in der Datei selbst das Objekt {"contact": {...}} steht.
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für den Kontaktbereich gefunden');
             return;
