@@ -85,25 +85,16 @@ export const contact = {
         form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
-        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId,
-                                            'name',
-                                            contact._data.form.nameLabel));
-
-        form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
+        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId, 'name'));
+        form.appendChild(contact._createInput('text', 'name'));
 
         // Email
-        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId,
-                                            'email',
-                                            contact._data.form.emailLabel));
-
-        form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
+        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId, 'email'));
+        form.appendChild(contact._createInput('email', 'email'));
 
         // Nachricht
-        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId,
-                                            'message',
-                                            contact._data.form.messageLabel));
-
-        form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
+        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId, 'message'));
+        form.appendChild(contact._createTextarea('message'));
 
 
 
@@ -111,6 +102,7 @@ export const contact = {
         const btn = document.createElement('button');
         btn.type = 'submit';
         btn.id = contact.structure.form.buttonId;
+        btn.dataset.i18n = 'contact.form.submit';
         form.appendChild(btn);
 
         const status = document.createElement('p');
@@ -130,6 +122,7 @@ export const contact = {
         const a1 = document.createElement('a');
         a1.id = contact.structure.legal.impressumId;
         a1.href = '#';
+        a1.dataset.i18n = 'contact.legal.impressum';
         legalLinks.appendChild(a1);
 
         const sep = document.createElement('span');
@@ -139,6 +132,7 @@ export const contact = {
         const a2 = document.createElement('a');
         a2.id = contact.structure.legal.datenschutzId;
         a2.href = '#';
+        a2.dataset.i18n = 'contact.legal.datenschutz';
         legalLinks.appendChild(a2);
 
         container.appendChild(legalLinks);
@@ -189,21 +183,26 @@ export const contact = {
     /**************************************************************
      * Hilfsfunktionen
      **************************************************************/
-    _createLabel(id, forId, text) {
+    _createLabel(id, forId) {
         const label = document.createElement('label');
         label.id = id;
         label.htmlFor = forId;
-        label.textContent = text;
+        
+        if(forId === 'name') label.dataset.i18n = 'contact.form.nameLabel';
+        if(forId === 'email') label.dataset.i18n = 'contact.form.emailLabel';
+        if(forId === 'message') label.dataset.i18n = 'contact.form.messageLabel';
         return label;
     },
 
-    _createInput(type, id, placeholder) {
+    _createInput(type, id) {
         const input = document.createElement('input');
         input.type = type;
         input.id = id;
         input.name = id;
-        input.placeholder = placeholder;
         input.required = true;
+
+        if(id === 'name') input.dataset.i18n = 'contact.form.namePlaceholder';
+        if(id === 'email') input.dataset.i18n = 'contact.form.emailPlaceholder';
         return input;
     },
 
@@ -213,7 +212,7 @@ export const contact = {
         textarea.name = id;
         textarea.rows = 6;
         textarea.required = true;
-        textarea.placeholder = placeholder;
+        textarea.dataset.i18n = 'contact.form.messagePlaceholder';
         return textarea;
     },
 
