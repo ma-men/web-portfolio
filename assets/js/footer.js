@@ -59,6 +59,7 @@ export const footer = {
         // === Titel ===
         const title = document.createElement('h2');
         title.dataset.i18n = 'ui.footer.title';
+        title.textContent = 'Kontakt';
         section.appendChild(title);
 
         // === Hauptcontainer ===
