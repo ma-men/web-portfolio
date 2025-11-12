@@ -86,6 +86,11 @@ export const skills = {
 
         const groups = Array.isArray(data?.[cfg.root]) ? data[cfg.root] : [];
 
+        console.log('DATA:', data);
+console.log('ROOT KEY:', cfg.root);
+console.log('DATA ROOT VALUE:', data?.[cfg.root]);
+
+
         if (groups.length === 0) {
             const p = document.createElement('p');
             p.classList.add('skills-empty');
