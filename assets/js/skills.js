@@ -57,7 +57,7 @@ export const skills = {
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.skills;
+        const jsonData = language?.data?.skills?.groups;
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für Skills gefunden');
             return;
