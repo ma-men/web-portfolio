@@ -116,7 +116,7 @@
  *      - Dunkler, halbtransparenter Hintergrund, 
  *        der über die ganze Seite gelegt wird
  **********************************************************/
-
+/*
 .story-overlay {
     position: fixed;
     inset: 0;
@@ -128,6 +128,26 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
+}
+    */
+
+.story-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* 🔧 statt center – Start-Ausrichtung mit Padding */
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    overflow-y: auto;
+    /* Scroll bei Bedarf */
+    padding: 80px 0 40px 0;
+    /* 🔧 oben genug Platz für die Navigation */
+    box-sizing: border-box;
 }
 
 .story-overlay.active {
