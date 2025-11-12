@@ -137,6 +137,12 @@ export const footer = {
         });
         container.appendChild(form);
 
+        // social
+        const social = footer._createSocial();
+        if (social) {
+            container.appendChild(social);
+        }
+
         // Legal Links
         const legalLinks = document.createElement('div');
         legalLinks.id = footer.structure.legal.legalLinksId;
@@ -171,6 +177,9 @@ export const footer = {
 
         // Events für Overlays
         footer._initModals();
+
+        // fülle die modals
+        footer._fillModals();
     },
 
     _sendForm(form, status, btn) {
@@ -238,6 +247,32 @@ export const footer = {
         return textarea;
     },
 
+    _createSocial() {
+        const socialData = footer._data.social;
+        if (!socialData) return null;
+
+        const wrapper = document.createElement('div');
+        wrapper.id = 'social-links';
+
+        const heading = document.createElement('h3');
+        heading.dataset.i18n = 'footer.social.connect';
+        heading.textContent = socialData.connect || 'Vernetzen Sie sich mit mir';
+        wrapper.appendChild(heading);
+
+        const links = socialData.links;
+        for (const key in links) {
+            const info = links[key];
+            const a = document.createElement('a');
+            a.href = info.url;
+            a.textContent = info.text;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            wrapper.appendChild(a);
+        }
+
+        return wrapper;
+    },
+
     _createModal(type) {
         const modal = document.createElement('div');
         modal.className = 'modal-backdrop';
@@ -303,5 +338,17 @@ export const footer = {
                 close(ds);
             }
         });
+    },
+
+    _fillModals() {
+        const data = footer._data.modals;
+        const impr = document.getElementById('modal-impressum');
+        const ds = document.getElementById('modal-datenschutz');
+        if (impr && data.impressum) {
+            impr.querySelector('.modal-content').innerHTML = data.impressum.content;
+        }
+        if (ds && data.datenschutz) {
+            ds.querySelector('.modal-content').innerHTML = data.datenschutz.content;
+        }
     }
 };
