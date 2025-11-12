@@ -96,7 +96,22 @@ export const language = {
             }
 
             if (typeof textObj === 'string') {
-                el.textContent = textObj;
+                const tag = el.tagName.toLowerCase();
+
+                // === Spezialfälle ===
+                if (tag === 'input' || tag === 'textarea') {
+                    // Placeholder aktualisieren
+                    el.setAttribute('placeholder', textObj);
+                } else if (tag === 'a' || tag === 'button') {
+                    // Link- oder Buttontext
+                    el.textContent = textObj;
+                } else if (tag === 'img') {
+                    // Alt-Text
+                    el.setAttribute('alt', textObj);
+                } else {
+                    // Standard: Textknoten ersetzen
+                    el.textContent = textObj;
+                }
             }
         }
     },
