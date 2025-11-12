@@ -12,6 +12,7 @@ export const skills = {
 
     // JSON-Struktur-Konfiguration
     structure: {
+        section: '',
         root: 'groups',
         subgroup: 'skills',
         fields: {

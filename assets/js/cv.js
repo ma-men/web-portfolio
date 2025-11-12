@@ -11,6 +11,7 @@ export const cv = {
 
     // JSON-Struktur-Konfiguration
     structure: {
+        section: '',
         root: 'experience',       // Liste aller Stationen
         fields: {
             year: 'year',

@@ -11,6 +11,7 @@ export const stories = {
       
     // === Strukturdefinition der JSON-Datei ===
     structure: {
+        section: '',
         root: 'stories', // oberster Schlüssel in der JSON-Datei, der das Array aller Stories enthält
         fields: {        // interne Feldnamenzuordnung
             section: 'section', // Schlüssel für Metadaten der Sektion (Titel, Labels)
