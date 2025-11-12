@@ -82,7 +82,9 @@ export const skills = {
         if (!grid || !data) return;
         grid.innerHTML = '';
 
-        const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
+        //const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
+
+        const groups = Array.isArray(data?.[cfg.root]) ? data[cfg.root] : [];
 
         if (groups.length === 0) {
             const p = document.createElement('p');
