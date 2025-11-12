@@ -82,6 +82,10 @@ export const skills = {
         if (!grid || !data) return;
         grid.innerHTML = '';
 
+        // === Haupttitel der Sektion setzen ===
+        const titleElem = document.getElementById(`${skills._containerId}-title`);
+        if (titleElem) titleElem.textContent = skills._data.section.title;
+
         const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
 
         if (groups.length === 0) {

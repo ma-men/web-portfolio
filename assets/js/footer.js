@@ -100,6 +100,9 @@ export const footer = {
         // Bestehenden Inhalt leeren
         container.innerHTML = '';
         
+        // === Haupttitel der Sektion setzen ===
+        const titleElem = document.getElementById(`${footer._containerId}-title`);
+        if (titleElem) titleElem.textContent = footer._data.section.title;
 
         // === Formular ===
         const form = document.createElement('form');

@@ -81,7 +81,12 @@ export const cv = {
 
         container.innerHTML = '';
 
+        // === Haupttitel der Sektion setzen ===
+        const titleElem = document.getElementById(`${cv._containerId}-title`);
+        if (titleElem) titleElem.textContent = cv._data.section.title;
+
         // Header
+        /*
         const header = document.createElement('header');
         header.classList.add('cv-header');
 
@@ -93,7 +98,9 @@ export const cv = {
         header.appendChild(h1);
         header.appendChild(p);
         container.appendChild(header);
+        */
 
+        
         // Timeline
         const timeline = document.createElement('div');
         timeline.classList.add('cv-timeline');
