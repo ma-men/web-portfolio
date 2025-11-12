@@ -1,5 +1,7 @@
 {
-    "title": "Contact",
+    "section": {
+        "title": "Contact"
+    },
     "contact": {
         "form": {
             "nameLabel": "Name",

@@ -44,7 +44,7 @@ export const skills = {
         // Überschrift 
         const title = document.createElement('h2');
         title.dataset.i18n = 'ui.skills.title';
-        title.textContent = 'Skills'; // Fallback
+        title.id = `${skills._containerId}-title`;
         section.appendChild(title);
 
         // Grid-Container für Karten

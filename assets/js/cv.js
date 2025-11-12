@@ -40,7 +40,7 @@ export const cv = {
         // Überschrift (wird per i18n ersetzt)
         const title = document.createElement('h2');
         title.dataset.i18n = 'ui.cv.title';
-        title.textContent = 'Lebenslauf';
+        title.id = `${cv._containerId}-title`;
         section.appendChild(title);
 
         // Hauptcontainer

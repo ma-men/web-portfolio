@@ -35,7 +35,6 @@ export const stories = {
         const title = document.createElement('h2');
         title.dataset.i18n = 'ui.stories.title';
         title.id = `${stories._containerId}-title`;
-        title.textContent = 'Stories & Projekte';
         container.appendChild(title);
 
         // Grid-Container für Karten
