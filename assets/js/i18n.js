@@ -5,7 +5,7 @@
 import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
-import { contact } from './contact.js';
+import { footer } from './footer.js';
 
 
 
@@ -28,7 +28,7 @@ export const language = {
 
     // Lädt alle JSON-Sprachdateien (synchron)
     loadLanguage(lang) {
-        const namespaces = ['ui', 'skills', 'cv', 'stories', 'contact'];
+        const namespaces = ['ui', 'skills', 'cv', 'stories', 'footer'];
         const basePath = 'assets/lang/';
         language.data = {};
 

@@ -1,0 +1,51 @@
+{
+    "contact": {
+        "title": "Kontakt",
+        "form": {
+            "nameLabel": "Name",
+            "namePlaceholder": "Ihr Name",
+            "emailLabel": "E-Mail",
+            "emailPlaceholder": "Ihre E-Mail-Adresse",
+            "messageLabel": "Nachricht",
+            "messagePlaceholder": "Ihre Nachricht...",
+            "submit": "Nachricht senden"
+        },
+        "formStatus": {
+            "sending": "Sende...",
+            "success": "✅ Nachricht erfolgreich gesendet!",
+            "error": "❌ Fehler beim Senden. Bitte später erneut versuchen."
+        },
+        "social": {
+            "connect": "Vernetzen Sie sich mit mir",
+            "links": {
+                "linkedin": {
+                    "text": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/martin-mengersen"
+                },
+                "github": {
+                    "text": "GitHub",
+                    "url": "https://github.com/ma-men"
+                },
+                "mail": {
+                    "text": "E-Mail",
+                    "url": "mailto:m2.pb@gmx.de"
+                }
+            }
+        }
+    },
+    "legal": {
+        "impressum": "Impressum",
+        "datenschutz": "Datenschutz"
+    },
+    "copyright": "© 2025 Martin Mengersen – Portfolio",
+    "modals": {
+        "impressum": {
+            "title": "Impressum",
+            "content": "<h3>Angaben gemäß § 5 TMG</h3><p><strong>Martin Mengersen</strong><br>Paderborner Straße 13<br>33178 Borchen<br></p><h3>Verantwortlich für den Inhalt</h3><p>Martin Mengersen</p><h3>Haftung für Inhalte</h3><p>Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.</p><h3>Haftung für Links</h3><p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p><h3>Urheberrecht</h3><p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>"
+        },
+        "datenschutz": {
+            "title": "Datenschutzerklärung",
+            "content": "<h3>Verantwortlicher</h3><p>Martin Mengersen, Paderborner Straße 13, 33178 Borchen </p><h3>Verarbeitete Daten & Zwecke</h3><ul><li><strong>Kontaktformular:</strong> Name, E-Mail und Nachricht zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO).</li><li><strong>Server-/Zugriffsprotokolle:</strong> Technisch notwendige Daten, die durch den Hosting-Anbieter verarbeitet werden.</li></ul><h3>Formular-Übermittlung über Formspree</h3><p>Das Kontaktformular wird über den Dienst <em>Formspree</em> bereitgestellt. Beim Absenden werden die eingegebenen Daten an Formspree Inc. (USA) übertragen, um die Nachricht an mich weiterzuleiten.</p><h3>Speicherdauer</h3><p>Personenbezogene Daten werden nur so lange gespeichert, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</p><h3>Ihre Rechte</h3><ul><li>Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch, Datenübertragbarkeit</li><li>Beschwerderecht bei einer Aufsichtsbehörde</li></ul><h3>SSL/TLS-Verschlüsselung</h3><p>Diese Website nutzt, soweit möglich, eine SSL-/TLS-Verschlüsselung, um übertragene Daten zu schützen.</p>"
+        }
+    }
+}

@@ -6,7 +6,7 @@ import { navigation } from './nav.js';
 import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
-import { contact } from './contact.js';
+import { footer } from './footer.js';
 
 
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     skills.init();
     cv.init();
     stories.init();
-    contact.init();
+    footer.init();
 
     
     language.init();  // // lädt ui/cv/… in i18n.js
@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     skills.load();   
     cv.load();
     stories.load();
-    contact.load();
+    footer.load();
 });
 

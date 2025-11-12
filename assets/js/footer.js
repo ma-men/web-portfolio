@@ -3,38 +3,54 @@
 import { language } from './i18n.js';
 
 
-export const contact = {
+export const footer = {
 
     // interne Konfiguration
-    _containerId: 'contact-section',
+    _containerId: 'footer-section',
     _basePath: 'assets/lang/',
     _data: null,
 
-    // contact.structure.legal.legalLinksId;
+    // Aufruf Beispiel: footer.structure.contact.formStatus.status;
     structure: {
-        titleId: 'contact-title',
-        form: {
-            formId: 'contact-form',
-            nameLabelId: 'contact-name-label',
-            emailLabelId: 'contact-email-label',
-            messageLabelId: 'contact-message-label',
-            buttonId: 'contact-submit'
-        },
-        social: {
-            connectId: 'contact-connect',
-            linkId: 'contact-linkedin'
+        titleId: 'footer-title',
+        contact: {
+            form: {
+                formId: 'contact-form',
+                nameLabelId: 'contact-name-label',
+                emailLabelId: 'contact-email-label',
+                messageLabelId: 'contact-message-label',
+                buttonId: 'contact-submit'
+            },
+            formStatus: {
+                statusId: 'form-status'
+            },
+            social: {
+                connectId: 'contact-connect',
+                linkId: 'contact-linkedin'
+            },
         },
         legal: {
             legalLinksId: 'legal-links',
             impressumId: 'open-impressum',
             datenschutzId: 'open-datenschutz'
         },
+        copyright: '',
+        modals: {
+            impressum: {
+                title: '',
+                content: ''
+            },
+            datenschutz: {
+                title: '',
+                content: ''
+            }
+        }
     },
 
     // DOM-Struktur aufbauen
     init() {
 
-        const section = document.getElementById(contact._containerId);
+        const section = document.getElementById(footer._containerId);
         if (!section) return;
 
         // Bestehenden Inhalt leeren
@@ -42,43 +58,42 @@ export const contact = {
 
         // === Titel ===
         const title = document.createElement('h2');
-        title.dataset.i18n = 'ui.contact.title';
-        title.textContent = 'Kontakt';
+        title.dataset.i18n = 'ui.footer.title';
         section.appendChild(title);
 
         // === Hauptcontainer ===
         const container = document.createElement('div');
-        container.classList.add('contact-container');
+        container.classList.add('footer-container');
         section.appendChild(container);
     },
 
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.contact?.contact;
+        const jsonData = language?.data?.footer;
 
         // Der doppelte contact ist hier technisch korrekt, weil:
         // im Namespace „contact“ steht (language.data.contact = JSON.parse(...)),
         // und in der Datei selbst das Objekt {"contact": {...}} steht.
         if (!jsonData) {
-            console.warn('⚠️ Keine Sprachdaten für den Kontaktbereich gefunden');
+            console.warn('⚠️ Keine Sprachdaten für den Footerbereich gefunden');
             return;
         }
 
-        contact._data = jsonData;
-        contact._render();
+        footer._data = jsonData;
+        footer._render();
 
         // Sprache anwenden (Überschrift etc.)
-        language.applyTexts(contact._containerId);
+        language.applyTexts(footer._containerId);
     },
 
 
     _render() {
-        const section = document.getElementById(contact._containerId);
-        if (!section || !contact._data) return;
+        const section = document.getElementById(footer._containerId);
+        if (!section || !footer._data) return;
 
         // Container-Referenz
-        const container = section.querySelector('.contact-container');
+        const container = section.querySelector('.footer-container');
         if (!container) return;
 
         // Bestehenden Inhalt leeren
@@ -87,33 +102,33 @@ export const contact = {
 
         // === Formular ===
         const form = document.createElement('form');
-        form.id = contact.structure.form.formId;
+        form.id = footer.structure.contact.form.formId;
         form.method = 'POST';
         form.action = 'https://formspree.io/f/xanaydqq';
 
         // Name
-        form.appendChild(contact._createLabel(contact.structure.form.nameLabelId, 'name'));
-        form.appendChild(contact._createInput('text', 'name'));
+        form.appendChild(footer._createLabel(footer.structure.contact.form.nameLabelId, 'name'));
+        form.appendChild(footer._createInput('text', 'name'));
 
         // Email
-        form.appendChild(contact._createLabel(contact.structure.form.emailLabelId, 'email'));
-        form.appendChild(contact._createInput('email', 'email'));
+        form.appendChild(footer._createLabel(footer.structure.contact.form.emailLabelId, 'email'));
+        form.appendChild(footer._createInput('email', 'email'));
 
         // Nachricht
-        form.appendChild(contact._createLabel(contact.structure.form.messageLabelId, 'message'));
-        form.appendChild(contact._createTextarea('message'));
+        form.appendChild(footer._createLabel(footer.structure.contact.form.messageLabelId, 'message'));
+        form.appendChild(footer._createTextarea('message'));
 
 
 
         // Button
         const btn = document.createElement('button');
         btn.type = 'submit';
-        btn.id = contact.structure.form.buttonId;
-        btn.dataset.i18n = 'contact.form.submit';
+        btn.id = footer.structure.contact.form.buttonId;
+        btn.dataset.i18n = 'footer.contact.form.submit';
         form.appendChild(btn);
 
         const status = document.createElement('p');
-        status.id = 'form-status';
+        status.id = footer.structure.contact.formStatus.statusId;
         form.appendChild(status);
 
         form.addEventListener('submit', function (e) {
@@ -124,12 +139,12 @@ export const contact = {
 
         // Legal Links
         const legalLinks = document.createElement('div');
-        legalLinks.id = contact.structure.legal.legalLinksId;
+        legalLinks.id = footer.structure.legal.legalLinksId;
 
         const a1 = document.createElement('a');
         a1.href = '#';
-        a1.dataset.i18n = 'contact.legal.impressum';
-        a1.id = contact.structure.legal.impressumId;
+        a1.dataset.i18n = 'footer.legal.impressum';
+        a1.id = footer.structure.legal.impressumId;
         legalLinks.appendChild(a1);
 
         const sep = document.createElement('span');
@@ -138,29 +153,29 @@ export const contact = {
 
         const a2 = document.createElement('a');
         a2.href = '#';
-        a2.dataset.i18n = 'contact.legal.datenschutz';
-        a2.id = contact.structure.legal.datenschutzId;
+        a2.dataset.i18n = 'footer.legal.datenschutz';
+        a2.id = footer.structure.legal.datenschutzId;
         legalLinks.appendChild(a2);
 
         container.appendChild(legalLinks);
 
-        // Footer
-        const footer = document.createElement('div');
-        footer.id = 'page-footer';
-        container.appendChild(footer);
+        // Copyright
+        const copyright = document.createElement('div');
+        copyright.id = 'copyright';
+        container.appendChild(copyright);
 
         // Overlay für Impressum
-        container.appendChild(contact._createModal('impressum'));
+        container.appendChild(footer._createModal('impressum'));
         // Overlay für Datenschutz
-        container.appendChild(contact._createModal('datenschutz'));
+        container.appendChild(footer._createModal('datenschutz'));
 
         // Events für Overlays
-        contact._initModals();
+        footer._initModals();
     },
 
     _sendForm(form, status, btn) {
         // Sprachabhängige Status-Texte laden
-        const txt = language?.data?.contact?.formStatus || {
+        const txt = language?.data?.footer?.contact?.formStatus || {
             sending: 'Sende...',
             success: '✅ Nachricht erfolgreich gesendet!',
             error: '❌ Fehler beim Senden.'
@@ -195,9 +210,9 @@ export const contact = {
         label.id = id;
         label.htmlFor = forId;
         
-        if(forId === 'name') label.dataset.i18n = 'contact.form.nameLabel';
-        if(forId === 'email') label.dataset.i18n = 'contact.form.emailLabel';
-        if(forId === 'message') label.dataset.i18n = 'contact.form.messageLabel';
+        if(forId === 'name') label.dataset.i18n = 'footer.contact.form.nameLabel';
+        if(forId === 'email') label.dataset.i18n = 'footer.contact.form.emailLabel';
+        if(forId === 'message') label.dataset.i18n = 'footer.contact.form.messageLabel';
         return label;
     },
 
@@ -208,8 +223,8 @@ export const contact = {
         input.name = id;
         input.required = true;
 
-        if(id === 'name') input.dataset.i18n = 'contact.form.namePlaceholder';
-        if(id === 'email') input.dataset.i18n = 'contact.form.emailPlaceholder';
+        if(id === 'name') input.dataset.i18n = 'footer.contact.form.namePlaceholder';
+        if(id === 'email') input.dataset.i18n = 'footer.contact.form.emailPlaceholder';
         return input;
     },
 
@@ -219,7 +234,7 @@ export const contact = {
         textarea.name = id;
         textarea.rows = 6;
         textarea.required = true;
-        textarea.dataset.i18n = 'contact.form.messagePlaceholder';
+        textarea.dataset.i18n = 'footer.contact.form.messagePlaceholder';
         return textarea;
     },
 
