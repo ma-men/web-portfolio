@@ -22,32 +22,6 @@ export const contact = {
             connectId: 'contact-connect',
             linkId: 'contact-linkedin'
         }
-
-        /*
-    "contact": {
-    "title": "Kontakt",
-    "form": {
-      "nameLabel": "Name",
-      "namePlaceholder": "Ihr Name",
-      "emailLabel": "E-Mail",
-      "emailPlaceholder": "Ihre E-Mail-Adresse",
-      "messageLabel": "Nachricht",
-      "messagePlaceholder": "Ihre Nachricht...",
-      "submit": "Nachricht senden"
-    },
-    "social": {
-      "connect": "Vernetzen Sie sich mit mir",
-      "linkedinText": "LinkedIn-Profil",
-      "linkedinUrl": "https://www.linkedin.com/in/dein-profilname"
-    }
-*/
-
-
-
-
-
-
-
     },
 
     // DOM-Struktur aufbauen
@@ -58,6 +32,17 @@ export const contact = {
 
         // Bestehenden Inhalt leeren
         section.innerHTML = '';
+
+        // === Titel ===
+        const title = document.createElement('h2');
+        title.dataset.i18n = 'ui.contact.title';
+        title.textContent = 'Kontakt';
+        section.appendChild(title);
+
+        // === Hauptcontainer ===
+        const container = document.createElement('div');
+        container.classList.add('contact-container');
+        section.appendChild(container);
     },
 
     // Sprache laden 
@@ -81,20 +66,13 @@ export const contact = {
         const section = document.getElementById(contact._containerId);
         if (!section || !contact._data) return;
 
+        // Container-Referenz
+        const container = section.querySelector('.contact-container');
+        if (!container) return;
+
         // Bestehenden Inhalt leeren
-        section.innerHTML = '';
-
-        // === Titel ===
-        const title = document.createElement('h2');
-        title.dataset.i18n = 'ui.contact.title';
-        title.textContent = 'Kontakt';
-        title.id = contact.structure.titleId;
-        section.appendChild(title);
-
-        // === Hauptcontainer ===
-        const container = document.createElement('div');
-        container.id = 'contact-container';
-
+        container.innerHTML = '';
+        
 
         // === Formular ===
         const form = document.createElement('form');
@@ -164,15 +142,12 @@ export const contact = {
         // Footer
         const footer = document.createElement('div');
         footer.id = 'page-footer';
-        section.appendChild(footer);
+        container.appendChild(footer);
 
         // Overlay für Impressum
         container.appendChild(contact._createModal('impressum'));
         // Overlay für Datenschutz
         container.appendChild(contact._createModal('datenschutz'));
-
-        section.appendChild(container);
-
 
         // Events für Overlays
         contact._initModals();
