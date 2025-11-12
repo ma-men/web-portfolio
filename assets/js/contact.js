@@ -63,7 +63,7 @@ export const contact = {
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.contact;
+        const jsonData = language?.data?.contact?.form;
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für den Kontaktbereich gefunden');
             return;
@@ -104,24 +104,24 @@ export const contact = {
 
         // Name
         form.appendChild(contact._createLabel(contact.structure.form.nameLabelId,
-            'name',
-            contact._data.form.nameLabel));
+                                            'name',
+                                            contact._data.nameLabel));
 
-        form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
+        form.appendChild(contact._createInput('text', 'name', contact._data.namePlaceholder));
 
         // Email
         form.appendChild(contact._createLabel(contact.structure.form.emailLabelId,
-            'email',
-            contact._data.form.emailLabel));
+                                            'email',
+                                            contact._data.emailLabel));
 
-        form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
+        form.appendChild(contact._createInput('email', 'email', contact._data.emailPlaceholder));
 
         // Nachricht
         form.appendChild(contact._createLabel(contact.structure.form.messageLabelId,
-            'message',
-            contact._data.form.messageLabel));
+                                            'message',
+                                            contact._data.messageLabel));
 
-        form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
+        form.appendChild(contact._createTextarea('message', contact._data.messagePlaceholder));
 
 
 
@@ -228,12 +228,13 @@ export const contact = {
         return input;
     },
 
-    _createTextarea(id) {
+    _createTextarea(id, placeholder) {
         const textarea = document.createElement('textarea');
         textarea.id = id;
         textarea.name = id;
         textarea.rows = 6;
         textarea.required = true;
+        textarea.placeholder = placeholder;
         return textarea;
     },
 
