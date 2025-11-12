@@ -48,7 +48,7 @@ export const contact = {
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.contact?.form;
+        const jsonData = language?.data?.contact;
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für den Kontaktbereich gefunden');
             return;
@@ -83,23 +83,23 @@ export const contact = {
         // Name
         form.appendChild(contact._createLabel(contact.structure.form.nameLabelId,
                                             'name',
-                                            contact._data.nameLabel));
+                                            contact._data.form.nameLabel));
 
-        form.appendChild(contact._createInput('text', 'name', contact._data.namePlaceholder));
+        form.appendChild(contact._createInput('text', 'name', contact._data.form.namePlaceholder));
 
         // Email
         form.appendChild(contact._createLabel(contact.structure.form.emailLabelId,
                                             'email',
-                                            contact._data.emailLabel));
+                                            contact._data.form.emailLabel));
 
-        form.appendChild(contact._createInput('email', 'email', contact._data.emailPlaceholder));
+        form.appendChild(contact._createInput('email', 'email', contact._data.form.emailPlaceholder));
 
         // Nachricht
         form.appendChild(contact._createLabel(contact.structure.form.messageLabelId,
                                             'message',
-                                            contact._data.messageLabel));
+                                            contact._data.form.messageLabel));
 
-        form.appendChild(contact._createTextarea('message', contact._data.messagePlaceholder));
+        form.appendChild(contact._createTextarea('message', contact._data.form.messagePlaceholder));
 
 
 
