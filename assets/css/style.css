@@ -17,7 +17,7 @@ h2 {
   text-align: center;
   font-size: 2rem;
   margin: 2rem 0 1rem;
-  color: #0d6efd;
+  color: #0077b5;
 }
 
 /* Sichere Wortumbrüche für längere Begriffe */
@@ -86,8 +86,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3882f3;
-  border: 5px solid #3882f3;
+  background-color: #0077b5;
+  border: 5px solid #0077b5;
   border-radius: 10px;
   z-index: 1000;
   padding: 0.8rem 1rem;
