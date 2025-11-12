@@ -25,7 +25,9 @@ export const contact = {
             linkId: 'contact-linkedin'
         },
         legal: {
-            legalLinksId: 'legal-links'
+            legalLinksId: 'legal-links',
+            impressumId: 'open-impressum',
+            datenschutzId: 'open-datenschutz'
         },
     },
 
@@ -127,6 +129,7 @@ export const contact = {
         const a1 = document.createElement('a');
         a1.href = '#';
         a1.dataset.i18n = 'contact.legal.impressum';
+        a1.id = contact.structure.legal.impressumId;
         legalLinks.appendChild(a1);
 
         const sep = document.createElement('span');
@@ -136,6 +139,7 @@ export const contact = {
         const a2 = document.createElement('a');
         a2.href = '#';
         a2.dataset.i18n = 'contact.legal.datenschutz';
+        a2.id = contact.structure.legal.datenschutzId;
         legalLinks.appendChild(a2);
 
         container.appendChild(legalLinks);
