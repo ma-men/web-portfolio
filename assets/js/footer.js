@@ -12,7 +12,7 @@ export const footer = {
 
     // Aufruf Beispiel: footer.structure.contact.formStatus.status;
     structure: {
-        titleId: 'footer-title',
+        section: '',
         contact: {
             form: {
                 formId: 'contact-form',
@@ -104,6 +104,8 @@ export const footer = {
         const titleElem = document.getElementById(`${footer._containerId}-title`);
         if (titleElem) titleElem.textContent = footer._data.section.title;
 
+
+        
         // === Formular ===
         const form = document.createElement('form');
         form.id = footer.structure.contact.form.formId;
