@@ -135,7 +135,6 @@ export const language = {
         skills.load(newLang);
         cv.load(newLang);
         stories.load(newLang);
-        contact.load(newLang);
         footer.load(newLang);
     },
 
