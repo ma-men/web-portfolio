@@ -58,7 +58,7 @@ export const skills = {
     // Sprache laden 
     load() {
         // direkt auf globales i18n-Objekt zugreifen
-        const jsonData = language?.data?.skills?.groups;
+        const jsonData = language?.data?.skills;
         if (!jsonData) {
             console.warn('⚠️ Keine Sprachdaten für Skills gefunden');
             return;
@@ -82,14 +82,7 @@ export const skills = {
         if (!grid || !data) return;
         grid.innerHTML = '';
 
-        //const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
-
-        const groups = Array.isArray(data?.[cfg.root]) ? data[cfg.root] : [];
-
-        console.log('DATA:', data);
-console.log('ROOT KEY:', cfg.root);
-console.log('DATA ROOT VALUE:', data?.[cfg.root]);
-
+        const groups = Array.isArray(data[cfg.root]) ? data[cfg.root] : [];
 
         if (groups.length === 0) {
             const p = document.createElement('p');
