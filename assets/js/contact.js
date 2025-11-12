@@ -10,9 +10,11 @@ export const contact = {
     _basePath: 'assets/lang/',
     _data: null,
 
+    // contact.structure.legal.legalLinksId;
     structure: {
         titleId: 'contact-title',
         form: {
+            formId: 'contact-form',
             nameLabelId: 'contact-name-label',
             emailLabelId: 'contact-email-label',
             messageLabelId: 'contact-message-label',
@@ -21,7 +23,10 @@ export const contact = {
         social: {
             connectId: 'contact-connect',
             linkId: 'contact-linkedin'
-        }
+        },
+        legal: {
+            legalLinksId: 'legal-links'
+        },
     },
 
     // DOM-Struktur aufbauen
@@ -80,7 +85,7 @@ export const contact = {
 
         // === Formular ===
         const form = document.createElement('form');
-        form.id = 'contact-form';
+        form.id = contact.structure.form.formId;
         form.method = 'POST';
         form.action = 'https://formspree.io/f/xanaydqq';
 
@@ -117,10 +122,9 @@ export const contact = {
 
         // Legal Links
         const legalLinks = document.createElement('div');
-        legalLinks.id = 'legal-links';
+        legalLinks.id = contact.structure.legal.legalLinksId;
 
         const a1 = document.createElement('a');
-        a1.id = contact.structure.legal.impressumId;
         a1.href = '#';
         a1.dataset.i18n = 'contact.legal.impressum';
         legalLinks.appendChild(a1);
@@ -130,7 +134,6 @@ export const contact = {
         legalLinks.appendChild(sep);
 
         const a2 = document.createElement('a');
-        a2.id = contact.structure.legal.datenschutzId;
         a2.href = '#';
         a2.dataset.i18n = 'contact.legal.datenschutz';
         legalLinks.appendChild(a2);
