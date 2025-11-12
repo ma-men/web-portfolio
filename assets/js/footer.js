@@ -248,14 +248,14 @@ export const footer = {
     },
 
     _createSocial() {
-        const socialData = footer._data.social;
+        const socialData = footer._data.contact.social;
         if (!socialData) return null;
 
         const wrapper = document.createElement('div');
         wrapper.id = 'social-links';
 
         const heading = document.createElement('h3');
-        heading.dataset.i18n = 'footer.social.connect';
+        heading.dataset.i18n = 'footer.contact.social.connect';
         heading.textContent = socialData.connect || 'Vernetzen Sie sich mit mir';
         wrapper.appendChild(heading);
 

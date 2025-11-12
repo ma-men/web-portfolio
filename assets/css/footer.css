@@ -162,16 +162,23 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     z-index: 999;
+
+    /* Animation */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .modal-backdrop.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
 }
+
 
 .modal-card {
     background: #fff;
@@ -183,7 +190,16 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    /* Animation */
+    transform: translateY(-30px);
+    transition: transform 0.35s ease;
 }
+
+.modal-backdrop.active .modal-card {
+    transform: translateY(0);
+}
+
 
 .modal-header {
     display: flex;
