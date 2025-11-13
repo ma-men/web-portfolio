@@ -70,7 +70,7 @@ p {
 #about-section,
 #skills-section,
 #cv-section,
-#stories-section, 
+#stories-section,
 #footer-section {
     margin: auto;
     padding: 1rem;
@@ -85,6 +85,7 @@ p {
     body {
         padding: 1rem;
     }
+
     .main-wrapper {
         padding: 1rem;
     }

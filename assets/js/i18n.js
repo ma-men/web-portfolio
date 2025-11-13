@@ -9,9 +9,6 @@ import { footer } from './footer.js';
 
 
 
-
-
-
 export const language = {
     currentLang: localStorage.getItem('lang') || 'de',
     data: {},

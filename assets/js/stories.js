@@ -161,10 +161,6 @@ export const stories = {
                 });
             });
 
-
-
-
-
             // --- Story-Titel ---
             const title = document.createElement('h3');
             title.className = 'story-card__title';

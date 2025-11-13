@@ -84,22 +84,6 @@ export const cv = {
         // === Haupttitel der Sektion setzen ===
         const titleElem = document.getElementById(`${cv._containerId}-title`);
         if (titleElem) titleElem.textContent = cv._data.section.title;
-
-        // Header
-        /*
-        const header = document.createElement('header');
-        header.classList.add('cv-header');
-
-        const h1 = document.createElement('h1');
-        h1.textContent = cv._data[cfg.header.name] || '';
-        const p = document.createElement('p');
-        p.textContent = cv._data[cfg.header.subtitle] || '';
-
-        header.appendChild(h1);
-        header.appendChild(p);
-        container.appendChild(header);
-        */
-
         
         // Timeline
         const timeline = document.createElement('div');
