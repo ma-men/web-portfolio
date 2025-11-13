@@ -12,8 +12,10 @@
     "about": {
         "title": "About me",
         "paragraphs": [
-            "Ich bin auf dem Weg zu einem Test Automation Engineer mit starkem Hintergrund in Embedded Systems, Softwaretesting und moderner Testautomatisierung.",
-            "Meine Expertise umfasst Java, Python, C#, JavaScript sowie Tools wie Selenium, Playwright und Cypress."
+            "<em>“He who stops being better stops being good.”</em><br>This thought has accompanied me for many years and reflects my professional path.",
+            "With experience in <strong>software development</strong> and <strong>quality assurance</strong>, I have learned to analyze technical systems in depth, work in a structured manner, and understand quality as a central responsibility.",
+            "Continuous improvement is a natural part of my work. That is why I am now moving further toward <strong>test automation</strong>—as a logical extension of my previous roles.",
+            "Open to new technologies, methods, and industries, I aim to contribute to creating <strong>reliable</strong> and <strong>transparent</strong> software solutions in the future."
         ]
     }
 }
