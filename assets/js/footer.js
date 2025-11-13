@@ -143,12 +143,7 @@ export const footer = {
         });
         container.appendChild(form);
 
-        // social
-        const social = footer._createSocial();
-        if (social) {
-            container.appendChild(social);
-        }
-
+        
         // Legal Links
         const legalLinks = document.createElement('div');
         legalLinks.id = footer.structure.legal.legalLinksId;
@@ -168,6 +163,13 @@ export const footer = {
         a2.dataset.i18n = 'footer.legal.datenschutz';
         a2.id = footer.structure.legal.datenschutzId;
         legalLinks.appendChild(a2);
+
+        // social
+        const social = footer._createSocial();
+        if (social) {
+            legalLinks.appendChild(social);
+        }
+
 
         container.appendChild(legalLinks);
 
@@ -259,12 +261,12 @@ export const footer = {
 
         const wrapper = document.createElement('div');
         wrapper.id = 'social-links';
-
+/*
         const heading = document.createElement('h3');
         heading.dataset.i18n = 'footer.contact.social.connect';
         heading.textContent = socialData.connect || 'Vernetzen Sie sich mit mir';
         wrapper.appendChild(heading);
-
+*/
         const links = socialData.links;
         for (const key in links) {
             const info = links[key];
@@ -287,23 +289,23 @@ export const footer = {
             // ICON
             const icon = document.createElement('span');
             icon.textContent = info.iconText;
-            icon.style.display = 'inline-flex';
+            icon.style.width = '36px';
+            icon.style.height = '36px';
+            icon.style.display = 'flex';
             icon.style.justifyContent = 'center';
             icon.style.alignItems = 'center';
-            icon.style.width = '22px';
-            icon.style.height = '22px';
-            icon.style.borderRadius = '4px';
-            icon.style.fontSize = '0.8rem';
+            icon.style.borderRadius = '6px';
+            icon.style.fontSize = '1rem';
             icon.style.fontWeight = 'bold';
             icon.style.color = '#fff';
             icon.style.background = info.iconBg;
 
             // TEXT
-            const text = document.createElement('span');
-            text.textContent = info.text;
+           /* const text = document.createElement('span');
+            text.textContent = info.text;*/
 
             a.appendChild(icon);
-            a.appendChild(text);
+            //a.appendChild(text);
             wrapper.appendChild(a);
         }
         return wrapper;
