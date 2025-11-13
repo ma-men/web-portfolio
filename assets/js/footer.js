@@ -188,7 +188,8 @@ export const footer = {
         const right = document.createElement('div');
         right.className = 'footer-right';
 
-        const links = socialData.links;
+
+        const links = footer._data.contact.social.links;
         for (const key in links) {
             const info = links[key];
             const a = document.createElement('a');
@@ -291,7 +292,8 @@ export const footer = {
         textarea.dataset.i18n = 'footer.contact.form.messagePlaceholder';
         return textarea;
     },
-    
+   
+
     _createModal(type) {
         const modal = document.createElement('div');
         modal.className = 'modal-backdrop';
