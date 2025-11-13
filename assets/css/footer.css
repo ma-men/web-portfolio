@@ -266,6 +266,12 @@
     white-space: nowrap;
 }
 
+.footer-left {
+    flex: 1;
+    min-width: clamp(80px, 10vw, 140px);
+}
+
+
 /*****************************************************
  * Links (Impressum / Datenschutz)
  *****************************************************/
