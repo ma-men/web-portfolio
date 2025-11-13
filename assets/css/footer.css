@@ -239,11 +239,6 @@
  * RESPONSIVE ANPASSUNG
  **********************************************************/
 @media (max-width: 768px) {
-    #contact-section {
-        margin: 1.5rem 0.75rem;
-        padding: 1.5rem;
-    }
-
     #contact-form {
         width: 100%;
     }
