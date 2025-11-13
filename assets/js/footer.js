@@ -188,10 +188,19 @@ export const footer = {
         const right = document.createElement('div');
         right.className = 'footer-right';
 
-        // social
-        const social = footer._createSocial();
-        if (social) {
-            right.appendChild(social);
+        const links = socialData.links;
+        for (const key in links) {
+            const info = links[key];
+            const a = document.createElement('a');
+            a.href = info.url;
+            a.target = '_blank';
+            a.classList.add('footer-icon');
+            if (info.class) a.classList.add(info.class);
+          
+            const span = document.createElement('span');
+            span.textContent = info.iconText;
+            a.appendChild(span);
+            right.appendChild(a);
         }
 
         // Zusammenfügen
@@ -282,38 +291,7 @@ export const footer = {
         textarea.dataset.i18n = 'footer.contact.form.messagePlaceholder';
         return textarea;
     },
-
-    _createSocial() {
-        const socialData = footer._data.contact.social;
-        if (!socialData) return null;
-
-        const wrapper = document.createElement('div');
-        wrapper.id = 'social-links';
-/*
-        const heading = document.createElement('h3');
-        heading.dataset.i18n = 'footer.contact.social.connect';
-        heading.textContent = socialData.connect || 'Vernetzen Sie sich mit mir';
-        wrapper.appendChild(heading);
-*/
-
-        const links = socialData.links;
-        for (const key in links) {
-            const info = links[key];
-            const a = document.createElement('a');
-            a.href = info.url;
-            a.target = '_blank';
-            a.className = `footer-icon ${info.class}`;
-          
-            const span = document.createElement('span');
-            span.textContent = info.iconText;
-
-            a.appendChild(span);
- 
-            wrapper.appendChild(a);
-        }
-        return wrapper;
-    },
-
+    
     _createModal(type) {
         const modal = document.createElement('div');
         modal.className = 'modal-backdrop';
