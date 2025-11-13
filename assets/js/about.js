@@ -65,7 +65,7 @@ export const about = {
         paragraphs.forEach(t => {
             if (!t) return;
             const p = document.createElement('p');
-            p.textContent = t;
+            p.innerHTML = t;
             textBlock.appendChild(p);
         });
     }
