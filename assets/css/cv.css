@@ -84,7 +84,6 @@
 .cv-item {
   position: relative;
   margin-bottom: 2rem;
-  background: var(--surface);
   z-index: 2;
 }
 /*
@@ -130,6 +129,7 @@
 .cv-card {
   margin-left: 3rem; /* Platz für die linke Linie + Punkt */
   width: calc(100% - 3rem);
+  background: var(--surface);
   position: relative;
   z-index: 1;
 }
@@ -270,6 +270,7 @@
   .cv-card {
     margin-left: 0;
     width: calc(50% - 2.5rem);
+    background: var(--surface);
   }
 
   .cv-item {
