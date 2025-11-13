@@ -72,26 +72,15 @@ p {
 #cv-section,
 #stories-section 
 #footer-section {
-    width: 90%;
-    max-width: 1100px;
+    /*width: 90%;
+    max-width: 1100px;*/
     margin: auto;
     padding: 4rem 0 2rem 0;
     background: var(--surface);
-    border: 5px solid #94b3e8;
-    border-radius: 10px;
+    /*border: 5px solid #94b3e8;
+    border-radius: 10px;*/
 }
 
-#cv-section {
-  padding: 2rem 1rem;
-}
-
-/* === Haupt-Container === */
-#stories-section {
-    margin: 2rem auto;
-    padding: 1rem;
-    border: none;
-   /* box-sizing: border-box;*/
-}
 
 #footer-section {
     margin: 3rem auto;
