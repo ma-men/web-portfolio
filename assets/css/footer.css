@@ -289,10 +289,16 @@
  * Social Icons rechts
  *****************************************************/
 .footer-right {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: flex-end;
     align-items: center;
     gap: 0.75rem;
+    flex-wrap: nowrap !important;   /* 🔥 verhindert Umbruch */
+}
+
+.footer-right a {
+    display: flex !important;
 }
 
 .footer-icon {
