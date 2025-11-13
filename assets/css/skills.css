@@ -44,14 +44,6 @@
 }
 
 
-
-/*     
-.skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-} 
-*/
-
 .skill-card h3 {
   color: #0077b5;
   margin-bottom: 1rem;

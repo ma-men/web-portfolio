@@ -72,8 +72,6 @@ p {
 #cv-section,
 #stories-section, 
 #footer-section {
-    /*width: 90%;
-    max-width: 1100px;*/
     margin: auto;
     padding: 0;
     scroll-margin-top: 80px;
@@ -83,28 +81,13 @@ p {
 }
 
 
-
-
 @media (min-width: 768px) {
     body {
         padding: 1rem;
     }
-
     .main-wrapper {
         padding: 1rem;
     }
-
-/*
-#contact-section {
-        margin: 1.5rem 0.75rem;
-        padding: 1.5rem;
-    }
-*/
-
-
-
-
-
 }
 
 /**********************************************************/
@@ -268,19 +251,7 @@ nav {
 /**********************************************************/
 /*         About Section                                  */
 /**********************************************************/
-/* About (minimal, optional) 
-#hero {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
 
-#hero-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-*/
 .img_responsive {
     max-width: 100%;
     height: auto;

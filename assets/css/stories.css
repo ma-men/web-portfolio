@@ -106,20 +106,6 @@
  *      - Dunkler, halbtransparenter Hintergrund, 
  *        der über die ganze Seite gelegt wird
  **********************************************************/
-/*
-.story-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 50;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-    */
 
 .story-overlay {
     position: fixed;
