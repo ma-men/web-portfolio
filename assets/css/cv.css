@@ -9,22 +9,19 @@
   --text-900: #111827;
   --text-700: #374151;
   --text-500: #6b7280;
-  --surface: #f9fafb;
 }
 
 /* ===== SECTION BASIS ===== */
-#cv-section {
-  background: var(--surface);
-  padding: 2rem 1rem;
-}
 
+/*
 .cv-container {
   max-width: 1200px;
   margin: 0 auto;
 }
+  */
 
-#cv-section, .cv-container {
-  box-sizing: border-box;
+/*#cv-section,*/.cv-container {
+  /*box-sizing: border-box; */
   margin: 0 auto;
   padding: 0;
   width: 100%;
@@ -180,10 +177,7 @@
 
 /* ===== RESPONSIVE LAYOUT ===== */
 @media (min-width: 768px) {
-  #cv-section {
-    padding: 2rem;
-  }
-
+ 
   .cv-item {
     display: flex;
     align-items: flex-start;

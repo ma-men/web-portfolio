@@ -1,3 +1,9 @@
+:root {
+ 
+  --surface: #f9fafb;
+}
+
+
 /* ===== Grundlayout ===== */
 * {
     box-sizing: border-box;
@@ -60,6 +66,46 @@ p {
     border-radius: 10px;
 }
 
+/* sections */
+#about-section,
+#skills-section,
+#cv-section,
+#stories-section 
+#footer-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 4rem 0 2rem 0;
+    background: var(--surface);
+    border: 5px solid #94b3e8;
+    border-radius: 10px;
+}
+
+#cv-section {
+  padding: 2rem 1rem;
+}
+
+/* === Haupt-Container === */
+#stories-section {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: none;
+   /* box-sizing: border-box;*/
+}
+
+#footer-section {
+    margin: 3rem auto;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  /*  box-sizing: border-box; */
+}
+
+
+@media (min-width: 768px) {
+  #cv-section {
+    padding: 2rem;
+  }
+}
 
 /**********************************************************/
 /*         Navbar                                         */
@@ -236,11 +282,9 @@ nav {
 }
 
 .img_responsive {
-    max-width: 240px;
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    display: block;
+    border-radius: 10px;
 }
 
 #about-text {
