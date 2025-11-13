@@ -1,12 +1,19 @@
 {
-  "header": {
-    "menu": {
-      "about": "Über mich",
-      "skills": "Fähigkeiten",
-      "cv": "Lebenslauf",
-      "stories": "Stories / Projekte",
-      "footer": "Kontakt"
+    "header": {
+        "menu": {
+            "about": "Über mich",
+            "skills": "Fähigkeiten",
+            "cv": "Lebenslauf",
+            "stories": "Stories / Projekte",
+            "footer": "Kontakt"
+        },
+        "language": "Sprache"
     },
-    "language": "Sprache"
-  }
+    "about": {
+        "title": "Über mich",
+        "paragraphs": [
+            "Ich bin auf dem Weg zu einem Test Automation Engineer mit starkem Hintergrund in Embedded Systems, Softwaretesting und moderner Testautomatisierung.",
+            "Meine Expertise umfasst Java, Python, C#, JavaScript sowie Tools wie Selenium, Playwright und Cypress."
+        ]
+    }
 }

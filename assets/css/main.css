@@ -1,0 +1,254 @@
+/* ===== Grundlayout ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Segoe, "Segoe UI", "DejaVu Sans", Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f7f8fa;
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: #0077b5;
+}
+
+/* Sichere Wortumbrüche für längere Begriffe */
+body,
+h1,
+h2,
+h3,
+p,
+div,
+span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+p {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+
+
+/* ===== Wrapper ===== */
+.main-wrapper {
+    max-width: 1200px;
+    /* Maximale Breite der Seite */
+    margin: 2rem auto;
+    /* Zentrierung und Abstand oben/unten */
+    background: #fff;
+    padding: 1rem 2rem 2rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border: 5px solid rgba(0, 119, 181, 0.6);
+    border-radius: 10px;
+}
+
+
+/**********************************************************/
+/*         Navbar                                         */
+/**********************************************************/
+
+#nav-container {
+    max-width: 1200px;
+    margin: auto;
+
+    position: sticky;
+    top: 0;
+    border-radius: 10px;
+    background-color: #c2c3c5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+nav {
+    /*max-width: 1200px;
+  margin: auto;
+  position: sticky;*/
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b5;
+    border: 5px solid #0077b5;
+    border-radius: 10px;
+    z-index: 1000;
+    padding: 0.8rem 1rem;
+    overflow: visible;
+}
+
+
+
+/* Menülinks */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    font-weight: 900;
+}
+
+/* Sprachumschalter */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.lang-option {
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.lang-option:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.lang-separator {
+    opacity: 0.5;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    width: 25px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.hamburger span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 7px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 14px;
+}
+
+/* Animation bei Klick */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 7px;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 7px;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background: #0d6efd;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem;
+        display: none;
+        width: 200px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .lang-switcher {
+        position: absolute;
+        right: 1rem;
+        top: 0.8rem;
+    }
+}
+
+/**********************************************************/
+/*         About Section                                  */
+/**********************************************************/
+/* About (minimal, optional) */
+#hero {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_responsive {
+    max-width: 240px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+#about-text {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem;
+}
+
+#about-section-title {
+    margin: 0 0 0.75rem 0;
+}

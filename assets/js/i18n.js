@@ -1,7 +1,7 @@
 'use strict';
 
 
-
+import { about } from './about.js';
 import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
@@ -132,10 +132,11 @@ export const language = {
         language.applyTexts();
 
         // Zusätzlich Module nachladen (z. B. Skills neu rendern)
-        skills.load(newLang);
-        cv.load(newLang);
-        stories.load(newLang);
-        footer.load(newLang);
+        about.load();
+        skills.load();
+        cv.load();
+        stories.load();
+        footer.load();
     },
 
     // Aktiven Sprachschalter hervorheben

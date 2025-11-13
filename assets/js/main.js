@@ -3,6 +3,7 @@
 
 import { language } from './i18n.js';
 import { navigation } from './nav.js';
+import { about } from './about.js';
 import { skills } from './skills.js';
 import { cv } from './cv.js';
 import { stories } from './stories.js';
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // DOM-Struktur einmalig:
     navigation.init();
+    about.init();
     skills.init();
     cv.init();
     stories.init();
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // <- Default-Sprache für Skills
     navigation.load();
+    about.load();
     skills.load();   
     cv.load();
     stories.load();
