@@ -1,6 +1,6 @@
 :root {
   --timeline-color: #0077b5;
-  --timeline-width: 2px;
+  --timeline-width: 3px;
   --mini-timeline-color: #0077b5;
   --mini-timeline-width: 1px;
 
@@ -9,6 +9,8 @@
   --text-900: #111827;
   --text-700: #374151;
   --text-500: #6b7280;
+
+  --surface: #f9fafb;
 }
 
 /* ===== SECTION BASIS ===== */
@@ -82,6 +84,7 @@
 .cv-item {
   position: relative;
   margin-bottom: 2rem;
+  background: var(--surface);
   z-index: 2;
 }
 /*
