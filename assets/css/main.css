@@ -76,6 +76,7 @@ p {
     max-width: 1100px;*/
     margin: auto;
     padding: 0;
+    scroll-margin-top: 80px;
     /*background: var(--surface);
     border: 5px solid #94b3e8;
     border-radius: 10px;*/
