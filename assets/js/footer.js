@@ -270,12 +270,42 @@ export const footer = {
             const info = links[key];
             const a = document.createElement('a');
             a.href = info.url;
-            a.textContent = info.text;
             a.target = '_blank';
             a.rel = 'noopener';
+
+            a.style.display = 'flex';
+            a.style.alignItems = 'center';
+            a.style.gap = '0.45rem';
+            a.style.fontSize = '1.05rem';
+            a.style.color = '#1a0dab';
+            a.style.fontWeight = '500';
+            a.style.textDecoration = 'none';
+
+            a.onmouseenter = () => a.style.textDecoration = 'underline';
+            a.onmouseleave = () => a.style.textDecoration = 'none';
+
+            // ICON
+            const icon = document.createElement('span');
+            icon.textContent = info.iconText;
+            icon.style.display = 'inline-flex';
+            icon.style.justifyContent = 'center';
+            icon.style.alignItems = 'center';
+            icon.style.width = '22px';
+            icon.style.height = '22px';
+            icon.style.borderRadius = '4px';
+            icon.style.fontSize = '0.8rem';
+            icon.style.fontWeight = 'bold';
+            icon.style.color = '#fff';
+            icon.style.background = info.iconBg;
+
+            // TEXT
+            const text = document.createElement('span');
+            text.textContent = info.text;
+
+            a.appendChild(icon);
+            a.appendChild(text);
             wrapper.appendChild(a);
         }
-
         return wrapper;
     },
 

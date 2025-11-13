@@ -73,7 +73,7 @@ p {
 #stories-section, 
 #footer-section {
     margin: auto;
-    padding: 0;
+    padding: 1rem;
     scroll-margin-top: 80px;
     /*background: var(--surface);
     border: 5px solid #94b3e8;

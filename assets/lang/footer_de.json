@@ -22,15 +22,21 @@
             "links": {
                 "linkedin": {
                     "text": "LinkedIn",
-                    "url": "https://www.linkedin.com/in/martin-mengersen"
+                    "url": "https://www.linkedin.com/in/martin-mengersen",
+                    "iconBg": "#0077b5",
+                    "iconText": "in"
                 },
                 "github": {
                     "text": "GitHub",
-                    "url": "https://github.com/ma-men"
+                    "url": "https://github.com/ma-men",
+                    "iconBg": "#333",
+                    "iconText": "{}"
                 },
                 "mail": {
                     "text": "E-Mail",
-                    "url": "mailto:m2.pb@gmx.de"
+                    "url": "mailto:m2.pb@gmx.de",
+                    "iconBg": "#6a6a6a",
+                    "iconText": "@"
                 }
             }
         }
