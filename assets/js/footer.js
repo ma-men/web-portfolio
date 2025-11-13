@@ -168,7 +168,7 @@ export const footer = {
         impressum.href = '#';
         impressum.dataset.i18n = 'footer.legal.impressum';
         impressum.id = footer.structure.legal.impressumId;
-        impressum.className = 'footer-link';
+        impressum.className = 'footer-legal';
 
         const sep = document.createElement('span');
         sep.textContent = ' • ';
@@ -178,7 +178,7 @@ export const footer = {
         datenschutz.href = '#';
         datenschutz.dataset.i18n = 'footer.legal.datenschutz';
         datenschutz.id = footer.structure.legal.datenschutzId;
-        datenschutz.className = 'footer-link';
+        datenschutz.className = 'footer-legal';
 
         center.appendChild(impressum);
         center.appendChild(sep);
@@ -186,7 +186,7 @@ export const footer = {
 
         // RIGHT (Social Icons)
         const right = document.createElement('div');
-        right.className = 'footer-right';
+        right.className = 'footer-link-right';
 
 
         const links = footer._data.contact.social.links;

@@ -65,71 +65,7 @@
     min-height: 1.2em;
 }
 
-/**********************************************************
- * SOCIAL-BEREICH
- **********************************************************/
-/*
-#contact-social {
-    text-align: center;
-    margin: 2rem 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid #eee;
-}
 
-#contact-social h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-#contact-social .social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    color: #0077b5;
-    text-decoration: none;
-    margin: 0 1rem;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-#contact-social .social-link:hover {
-    transform: translateY(-2px);
-    opacity: 0.85;
-    text-decoration: underline;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
-*/
-
-/**********************************************************
- * IMPRESSUM / DATENSCHUTZ LINKS
- **********************************************************/
-/*
-#legal-links {
-    display: flex;
-    //justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-    border-top: 1px solid #eee;
-    margin: 0 auto;
-    padding-top: 1.5rem 0;
-}
-
-#legal-links a {
-    color: #0077b5;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-#legal-links a:hover {
-    text-decoration: underline;
-}
-*/
 /**********************************************************
  * copyright-BEREICH
  **********************************************************/
@@ -264,6 +200,7 @@
     white-space: nowrap;
 }
 
+
 .footer-link-right {
     justify-self: end;
     display: flex;
@@ -302,6 +239,27 @@
 .footer-icon:hover {
     opacity: 0.85;
 }
+
+/*****************************************************
+ * Links (Impressum / Datenschutz)
+ *****************************************************/
+.footer-legal {
+    color: #006eb3;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer-legal:hover {
+    text-decoration: underline;
+}
+
+.footer-sep {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+
 
 /* Responsive: Bei kleinen Geräten alles untereinander */
 @media (max-width: 700px) {
