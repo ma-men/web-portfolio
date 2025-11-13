@@ -143,35 +143,63 @@ export const footer = {
         });
         container.appendChild(form);
 
+        // ****************************************************
+        // legal / social Bereich
+        //     // Drei Spalten = Left, Center, Right
+        //  |   left (leer) | center (zentriert) | right (Icons)  |
+        // ****************************************************
+        // Container für Footer-Zeile
+        const footerRow = document.createElement('div');
+        footerRow.className = 'footer-link-row';
+
+        // Left (leer)
+        const left = document.createElement('div');
+        left.className = 'footer-link-left';;
+
+        // CENTER – Impressum / Datenschutz
+        const center = document.createElement('div');
+        center.className = 'footer-link-center';
         
         // Legal Links
-        const legalLinks = document.createElement('div');
-        legalLinks.id = footer.structure.legal.legalLinksId;
+        /*const legalLinks = document.createElement('div');
+        legalLinks.id = footer.structure.legal.legalLinksId;*/
 
-        const a1 = document.createElement('a');
-        a1.href = '#';
-        a1.dataset.i18n = 'footer.legal.impressum';
-        a1.id = footer.structure.legal.impressumId;
-        legalLinks.appendChild(a1);
+        const impressum = document.createElement('a');
+        impressum.href = '#';
+        impressum.dataset.i18n = 'footer.legal.impressum';
+        impressum.id = footer.structure.legal.impressumId;
+        impressum.className = 'footer-link';
 
         const sep = document.createElement('span');
         sep.textContent = ' • ';
-        legalLinks.appendChild(sep);
+        sep.className = 'footer-sep';
 
-        const a2 = document.createElement('a');
-        a2.href = '#';
-        a2.dataset.i18n = 'footer.legal.datenschutz';
-        a2.id = footer.structure.legal.datenschutzId;
-        legalLinks.appendChild(a2);
+        const datenschutz = document.createElement('a');
+        datenschutz.href = '#';
+        datenschutz.dataset.i18n = 'footer.legal.datenschutz';
+        datenschutz.id = footer.structure.legal.datenschutzId;
+        datenschutz.className = 'footer-link';
+
+        center.appendChild(impressum);
+        center.appendChild(sep);
+        center.appendChild(datenschutz);
+
+        // RIGHT (Social Icons)
+        const right = document.createElement('div');
+        right.className = 'footer-right';
 
         // social
         const social = footer._createSocial();
         if (social) {
-            legalLinks.appendChild(social);
+            right.appendChild(social);
         }
 
+        // Zusammenfügen
+        footerRow.appendChild(left);
+        footerRow.appendChild(center);
+        footerRow.appendChild(right);
 
-        container.appendChild(legalLinks);
+        container.appendChild(footerRow);
 
         // Copyright
         const copyright = document.createElement('div');
@@ -267,45 +295,20 @@ export const footer = {
         heading.textContent = socialData.connect || 'Vernetzen Sie sich mit mir';
         wrapper.appendChild(heading);
 */
+
         const links = socialData.links;
         for (const key in links) {
             const info = links[key];
             const a = document.createElement('a');
             a.href = info.url;
             a.target = '_blank';
-            a.rel = 'noopener';
+            a.className = `footer-icon ${info.class}`;
+          
+            const span = document.createElement('span');
+            span.textContent = info.iconText;
 
-            a.style.display = 'flex';
-            a.style.alignItems = 'center';
-            a.style.gap = '0.45rem';
-            a.style.fontSize = '1.05rem';
-            a.style.color = '#1a0dab';
-            a.style.fontWeight = '500';
-            a.style.textDecoration = 'none';
-
-            a.onmouseenter = () => a.style.textDecoration = 'underline';
-            a.onmouseleave = () => a.style.textDecoration = 'none';
-
-            // ICON
-            const icon = document.createElement('span');
-            icon.textContent = info.iconText;
-            icon.style.width = '36px';
-            icon.style.height = '36px';
-            icon.style.display = 'flex';
-            icon.style.justifyContent = 'center';
-            icon.style.alignItems = 'center';
-            icon.style.borderRadius = '6px';
-            icon.style.fontSize = '1rem';
-            icon.style.fontWeight = 'bold';
-            icon.style.color = '#fff';
-            icon.style.background = info.iconBg;
-
-            // TEXT
-           /* const text = document.createElement('span');
-            text.textContent = info.text;*/
-
-            a.appendChild(icon);
-            //a.appendChild(text);
+            a.appendChild(span);
+ 
             wrapper.appendChild(a);
         }
         return wrapper;
