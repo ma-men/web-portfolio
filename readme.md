@@ -8,7 +8,7 @@ Dieses Dokument dient als kleine Begleitnotiz für mein gesamtes Portfolio-Proje
 
 ## 🔐 Passwort
 
-> **Passwort:** Euro-pa1
+> **Passwort:** bitte anfragen
 
 ## 📝 Projektbeschreibung
 

@@ -139,7 +139,7 @@ export const footer = {
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            contact._sendForm(form, status, btn);
+            footer._sendForm(form, status, btn);
         });
         container.appendChild(form);
 
