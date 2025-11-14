@@ -346,4 +346,32 @@
   }
 }
 
+/* CV wird bereits unter 900px einspaltig */
+@media (max-width: 900px) {
+
+    /* Timeline links */
+    .cv-timeline-line {
+        left: 1rem;
+        transform: none;
+    }
+
+    .cv-point {
+        left: calc(1rem - 0.5rem);
+        transform: none;
+    }
+
+    /* Cards sollen 100% Breite haben */
+    .cv-card {
+        width: calc(100% - 3rem);
+        margin-left: 3rem;
+        text-align: left;
+    }
+
+    /* Immer untereinander */
+    .cv-item {
+        display: block;
+    }
+}
+
+
 
