@@ -172,7 +172,7 @@
   content: "📄 ";
 }
 
-/* ===== DESKTOP-VERSION ===== 
+/* ===== DESKTOP-VERSION ===== */
 @media (min-width: 768px) {
   .cv-timeline-line {
     left: 50%;
@@ -211,7 +211,7 @@
     margin-left: auto;
     text-align: left;
   }
-}*/
+}
 
 /* bis 900px — leichte Kompression */
 @media (max-width: 900px) {
