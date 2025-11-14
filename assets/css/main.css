@@ -80,7 +80,7 @@ p {
     border-radius: 10px;*/
 }
 
-
+/*
 @media (min-width: 768px) {
     body {
         padding: 1rem;
@@ -90,7 +90,7 @@ p {
         padding: 1rem;
     }
 }
-
+*/
 /**********************************************************/
 /*         Navbar                                         */
 /**********************************************************/
@@ -216,7 +216,8 @@ nav {
     top: 7px;
 }
 
-/* Mobile Ansicht */
+
+/* Mobile Ansicht 
 @media (max-width: 768px) {
     nav {
         flex-wrap: wrap;
@@ -248,7 +249,7 @@ nav {
         top: 0.8rem;
     }
 }
-
+*/
 /**********************************************************/
 /*         About Section                                  */
 /**********************************************************/
@@ -268,3 +269,119 @@ nav {
 #about-section-title {
     margin: 0 0 0.75rem 0;
 }
+
+/*  leichte Reduktion für Tablets & kleine Laptops   */
+@media (max-width: 900px) {
+
+    body {
+        padding: 1.5rem;
+    }
+
+    .main-wrapper {
+        padding: 1.5rem;
+    }
+
+    #about-text {
+        padding: 0 0.8rem 1.6rem;
+    }
+
+    nav {
+        padding: 0.7rem 0.8rem;
+    }
+}
+
+/* Optimale Smartphone-Darstellung (Abstände deutlich kompakter) */
+@media (max-width: 600px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    .main-wrapper {
+        padding: 1rem;
+        border-width: 4px;
+    }
+
+    #about-section,
+    #skills-section,
+    #cv-section,
+    #stories-section,
+    #footer-section {
+        padding: 0.8rem;
+    }
+
+    #about-text {
+        padding: 0 0.6rem 1.2rem;
+    }
+
+    nav {
+        padding: 0.6rem 0.75rem;
+        border-width: 4px;
+    }
+
+    .nav-links {
+        width: 180px;
+        padding: 0.8rem;
+    }
+
+    .hamburger {
+        width: 22px;
+        height: 16px;
+    }
+
+    .lang-switcher {
+        font-size: 0.9rem;
+    }
+}
+
+/* Kompaktmodus für sehr kleine Smartphones */
+@media (max-width: 400px) {
+
+    body {
+        padding: 0.6rem;
+    }
+
+    .main-wrapper {
+        padding: 0.7rem;
+        border-width: 3px;
+        border-radius: 8px;
+    }
+
+    #about-section,
+    #skills-section,
+    #cv-section,
+    #stories-section,
+    #footer-section {
+        padding: 0.6rem;
+    }
+
+    #about-text {
+        padding: 0 0.4rem 1rem;
+    }
+
+    nav {
+        padding: 0.5rem 0.6rem;
+        border-width: 3px;
+    }
+
+    .nav-links {
+        width: 160px;
+        padding: 0.6rem;
+    }
+
+    .hamburger {
+        width: 20px;
+        height: 15px;
+    }
+
+    .lang-switcher {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        margin: 1.5rem 0 0.8rem;
+    }
+}
+
+
+

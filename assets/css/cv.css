@@ -172,7 +172,7 @@
   content: "📄 ";
 }
 
-/* ===== DESKTOP-VERSION ===== */
+/* ===== DESKTOP-VERSION ===== 
 @media (min-width: 768px) {
   .cv-timeline-line {
     left: 50%;
@@ -211,4 +211,139 @@
     margin-left: auto;
     text-align: left;
   }
+}*/
+
+/* bis 900px — leichte Kompression */
+@media (max-width: 900px) {
+  .cv-header h1 {
+    font-size: 1.75rem;
+  }
+  .cv-header p {
+    font-size: 1rem;
+  }
+
+  .cv-card {
+    margin-left: 2.4rem;
+    width: calc(100% - 2.4rem);
+    padding: 0.9rem;
+    border-radius: 9px;
+  }
+
+  .cv-point {
+    width: 0.9rem;
+    height: 0.9rem;
+    left: calc(1rem - 0.45rem);
+  }
+
+  .cv-subroles {
+    margin-left: 0.8rem;
+    padding-left: 1rem;
+  }
+
+  .cv-subrole {
+    padding: 0.3rem 0 0.3rem 0.45rem;
+  }
 }
+
+/* bis 600px — deutliche Reduktion (optimale Smartphone-Größe) */
+@media (max-width: 600px) {
+  .cv-header {
+    margin-bottom: 2.2rem;
+  }
+
+  .cv-header h1 {
+    font-size: 1.55rem;
+  }
+  .cv-header p {
+    font-size: 0.95rem;
+  }
+
+  .cv-card {
+    margin-left: 1.8rem;
+    width: calc(100% - 1.8rem);
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .cv-point {
+    width: 0.8rem;
+    height: 0.8rem;
+    left: calc(1rem - 0.4rem);
+  }
+
+  .cv-year {
+    font-size: 0.75rem;
+  }
+  .cv-title {
+    font-size: 1rem;
+  }
+  .cv-company {
+    font-size: 0.9rem;
+  }
+  .cv-desc {
+    font-size: 0.85rem;
+  }
+
+  .cv-subroles {
+    margin-left: 0.6rem;
+    padding-left: 0.8rem;
+  }
+
+  .cv-subrole {
+    padding: 0.25rem 0 0.25rem 0.4rem;
+  }
+
+  .cv-certificate a {
+    font-size: 0.8rem;
+  }
+}
+
+/* bis 400px — kompakte Ansicht für kleine Smartphones */
+@media (max-width: 400px) {
+  .cv-header h1 {
+    font-size: 1.35rem;
+  }
+  .cv-header p {
+    font-size: 0.9rem;
+  }
+
+  .cv-card {
+    margin-left: 1.2rem;
+    width: calc(100% - 1.2rem);
+    padding: 0.65rem;
+    border-radius: 7px;
+  }
+
+  .cv-point {
+    width: 0.7rem;
+    height: 0.7rem;
+    left: calc(1rem - 0.35rem);
+  }
+
+  .cv-year {
+    font-size: 0.7rem;
+  }
+  .cv-title {
+    font-size: 0.95rem;
+  }
+  .cv-company {
+    font-size: 0.85rem;
+  }
+  .cv-desc {
+    font-size: 0.8rem;
+  }
+
+  .cv-subroles {
+    margin-left: 0.5rem;
+    padding-left: 0.7rem;
+  }
+  .cv-subrole {
+    padding: 0.2rem 0 0.2rem 0.35rem;
+  }
+
+  .cv-certificate a {
+    font-size: 0.75rem;
+  }
+}
+
+
