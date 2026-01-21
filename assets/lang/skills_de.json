@@ -190,6 +190,21 @@
          ]
       },
       {
+         "group":"Agile Entwicklungsmethoden",
+         "skills":[
+            {
+               "name":"SCRUM",
+               "rating":3,
+               "desc":" "
+            },
+            {
+               "name":"Kanban",
+               "rating":3,
+               "desc":" "
+            }
+         ]
+      },
+      {
          "group":"Agriculture / Automotive",
          "skills":[
             {
