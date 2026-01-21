@@ -8,12 +8,12 @@
          "skills":[
             {
                "name":"Java",
-               "rating":3.5,
+               "rating":2.5,
                "desc":"gute Kenntnisse inkl. JavaFX und MariaDB Anbindung",
                "certs":[
                   {
                      "label":"8-wöchiger Java-Lehrgang",
-                     "file":"java-alfatraining.pdf"
+                     "file":"alfatraining-java.pdf"
                   },
                   {
                      "label":"7-wöchiges Java-Praktikum",
@@ -23,7 +23,7 @@
             },
             {
                "name":"Python",
-               "rating":1.5,
+               "rating":2,
                "desc":"gute Grundkenntnisse auf PCEP-Prüfung-Niveau",
                "certs":[
                   {
@@ -32,7 +32,7 @@
                   },
                   {
                      "label":"4-wöchiger Python-Lehrgang",
-                     "file":"python-alfatraining.pdf"
+                     "file":"alfatraining-python.pdf"
                   }
                ]
             },
@@ -44,7 +44,13 @@
             {
                "name":"C#",
                "rating":2.5,
-               "desc":" "
+               "desc":"gute Kenntnisse in WindowsForms und MS-SQL / SQLite",
+               "certs":[                 
+                  {
+                     "label":"8-wöchiger C#-Lehrgang inkl. WindowsForms und MS-SQL / SQLite",
+                     "file":"alfatraining-csharp.pdf"
+                  }
+               ]
             },
             {
                "name":"JavaScript",
@@ -53,18 +59,18 @@
                "certs":[                 
                   {
                      "label":"4-wöchiger JavaScript-Lehrgang",
-                     "file":" "
+                     "file":"alfatraining-javascript.pdf"
                   }
                ]
             },
             {
                "name":"HTML & CSS",
-               "rating":4,
+               "rating":3.5,
                "desc":"gute kenntnisse auch im responsiven Webdesign",
                 "certs":[                 
                   {
                      "label":"8-wöchiger Webdesign-Lehrgang",
-                     "file":"webdesign-alfatraining.pdf"
+                     "file":"alfatraining-webdesign.pdf"
                   }
                ]
             }
@@ -112,24 +118,9 @@
                "desc":"Testmanagement-Tool als Jira-Plugin."
             },
             {
-               "name":"Selenium",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Playwright",
-               "rating":0,
-               "desc":" "
-            },
-            {
                "name":"Cypress",
                "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Postman",
-               "rating":0,
-               "desc":" "
+               "desc":"coming soon..."
             }
          ]
       },
@@ -144,7 +135,7 @@
             {
                "name":"Polarion",
                "rating":3,
-               "desc":"Leitende Verantwortung für die Einführung von Polarion zur Anforderungsverwaltung in ein bestehendes System."
+               "desc":"Leitende Verantwortung für die Einführung von Polarion zum Anforderungsmanagement in ein bestehendes System."
             },
             {
                "name":"Anforderungsmanagement",
@@ -233,8 +224,13 @@
          "skills":[
             {
                "name":"MariaDB / MySQL",
-               "rating":4,
+               "rating":2.5,
                "desc":"Anbindung über JDBC und SQL-Scripting."
+            },
+            {
+               "name":"MS-SQL / SQLite",
+               "rating":2.5,
+               "desc":"in Verbindung mit C#"
             },
             {
                "name":"JSON",
@@ -243,7 +239,7 @@
             },
             {
                "name":"XML",
-               "rating":2.5,
+               "rating":2.0,
                "desc":" "
             }
          ]

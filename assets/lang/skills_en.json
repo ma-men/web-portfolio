@@ -8,12 +8,12 @@
          "skills":[
             {
                "name":"Java",
-               "rating":3.5,
+               "rating":2.5,
                "desc":"Good knowledge including JavaFX and MariaDB integration",
                "certs":[
                   {
                      "label":"8-week Java course",
-                     "file":"java-alfatraining.pdf"
+                     "file":"alfatraining-java.pdf"
                   },
                   {
                      "label":"7-week Java internship",
@@ -23,8 +23,8 @@
             },
             {
                "name":"Python",
-               "rating":3,
-               "desc":"Knowledge at PCEP exam level",
+               "rating":2,
+               "desc":"good base knowledge at PCEP exam level",
                "certs":[
                   {
                      "label":"Python PCEP Exam",
@@ -32,7 +32,7 @@
                   },
                   {
                      "label":"4-week Python course",
-                     "file":"python-alfatraining.pdf"
+                     "file":"alfatraining-python.pdf"
                   }
                ]
             },
@@ -44,27 +44,33 @@
             {
                "name":"C#",
                "rating":2.5,
-               "desc":" "
+               "desc":"Good knowledge in WindowsForms and MS-SQL / SQLite",
+               "certs":[                 
+                  {
+                     "label":"8-week C# course with WindowsForms and MS-SQL / SQLite",
+                     "file":"alfatraining-csharp.pdf"
+                  }
+               ]
             },
             {
                "name":"JavaScript",
-               "rating":3,
-               "desc":"Including AJAX",
+               "rating":1.5,
+               "desc":"good base knowledge including AJAX and JQuery",
                "certs":[                 
                   {
                      "label":"4-week JavaScript course",
-                     "file":" "
+                     "file":"alfatraining-javascript.pdf"
                   }
                ]
             },
             {
                "name":"HTML & CSS",
-               "rating":4,
+               "rating":3.5,
                "desc":"Good knowledge including responsive web design",
                "certs":[                 
                   {
                      "label":"8-week web design course",
-                     "file":"webdesign-alfatraining.pdf"
+                     "file":"alfatraining-webdesign.pdf"
                   }
                ]
             }
@@ -112,24 +118,9 @@
                "desc":"testmanagement tool integrated into Jira"
             },
             {
-               "name":"Selenium",
-               "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Playwright",
-               "rating":0,
-               "desc":" "
-            },
-            {
                "name":"Cypress",
                "rating":0,
-               "desc":" "
-            },
-            {
-               "name":"Postman",
-               "rating":0,
-               "desc":" "
+               "desc":"coming soon..."
             }
          ]
       },
@@ -228,13 +219,23 @@
          "skills":[
             {
                "name":"MariaDB / MySQL",
-               "rating":4,
+               "rating":2.5,
                "desc":"Integration via JDBC and SQL scripting."
+            },
+            {
+               "name":"MS-SQL / SQLite",
+               "rating":2.5,
+               "desc":"in connection with C#"
             },
             {
                "name":"JSON",
                "rating":3,
                "desc":"Local data storage and test environments."
+            },
+            {
+               "name":"XML",
+               "rating":2.0,
+               "desc":" "
             }
          ]
       },
