@@ -8,13 +8,13 @@
         {
             "year": "06/2025-01/2026",
             "company": "alafatraining GmbH",
-            "title": " ",
+            "title": "Further education",
             "description": "Advanced training in Python, Java, HTML / CSS, JavaScript, and C#"
         },
         {
             "year": "03/2007–06/2025",
             "company": "PTx Trimble GmbH (formerly Müller Elektronik GmbH & Co. KG) in Salzkotten",
-            "title": " ",
+            "title": "Software developer / Software tester",
             "description": " ",
             "subroles": [
                 {
@@ -54,7 +54,7 @@
         {
             "year": "10/2000–03/2002",
             "company": "b.i.b. International College in Paderborn",
-            "title": " ",
+            "title": "Advanced training",
             "description": "Advanced training as a State-certified Computer Scientist with successfully passed final examination",
             "certificate": {
                 "label": "Final Certificate",

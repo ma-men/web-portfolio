@@ -8,13 +8,13 @@
         {
             "year": "06/2025-01/2026",
             "company": "alafatraining GmbH",
-            "title": " ",
+            "title": "Weiterbildung",
             "description": "Weiterbildung in Python, Java, HTML / CSS, JavaScript und C#"
         },
         {
             "year": "03/2007–06-2025",
             "company": "PTx Trimble GmbH (früher Müller Elektronik GmbH & Co. KG) in Salzkotten",
-            "title": " ",
+            "title": "Softwareentwickler / Softwaretester",
             "description": " ",
             "subroles": [
                 {
@@ -54,7 +54,7 @@
         {
             "year": "10/2000–03/2002",
             "company": "b.i.b. International College in Paderborn",
-            "title": " ",
+            "title": "Fortbildung",
             "description": "Fortbildung zum Staatlich geprüften Informatiker mit erfolgreich bestandener Abschlussprüfung",
             "certificate": {
                 "label": "Abschlusszeugnis",
