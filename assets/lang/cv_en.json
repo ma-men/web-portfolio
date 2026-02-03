@@ -10,43 +10,14 @@
             "company": "Building and deepening programming skills and practical qualifications in the field of test automation",
             "title": "Professional Upskilling – Test Automation",
             "description": " ",
-            "subroles": [
-                {
-                    "year": " ",
-                    "title": "Knowledge acquired or expanded:"
-                },
-                {
-                    "year": " ",
-                    "title": "- Python, pytest, mypy, pylint, Django,"
-                },
-                {
-                    "year": " ",
-                    "title": "- Java, JavaFX, Ajax,"
-                },
-                {
-                    "year": " ",
-                    "title": "- HTML / CSS, responsives Webdesign"
-                },
-                {
-                    "year": " ",
-                    "title": "- JavaScript, "
-                },
-                {
-                    "year": " ",
-                    "title": "- C#, .NetCore, WinForms, LINQ,"
-                },
-                {
-                    "year": " ",
-                    "title": "- MariaDB, PostgeSQL, SQLite, MS-SQL"
-                },
-                {
-                    "year": " ",
-                    "title": "- Git, GitHub, CI/CD"
-                },
-                {
-                    "year": " ",
-                    "title": "- Cypress, TDD"
-                }
+            "skills": ["Python, pytest, mypy, pylint, Django,",
+                       "Java, JavaFX, Ajax,",
+                       "HTML / CSS, responsives Webdesign",
+                       "JavaScript,",
+                       "C#, .NetCore, WinForms, LINQ,",
+                       "MariaDB, PostgeSQL, SQLite, MS-SQL",
+                       "Git, GitHub, CI/CD",
+                       "Cypress, TDD"
             ]
         },
         {
@@ -54,10 +25,12 @@
             "company": "PTx Trimble GmbH (formerly Müller Elektronik GmbH & Co. KG) in Salzkotten",
             "title": "Software developer / Software tester",
             "description": " ",
+            "skills": ["JIRA", "Confluence"],
             "subroles": [
                 {
                     "year": "04/2021–06/2025",
-                    "title": "Project-specific responsibility as Test Lead for the planning, execution, and evaluation of software tests"
+                    "title": "Project-specific responsibility as Test Lead for the planning, execution, and evaluation of software tests",
+                    "skills": ["Polarion"]
                 },
                 {
                     "year": "04/2021–06/2025",

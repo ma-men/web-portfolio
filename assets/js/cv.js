@@ -18,7 +18,9 @@ export const cv = {
             company: 'company',
             title: 'title',
             description: 'description',
+            skills: 'skills',
             subroles: 'subroles',
+            subSkills: 'skills',
             subYear: 'year',
             subTitle: 'title',
             certificate: 'certificate',
@@ -148,6 +150,13 @@ export const cv = {
             card.appendChild(desc);
         }
 
+        // Skills auf Hauptebene (falls vorhanden)
+        const mainSkills = Array.isArray(item[f.skills]) ? item[f.skills] : [];
+        if (mainSkills.length > 0) {
+            const skillsContainer = cv._createSkillsList(mainSkills, false);
+            card.appendChild(skillsContainer);
+        }
+
         // Mini-Timeline (subroles)
         const subs = Array.isArray(item[f.subroles]) ? item[f.subroles] : [];
         if (subs.length > 0) {
@@ -169,6 +178,14 @@ export const cv = {
 
                 row.appendChild(y);
                 row.appendChild(t);
+
+                // Skills in Subrole (falls vorhanden)
+                const subSkills = Array.isArray(sr[f.subSkills]) ? sr[f.subSkills] : [];
+                if (subSkills.length > 0) {
+                    const subSkillsList = cv._createSkillsList(subSkills, true);
+                    row.appendChild(subSkillsList);
+                }
+
                 subContainer.appendChild(row);
             }
 
@@ -194,4 +211,21 @@ export const cv = {
 
         return card;
     },
+
+    // Erstellt eine Skills-Liste (ul/li mit grauen Bullets)
+    _createSkillsList(skills, isNested) {
+        const ul = document.createElement('ul');
+        ul.classList.add('cv-skills');
+        if (isNested) {
+            ul.classList.add('cv-skills-nested');
+        }
+
+        for (let i = 0; i < skills.length; i++) {
+            const li = document.createElement('li');
+            li.textContent = skills[i];
+            ul.appendChild(li);
+        }
+
+        return ul;
+    }
 };
