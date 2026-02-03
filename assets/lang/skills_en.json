@@ -33,6 +33,10 @@
                   {
                      "label":"4-week Python course",
                      "file":"alfatraining-python.pdf"
+                  },
+                  {
+                     "label":"Seminar: Test-driven development with pytest",
+                     "file":"seminar-pytest.pdf"
                   }
                ]
             },
