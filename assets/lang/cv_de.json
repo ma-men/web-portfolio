@@ -6,10 +6,48 @@
     "subtitle": "Softwaretester / Softwareentwickler",
     "experience": [
         {
-            "year": "06/2025-01/2026",
-            "company": "alafatraining GmbH",
-            "title": "Weiterbildung",
-            "description": "Weiterbildung in Python, Java, HTML / CSS, JavaScript und C#"
+            "year": "06/2025-heute",
+            "company": "Aufbau und Vertiefung von Programmierkenntnissen und praxisorientierte Qualifizierung im Bereich Testautomatisierung",
+            "title": "Qualifizierung Testautomation",
+            "description": " ",
+            "subroles": [
+                {
+                    "year": " ",
+                    "title": "Erworbene bzw. ausgebaute Kenntnisse:"
+                },
+                {
+                    "year": " ",
+                    "title": "- Python, pytest, mypy, pylint, Django,"
+                },
+                {
+                    "year": " ",
+                    "title": "- Java, JavaFX, Ajax,"
+                },
+                {
+                    "year": " ",
+                    "title": "- HTML / CSS, responsives Webdesign"
+                },
+                {
+                    "year": " ",
+                    "title": "- JavaScript, "
+                },
+                {
+                    "year": " ",
+                    "title": "- C#, .NetCore, WinForms, LINQ,"
+                },
+                {
+                    "year": " ",
+                    "title": "- MariaDB, PostgeSQL, SQLite, MS-SQL"
+                },
+                {
+                    "year": " ",
+                    "title": "- Git, GitHub, CI/CD"
+                },
+                {
+                    "year": " ",
+                    "title": "- Cypress, TDD"
+                }
+            ]
         },
         {
             "year": "03/2007–06-2025",

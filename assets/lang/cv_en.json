@@ -6,10 +6,48 @@
     "subtitle": "Software Tester / Software Developer",
     "experience": [
         {
-            "year": "06/2025-01/2026",
-            "company": "alafatraining GmbH",
-            "title": "Further education",
-            "description": "Advanced training in Python, Java, HTML / CSS, JavaScript, and C#"
+            "year": "06/2025-Present",
+            "company": "Building and deepening programming skills and practical qualifications in the field of test automation",
+            "title": "Professional Upskilling – Test Automation",
+            "description": " ",
+            "subroles": [
+                {
+                    "year": " ",
+                    "title": "Knowledge acquired or expanded:"
+                },
+                {
+                    "year": " ",
+                    "title": "- Python, pytest, mypy, pylint, Django,"
+                },
+                {
+                    "year": " ",
+                    "title": "- Java, JavaFX, Ajax,"
+                },
+                {
+                    "year": " ",
+                    "title": "- HTML / CSS, responsives Webdesign"
+                },
+                {
+                    "year": " ",
+                    "title": "- JavaScript, "
+                },
+                {
+                    "year": " ",
+                    "title": "- C#, .NetCore, WinForms, LINQ,"
+                },
+                {
+                    "year": " ",
+                    "title": "- MariaDB, PostgeSQL, SQLite, MS-SQL"
+                },
+                {
+                    "year": " ",
+                    "title": "- Git, GitHub, CI/CD"
+                },
+                {
+                    "year": " ",
+                    "title": "- Cypress, TDD"
+                }
+            ]
         },
         {
             "year": "03/2007–06/2025",
