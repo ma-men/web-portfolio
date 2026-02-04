@@ -10,12 +10,12 @@
             "company": "Aufbau und Vertiefung von Programmierkenntnissen und praxisorientierte Qualifizierung im Bereich Testautomatisierung",
             "title": "Qualifizierung Testautomation",
             "description": " ",
-            "skills": ["Python, pytest, mypy, pylint, Django,",
-                       "Java, JavaFX, Ajax,",
+            "skills": ["Python, pytest, mypy, pylint, Django",
+                       "Java, JavaFX",
                        "HTML / CSS, responsives Webdesign",
-                       "JavaScript,",
-                       "C#, .NetCore, WinForms, LINQ,",
-                       "MariaDB, PostgeSQL, SQLite, MS-SQL",
+                       "JavaScript, DOM, AJAX, jQuery",
+                       "C#, .NetCore, WinForms, LINQ",
+                       "MariaDB, PostgeSQL, SQLite, MS-SQL, MySQL",
                        "Git, GitHub, CI/CD",
                        "Cypress, TDD"
             ]
@@ -25,20 +25,29 @@
             "company": "PTx Trimble GmbH (früher Müller Elektronik GmbH & Co. KG) in Salzkotten",
             "title": "Softwareentwickler / Softwaretester",
             "description": " ",
-            "skills": ["JIRA", "Confluence"],
+            "skills": ["JIRA, Zephyr for JIRA", 
+                       "SCRUM, Kanban, Agile Mindset",
+                       "Confluence", 
+                       "Bitbucket, Git"],
             "subroles": [
                 {
                     "year": "04/2021–06/2025",
-                    "title": "Projektspezifische Verantwortung als Test Lead für die Planung, Durchführung und Auswertung von Softwaretests",
-                    "skills": ["Polarion"]
+                    "title": "Koordination und fachliche Führung der Testaktivitäten eines kleinen Testteams als Test Lead (2 Personen) in ausgewählten Projekten.",
+                    "skills": ["Testkonzeption & Teststrategie",
+                               "Testplanung und -koordination",
+                               "Abstimmung mit Entwicklung, Product Owner und Projektleitung"]
                 },
                 {
                     "year": "04/2021–06/2025",
-                    "title": "Softwaretester für Steuergeräte und Terminals im Agrartechnischen Umfeld"
+                    "title": "Softwaretester für Steuergeräte und Terminals im Agrartechnischen Umfeld",
+                    "skills": ["Polarion",
+                               "Testdurchführung (manuell, ggf. explorativ)"]
                 },
                 {
                     "year": "03/2007-03/2021",
-                    "title": "Software Entwicklung in C im Bereich Agrarelektronik und im Automotive Umfeld (Steuergeräte und Bedien-Terminals"
+                    "title": "Software Entwicklung in C im Bereich Agrarelektronik und im Automotive Umfeld (Steuergeräte und Bedien-Terminals",
+                    "skills": ["Embedded C",
+                               "Rational Synergy, Rational DOORS Classic"]
                 }
             ],
             "certificate": {
@@ -57,6 +66,9 @@
             "company": "NovaTec Kommunikationstechnik GmbH in Paderborn",
             "title": "Softwareentwickler",
             "description": "Software Entwicklung in C im Bereich Mobilfunk (GSM-Router, Domain Name Services, TCP/IP und ISDN Layer 3) ",
+            "skills": ["Embedded C",
+                       "TCP/IP, DNS",
+                       "GSM, VOIP, SIP"],
             "certificate": {
                 "label": "Arbeitszeugnis",
                 "file": "zeugnis_novatec.pdf"
