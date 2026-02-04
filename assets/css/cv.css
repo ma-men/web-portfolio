@@ -17,6 +17,9 @@
 .cv-container {
   margin: 0 auto;
   width: 100%;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
 }
 
 
