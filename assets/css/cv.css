@@ -137,7 +137,9 @@
   content: "";
   position: absolute;
   left: -0.2rem;
-  top: 0.65rem;
+  /*top: 0.65rem;*/
+  top: 50%;
+  transform: translateY(-50%);
   width: 0.5rem;
   height: 0.5rem;
   background: var(--mini-timeline-color);
