@@ -175,7 +175,7 @@
 
   margin: 1rem 0 0 0;
   /*padding: 0;*/
-  list-style-position: inside;
+  list-style-position: outside; /* Bullets außerhalb des Textflusses */
   list-style-type: disc;
   text-align: left !important; /* WICHTIG: immer linksbündig, überschreibt Card-Ausrichtung */
 }
