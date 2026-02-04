@@ -17,9 +17,19 @@
 .cv-container {
   margin: 0 auto;
   width: 100%;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
+}
+
+/* Überschreibt das globale p { hyphens: auto; }, 
+   im CV-Bereich kein Umbruch innerhalb eines Wortes */
+.cv-container p,
+.cv-card p,
+.cv-company,
+.cv-desc,
+.cv-subrole-title,
+.cv-skills li {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
 }
 
 
