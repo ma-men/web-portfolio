@@ -156,7 +156,7 @@
 
 /* ===== SKILLS-LISTE (GRAU, SCHLICHT, IMMER LINKSBÜNDIG) ===== */
 .cv-skills {
-  margin: 0.6rem 0 0 0;
+  margin: 2.6rem 0 0 0;
   padding: 0;
   list-style-position: inside;
   list-style-type: disc;
@@ -164,7 +164,7 @@
 }
 .cv-skills li {
   font-size: 0.85rem; /* 0.95rem; Gleiche Größe wie .cv-company */
-  line-height: 1.4; /*1.6;*/
+  line-height: 1.2; /*1.6;*/
   color: var(--text-700);
   margin-bottom: 0.25rem;
   font-weight: 500; /* Gleiche Stärke wie .cv-company */
