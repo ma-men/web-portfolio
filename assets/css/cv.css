@@ -154,6 +154,32 @@
   color: var(--text-700);
 }
 
+/* ===== SKILLS-LISTE (GRAU, SCHLICHT, IMMER LINKSBÜNDIG) ===== */
+.cv-skills {
+  margin: 0.6rem 0 0 0;
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: disc;
+  text-align: left !important; /* WICHTIG: immer linksbündig, überschreibt Card-Ausrichtung */
+}
+.cv-skills li {
+  font-size: 0.95rem; /* Gleiche Größe wie .cv-company */
+  line-height: 1.6;
+  color: var(--text-700);
+  margin-bottom: 0.25rem;
+  font-weight: 500; /* Gleiche Stärke wie .cv-company */
+}
+.cv-skills li::marker {
+  color: var(--text-500); /* Graue Bullet-Points */
+}
+
+/* Skills innerhalb einer Subrole (zusätzlich eingerückt) */
+.cv-skills-nested {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+
 /* ===== ARBEITSZEUGNIS-LINK ===== */
 .cv-certificate {
   margin-top: 0.8rem;
