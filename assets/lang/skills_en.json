@@ -172,16 +172,6 @@
                "desc":"6 years of professional experience documenting test plans, test cases, and results."
             },
             {
-               "name":"Bitbucket",
-               "rating":2.5,
-               "desc":"Approx. 4 years of professional experience in source code management."
-            },
-            {
-               "name":"Git / GitHub",
-               "rating":3,
-               "desc":"7 years of professional experience in source code management."
-            },
-            {
                "name":"Rational Synergy",
                "rating":4,
                "desc":"Many years of experience as key user supporting developers and testers."
@@ -194,17 +184,38 @@
          ]
       },
       {
+         "group":"Git / Git hosting",
+         "skills":[
+            {
+               "name":"Bitbucket",
+               "rating":2.5,
+               "desc":"Approx. 4 years of professional experience in source code management."
+            },
+            {
+               "name":"Git",
+               "rating":3,
+               "desc":"7 years of professional experience in source code management.",
+               "certs":[                 
+                  {
+                     "label":"Seminar Git for Developer",
+                     "file":"seminar-git.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"GitLab CI / GitHub",
+               "rating":2,
+               "desc":"Good general understanding of CI/CD, including pipelines"
+            }
+         ]
+      },
+      {
          "group":"Agile development methods",
          "skills":[
             {
-               "name":"SCRUM",
+               "name":"Scrum / Kanban",
                "rating":3,
-               "desc":" "
-            },
-            {
-               "name":"Kanban",
-               "rating":3,
-               "desc":" "
+               "desc":"Several years of experience in agile environments with a strong focus on software testing and quality assurance."
             }
          ]
       },

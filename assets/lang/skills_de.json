@@ -172,16 +172,6 @@
                "desc":"6 Jahre Berufserfahrung in der Dokumentation von Testplänen, Testfällen und Ergebnissen."
             },
             {
-               "name":"Bitbucket",
-               "rating":2.5,
-               "desc":"ca 4 Jahre Berufserfahrung in der Quellcodeverwaltung."
-            },
-            {
-               "name":"Git / GitHub",
-               "rating":3,
-               "desc":"7 Jahre Berufserfahrung in der Quellcodeverwaltung"
-            },
-            {
                "name":"Rational Synergy",
                "rating":4,
                "desc":"jahrelange Tätigkeit als Keyuser zur Unterstützung von Entwicklern und Testern."
@@ -194,17 +184,38 @@
          ]
       },
       {
+         "group":"Git / Git Hosting",
+         "skills":[
+            {
+               "name":"Bitbucket",
+               "rating":2.5,
+               "desc":"ca 4 Jahre Berufserfahrung in der Quellcodeverwaltung."
+            },
+            {
+               "name":"Git",
+               "rating":3,
+               "desc":"7 Jahre Berufserfahrung in der Quellcodeverwaltung",
+               "certs":[                 
+                  {
+                     "label":"Seminar Git für Entwickler",
+                     "file":"seminar-git.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"GitLab CI / GitHub",
+               "rating":2,
+               "desc":"Gutes allgemeines Verständnis von CI/CD, einschließlich Pipelines"
+            }
+         ]
+      },
+      {
          "group":"Agile Entwicklungsmethoden",
          "skills":[
             {
-               "name":"SCRUM",
+               "name":"Scrum / Kanban",
                "rating":3,
-               "desc":" "
-            },
-            {
-               "name":"Kanban",
-               "rating":3,
-               "desc":" "
+               "desc":"Mehrjährige praktische Erfahrung sowie fundierte Kenntnisse in agiler Softwareentwicklung und Softwaretesting."
             }
          ]
       },
