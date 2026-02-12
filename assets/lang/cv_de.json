@@ -17,7 +17,7 @@
                        "C#, .NetCore, WinForms, LINQ",
                        "MariaDB, PostgeSQL, SQLite, MS-SQL, MySQL",
                        "Git, GitHub, Gitlab CI, CI/CD",
-                       "Cypress, TDD"
+                       "Cypress, Mocha, TDD"
             ]
         },
         {
