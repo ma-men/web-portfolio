@@ -85,7 +85,7 @@
          "skills":[
             {
                "name":"Scrum / Kanban",
-               "rating":3,
+               "rating":3.5,
                "desc":"Several years of experience in agile environments with a strong focus on software testing and quality assurance."
             }
          ]
@@ -104,9 +104,9 @@
                "desc":"Over 4 years of experience as test lead of a small test team (2 people)"
             },
             {
-               "name":"Creation of test plans and test strategies",
+               "name":"Test Design",
                "rating":2.5,
-               "desc":" "
+               "desc":"Creation of test plans and test strategies"
             },
             {
                "name":"ISTQB Certifications",
@@ -168,7 +168,7 @@
             },
             {
                "name":"Embedded Software-Test for C",
-               "rating":3.5,
+               "rating":2.0,
                "desc":" ",
                "certs":[                 
                   {
@@ -179,7 +179,7 @@
             },
             {
                "name":"Static code analysis/review for C",
-               "rating":3.5,
+               "rating":2.0,
                "desc":" ",
                "certs":[                 
                   {
@@ -272,7 +272,7 @@
          ]
       },
       {
-         "group":"Agriculture / Automotive",
+         "group":"Agriculture - Automotive",
          "skills":[
             {
                "name":"CAN-BUS",
@@ -305,9 +305,14 @@
                "desc":"Integration via JDBC and SQL scripting."
             },
             {
-               "name":"MS-SQL / SQLite",
+               "name":"MS-SQL - SQLite",
                "rating":2.5,
                "desc":"in connection with C#"
+            },
+            {
+               "name":"PostgreSQL",
+               "rating":2.5,
+               "desc":"in connection with Python and Django"
             },
             {
                "name":"JSON",
@@ -316,6 +321,11 @@
             },
             {
                "name":"XML",
+               "rating":2.0,
+               "desc":" "
+            },
+            {
+               "name":"YAML",
                "rating":2.0,
                "desc":" "
             }
