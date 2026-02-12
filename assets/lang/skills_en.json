@@ -125,7 +125,7 @@
          "group":"Test Automation",
          "skills":[
             {
-               "name":"Cypress – End-to-End Test Automation",
+               "name":"Cypress - Mocha",
                "rating":1.5,
                "desc":"First practical experience in developing end-to-end tests (private project)",
                "certs":[                 
@@ -138,7 +138,7 @@
             {
                "name":"pytest",
                "rating":1.5,
-               "desc":"pytest – Transferring classic testing methodology to automated unit tests using TDD",
+               "desc":"pytest - Transferring classic testing methodology to automated unit tests using TDD",
                "certs":[                 
                   {
                      "label":"Test-driven development with pytest",
@@ -149,7 +149,7 @@
             {
                "name":"Gitlab CI",
                "rating":1.5,
-               "desc":"GitLab CI – first practical experience with CI/CD pipelines"
+               "desc":"GitLab CI - first practical experience with CI/CD pipelines"
             },
             {
                "name":"xUnit , NUnit, MSTest ????",
