@@ -16,7 +16,7 @@
                        "JavaScript, DOM, AJAX, jQuery",
                        "C#, .NetCore, WinForms, LINQ",
                        "MariaDB, PostgeSQL, SQLite, MS-SQL, MySQL",
-                       "Git, GitHub, CI/CD",
+                       "Git, GitHub, Gitlab CI, CI/CD",
                        "Cypress, TDD"
             ]
         },
