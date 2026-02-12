@@ -312,7 +312,7 @@
             },
             {
                "name":"PostgreSQL",
-               "rating":2.5,
+               "rating":1.5,
                "desc":"in Verbindung Python und Django"
             },
             {
@@ -327,7 +327,7 @@
             },
             {
                "name":"YAML",
-               "rating":2.0,
+               "rating":1.5,
                "desc":" "
             }
          ]
