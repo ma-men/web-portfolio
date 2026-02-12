@@ -77,6 +77,16 @@
          ]
       },
       {
+         "group":"Agile Entwicklungsmethoden",
+         "skills":[
+            {
+               "name":"Scrum / Kanban",
+               "rating":3,
+               "desc":"Mehrjährige praktische Erfahrung sowie fundierte Kenntnisse in agiler Softwareentwicklung und Softwaretesting."
+            }
+         ]
+      },
+      {
          "group":"Testmanagement",
          "skills":[
             {
@@ -254,16 +264,6 @@
                "name":"GitLab CI / GitHub",
                "rating":1.5,
                "desc":"Gutes Grundverständnis von CI/CD, einschließlich der Erstellung von Pipelines"
-            }
-         ]
-      },
-      {
-         "group":"Agile Entwicklungsmethoden",
-         "skills":[
-            {
-               "name":"Scrum / Kanban",
-               "rating":3,
-               "desc":"Mehrjährige praktische Erfahrung sowie fundierte Kenntnisse in agiler Softwareentwicklung und Softwaretesting."
             }
          ]
       },

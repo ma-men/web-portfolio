@@ -81,6 +81,16 @@
          ]
       },
       {
+         "group":"Agile development methods",
+         "skills":[
+            {
+               "name":"Scrum / Kanban",
+               "rating":3,
+               "desc":"Several years of experience in agile environments with a strong focus on software testing and quality assurance."
+            }
+         ]
+      },
+      {
          "group":"Test Management",
          "skills":[
             {
@@ -258,16 +268,6 @@
                "name":"GitLab CI / GitHub",
                "rating":1.5,
                "desc":"Good basic understanding of CI/CD, including creating pipelines"
-            }
-         ]
-      },
-      {
-         "group":"Agile development methods",
-         "skills":[
-            {
-               "name":"Scrum / Kanban",
-               "rating":3,
-               "desc":"Several years of experience in agile environments with a strong focus on software testing and quality assurance."
             }
          ]
       },
