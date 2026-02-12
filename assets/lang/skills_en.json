@@ -125,7 +125,7 @@
          "group":"Test Automation",
          "skills":[
             {
-               "name":"Cypress - Mocha",
+               "name":"Cypress - Mocha - POM",
                "rating":1.5,
                "desc":"First practical experience in developing end-to-end tests (private project)",
                "certs":[                 
