@@ -33,10 +33,6 @@
                   {
                      "label":"4-wöchiger Python-Lehrgang",
                      "file":"alfatraining-python.pdf"
-                  },
-                  {
-                     "label":"Seminar: Testgetriebene Entwicklung mit pytest",
-                     "file":"seminar-pytest.pdf"
                   }
                ]
             },
@@ -81,20 +77,82 @@
          ]
       },
       {
-         "group":"Softwaretest",
+         "group":"Testmanagement",
          "skills":[
-             {
+            {
+               "name":"Zephyr für Jira",
+               "rating":4,
+               "desc":"über 4 Jahre Erfahrung in der Erstellung, Strukturierung und Durchführung von Testfällen."
+            },
+            {
+               "name":"Test Lead",
+               "rating":4,
+               "desc":"über 4 Jahre Erfahrung als Test Lead eines kleinen Testteams (2 Personen)"
+            },
+            {
+               "name":"Erstellung von Testplänen und Teststrategien",
+               "rating":2.5,
+               "desc":" "
+            },
+            {
                "name":"ISTQB",
-               "rating":3.5,
+               "rating":5,
                "desc":" ",
                "certs":[                 
                   {
-                     "label":"ISTQB Foundation Level",
+                     "label":"ISTQB Foundation Level Zertifizierung erfolgreich abgeschlossen",
                      "file":"istqb-foundation-level.pdf"
                   }
                ]
-             },
-             {
+             }
+         ]
+      },
+      {
+         "group":"Testautomatisierung",
+         "skills":[
+            {
+               "name":"Cypress",
+               "rating":1.5,
+               "desc":"Erste praktische Erfahrung in der Entwicklung von End-to-End Tests (privates Projekt)",
+               "certs":[                 
+                  {
+                     "label":"Cypress - Eﬀektive End-to-End-Tests",
+                     "file":"seminar-cypress.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"pytest",
+               "rating":1.5,
+               "desc":"pytest – Übertragung klassischer Testmethodik in automatisierte Unit-Tests mittels TDD",
+               "certs":[                 
+                  {
+                     "label":"Testgetriebene Entwicklung mit pytest",
+                     "file":"seminar-pytest.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"Gitlab CI",
+               "rating":1.5,
+               "desc":"GitLab CI – erste praktische Erfahrung mit CI/CD-Pipelines"
+            },
+            {
+               "name":"xUnit , NUnit, MSTest ????",
+               "rating":1.5,
+               "desc":"Testgetriebene Entwicklung mit C# .NET"
+            }
+         ]
+      },
+      {
+         "group":"Embedded Testing",
+         "skills":[
+            {
+               "name":"manuelle Softwaretests",
+               "rating":4,
+               "desc":"über 4 Jahre Jahre Erfahrung im manuellen Softwaretest (Embedded Systems)"
+            },
+            {
                "name":"Embedded Software-Test für C",
                "rating":3.5,
                "desc":" ",
@@ -115,16 +173,6 @@
                      "file":"polyspace-for-c.pdf"
                   }
                ]
-            },
-            {
-               "name":"Zephyr für Jira",
-               "rating":4,
-               "desc":"Testmanagement-Tool als Jira-Plugin."
-            },
-            {
-               "name":"Cypress",
-               "rating":0,
-               "desc":"coming soon..."
             }
          ]
       },
@@ -184,11 +232,11 @@
          ]
       },
       {
-         "group":"Git / Git Hosting",
+         "group":"Git - Git Hosting - CI/CD",
          "skills":[
             {
-               "name":"Bitbucket",
-               "rating":2.5,
+               "name":"Bitbucket / Bamboo",
+               "rating":1.5,
                "desc":"ca 4 Jahre Berufserfahrung in der Quellcodeverwaltung."
             },
             {
@@ -204,8 +252,8 @@
             },
             {
                "name":"GitLab CI / GitHub",
-               "rating":2,
-               "desc":"Gutes allgemeines Verständnis von CI/CD, einschließlich Pipelines"
+               "rating":1.5,
+               "desc":"Gutes Grundverständnis von CI/CD, einschließlich der Erstellung von Pipelines"
             }
          ]
       },

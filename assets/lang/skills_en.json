@@ -81,21 +81,83 @@
          ]
       },
       {
-         "group":"Software Testing",
+         "group":"Test Management",
          "skills":[
-             {
-               "name":"ISTQB",
-               "rating":3.5,
+            {
+               "name":"Zephyr for Jira",
+               "rating":4,
+               "desc":"Over 4 years of experience in creating, structuring, and executing test cases"
+            },
+            {
+               "name":"Test Lead",
+               "rating":4,
+               "desc":"Over 4 years of experience as test lead of a small test team (2 people)"
+            },
+            {
+               "name":"Creation of test plans and test strategies",
+               "rating":2.5,
+               "desc":" "
+            },
+            {
+               "name":"ISTQB Certifications",
+               "rating":5,
                "desc":" ",
                "certs":[                 
                   {
-                     "label":"ISTQB Foundation Level",
+                     "label":"ISTQB Foundation Level certification successfully completed",
                      "file":"istqb-foundation-level.pdf"
                   }
                ]
-             },
-             {
-               "name":"Embedded Software Testing for C",
+             }
+         ]
+      },
+      {
+         "group":"Test Automation",
+         "skills":[
+            {
+               "name":"Cypress – End-to-End Test Automation",
+               "rating":1.5,
+               "desc":"First practical experience in developing end-to-end tests (private project)",
+               "certs":[                 
+                  {
+                     "label":"Cypress - Effective end-to-end testing",
+                     "file":"seminar-cypress.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"pytest",
+               "rating":1.5,
+               "desc":"pytest – Transferring classic testing methodology to automated unit tests using TDD",
+               "certs":[                 
+                  {
+                     "label":"Test-driven development with pytest",
+                     "file":"seminar-pytest.pdf"
+                  }
+               ]
+            },
+            {
+               "name":"Gitlab CI",
+               "rating":1.5,
+               "desc":"GitLab CI – first practical experience with CI/CD pipelines"
+            },
+            {
+               "name":"xUnit , NUnit, MSTest ????",
+               "rating":1.5,
+               "desc":"Test-driven development with C# .NET"
+            }
+         ]
+      },
+      {
+         "group":"Embedded Testing",
+         "skills":[
+            {
+               "name":"manual software testing",
+               "rating":4,
+               "desc":"Over 4 years of experience in manual software testing (embedded systems)"
+            },
+            {
+               "name":"Embedded Software-Test for C",
                "rating":3.5,
                "desc":" ",
                "certs":[                 
@@ -106,7 +168,7 @@
                ]
             },
             {
-               "name":"Static Code Analysis / Review for C",
+               "name":"Static code analysis/review for C",
                "rating":3.5,
                "desc":" ",
                "certs":[                 
@@ -115,16 +177,6 @@
                      "file":"polyspace-for-c.pdf"
                   }
                ]
-            },
-            {
-               "name":"Zephyr for Jira",
-               "rating":4,
-               "desc":"testmanagement tool integrated into Jira"
-            },
-            {
-               "name":"Cypress",
-               "rating":0,
-               "desc":"coming soon..."
             }
          ]
       },
@@ -184,12 +236,12 @@
          ]
       },
       {
-         "group":"Git / Git hosting",
+         "group":"Git - Git hosting - CI / CD",
          "skills":[
             {
-               "name":"Bitbucket",
-               "rating":2.5,
-               "desc":"Approx. 4 years of professional experience in source code management."
+               "name":"Bitbucket / Bamboo",
+               "rating":1.5,
+               "desc":"Approx. 4 years of experience in source code management."
             },
             {
                "name":"Git",
@@ -204,8 +256,8 @@
             },
             {
                "name":"GitLab CI / GitHub",
-               "rating":2,
-               "desc":"Good general understanding of CI/CD, including pipelines"
+               "rating":1.5,
+               "desc":"Good basic understanding of CI/CD, including creating pipelines"
             }
          ]
       },
