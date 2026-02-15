@@ -6,7 +6,7 @@
     "subtitle": "Softwaretester / Softwareentwickler",
     "experience": [
         {
-            "year": "06/2025-heute",
+            "year": "06/2025 - heute",
             "company": "Aufbau und Vertiefung von Programmierkenntnissen und praxisorientierte Qualifizierung im Bereich Testautomatisierung",
             "title": "Qualifizierung Testautomation",
             "description": " ",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "year": "03/2007–06-2025",
+            "year": "03/2007 - 06-2025",
             "company": "PTx Trimble GmbH (früher Müller Elektronik GmbH & Co. KG) in Salzkotten",
             "title": "Softwareentwickler / Softwaretester",
             "description": " ",
@@ -31,20 +31,20 @@
                        "Bitbucket, Git"],
             "subroles": [
                 {
-                    "year": "04/2021–06/2025",
+                    "year": "04/2021 - 06/2025",
                     "title": "Koordination und fachliche Führung der Testaktivitäten eines kleinen Testteams als Test Lead (2 Personen) in ausgewählten Projekten.",
                     "skills": ["Testkonzeption & Teststrategie",
                                "Testplanung und -koordination",
                                "Abstimmung mit Entwicklung, Product Owner und Projektleitung"]
                 },
                 {
-                    "year": "04/2021–06/2025",
+                    "year": "04/2021 - 06/2025",
                     "title": "Softwaretester für Steuergeräte und Terminals im Agrartechnischen Umfeld",
                     "skills": ["Polarion",
                                "Testdurchführung (manuell, ggf. explorativ)"]
                 },
                 {
-                    "year": "03/2007-03/2021",
+                    "year": "03/2007 - 03/2021",
                     "title": "Software Entwicklung in C im Bereich Agrarelektronik und im Automotive Umfeld (Steuergeräte und Bedien-Terminals",
                     "skills": ["Embedded C",
                                "Rational Synergy, Rational DOORS Classic"]
@@ -56,13 +56,13 @@
             }
         },
         {
-            "year": "10/2006–02/2007",
+            "year": "10/2006 - 02/2007",
             "company": " ",
             "title": "Arbeitssuchend",
             "description": " "
         },
         {
-            "year": "09/2002–09/2006",
+            "year": "09/2002 - 09/2006",
             "company": "NovaTec Kommunikationstechnik GmbH in Paderborn",
             "title": "Softwareentwickler",
             "description": "Software Entwicklung in C im Bereich Mobilfunk (GSM-Router, Domain Name Services, TCP/IP und ISDN Layer 3) ",
@@ -75,7 +75,13 @@
             }
         },
         {
-            "year": "10/2000–03/2002",
+            "year": "04/2002 - 08/2002",
+            "company": " ",
+            "title": "Private Auszeit zum Zwecke der Renovierung des Elternhauses",
+            "description": " "
+        },
+        {
+            "year": "10/2000 - 03/2002",
             "company": "b.i.b. International College in Paderborn",
             "title": "Fortbildung",
             "description": "Fortbildung zum Staatlich geprüften Informatiker mit erfolgreich bestandener Abschlussprüfung",
@@ -85,29 +91,29 @@
             }
         },
         {
-            "year": "08/1984-09/2002",
+            "year": "08/1984 - 09/2002",
             "company": "Deutsche telekom AG in Detmold",
             "title": "Angestellter im fernmeldetechnischen Betriebsdienst und im Vertrieb",
             "description": " ",
             "subroles": [
                  {
-                    "year": "09/2000–09/2002",
+                    "year": "09/2000 - 09/2002",
                     "title": "Sonderurlaub unter Wegfall der Bezüge zum Zwecke der Fortbildung zum Staatlich geprüften Informatiker beim BiB in Paderborn "
                 },
                  {
-                    "year": "06/1996–09/2000",
+                    "year": "06/1996 - 09/2000",
                     "title": "Privat- und Geschäftskundenberater im Customer Care Management"
                 },
                 {
-                    "year": "03/1992–06/1996",
+                    "year": "03/1992 - 06/1996",
                     "title": "Aufbau und Betrieb eines bundesweiten Supports für eine Software zur Mitteldisposition und Novell Netware Server Struktur"
                 },
                 {
-                    "year": "08/1987–03/1992",
+                    "year": "08/1987 - 03/1992",
                     "title": "Wartung und Betrieb von Anlagen der Übertragungstechnik in der plesiochronen und synchronen digitalen Hierarchie (PDH, SDH), Leitungsnetzen und Telekommunikationsanschlüssen"
                 },
                 {
-                    "year": "08/1984-07/1987",
+                    "year": "08/1984 - 07/1987",
                     "title": "Berufsausbildung zum Fernmeldehandwerker mit erfolgreich bestandener Abschlussprüfung (Zusatzqualifikation: Fachgehilfe in der Elektroinstallation)"
                 }
             ],

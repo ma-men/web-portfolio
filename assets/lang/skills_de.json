@@ -148,7 +148,7 @@
                "desc":"GitLab CI - erste praktische Erfahrung mit CI/CD-Pipelines"
             },
             {
-               "name":"xUnit , NUnit, MSTest ????",
+               "name":"xUnit , NUnit, MSTest",
                "rating":1.5,
                "desc":"Testgetriebene Entwicklung mit C# .NET"
             }

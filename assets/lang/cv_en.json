@@ -6,7 +6,7 @@
     "subtitle": "Software Tester / Software Developer",
     "experience": [
         {
-            "year": "06/2025-Present",
+            "year": "06/2025 - Present",
             "company": "Building and deepening programming skills and practical qualifications in the field of test automation",
             "title": "Professional Upskilling – Test Automation",
             "description": " ",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "year": "03/2007–06/2025",
+            "year": "03/2007 - 06/2025",
             "company": "PTx Trimble GmbH (formerly Müller Elektronik GmbH & Co. KG) in Salzkotten",
             "title": "Software developer / Software tester",
             "description": " ",
@@ -31,20 +31,20 @@
                        "Bitbucket, Git"],
             "subroles": [
                 {
-                    "year": "04/2021–06/2025",
+                    "year": "04/2021 - 06/2025",
                     "title": "Coordination and functional leadership of test activities for a small test team as Test Lead (2 people) in selected projects.",
                     "skills": ["Test design & test strategy",
                                "Test planning and coordination",
                                "Coordination with development, product owner, and project management"]
                 },
                 {
-                    "year": "04/2021–06/2025",
+                    "year": "04/2021 - 06/2025",
                     "title": "Software Tester for control units and terminals in the agricultural technology sector",
                     "skills": ["Polarion",
                                "Test execution (manual, exploratory if necessary)"]
                 },
                 {
-                    "year": "03/2007-03/2021",
+                    "year": "03/2007 - 03/2021",
                     "title": "Software Development in C in the field of agricultural electronics and automotive systems (control units and operator terminals)",
                     "skills": ["Embedded C",
                                "Rational Synergy, Rational DOORS Classic"]
@@ -56,13 +56,13 @@
             }
         },
         {
-            "year": "10/2006–02/2007",
+            "year": "10/2006 - 02/2007",
             "company": " ",
             "title": "Job Seeking",
             "description": " "
         },
         {
-            "year": "09/2002–09/2006",
+            "year": "09/2002 - 09/2006",
             "company": "NovaTec Kommunikationstechnik GmbH in Paderborn",
             "title": "Software Developer",
             "description": "Software development in C in the field of mobile communications (GSM routers, domain name services, TCP/IP, and ISDN Layer 3)",
@@ -75,7 +75,13 @@
             }
         },
         {
-            "year": "10/2000–03/2002",
+            "year": "04/2002 - 08/2002",
+            "company": " ",
+            "title": "Private time off for the purpose of renovating the family home",
+            "description": " "
+        },
+        {
+            "year": "10/2000 - 03/2002",
             "company": "b.i.b. International College in Paderborn",
             "title": "Advanced training",
             "description": "Advanced training as a State-certified Computer Scientist with successfully passed final examination",
@@ -85,29 +91,29 @@
             }
         },
         {
-            "year": "08/1984-09/2002",
+            "year": "08/1984 - 09/2002",
             "company": "Deutsche Telekom AG in Detmold",
             "title": "Employee in telecommunications operations and sales",
             "description": " ",
             "subroles": [
                  {
-                    "year": "09/2000–09/2002",
+                    "year": "09/2000 - 09/2002",
                     "title": "Special leave without pay for the purpose of further training as a State-certified Computer Scientist at BiB in Paderborn"
                 },
                  {
-                    "year": "06/1996–09/2000",
+                    "year": "06/1996 - 09/2000",
                     "title": "Private and business customer consultant in Customer Care Management"
                 },
                 {
-                    "year": "03/1992–06/1996",
+                    "year": "03/1992 - 06/1996",
                     "title": "Establishment and operation of a nationwide support system for software for resource scheduling and Novell NetWare server infrastructure"
                 },
                 {
-                    "year": "08/1987–03/1992",
+                    "year": "08/1987 - 03/1992",
                     "title": "Maintenance and operation of transmission systems in the plesiochronous and synchronous digital hierarchy (PDH, SDH), line networks, and telecommunications connections"
                 },
                 {
-                    "year": "08/1984-07/1987",
+                    "year": "08/1984 - 07/1987",
                     "title": "Apprenticeship as a Telecommunications Technician with successfully passed final examination (additional qualification: Assistant in Electrical Installation)"
                 }
             ],
