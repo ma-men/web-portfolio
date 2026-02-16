@@ -350,6 +350,21 @@
                "desc":"Many years of experience in developing and testing embedded software for telecommunications applications and control units in agricultural technology."
             } 
          ]
+      },
+      {
+         "group":"Language Skills",
+         "skills":[
+            {
+               "name":"German",
+               "rating":5.0,
+               "desc":"native language"
+            },
+            {
+               "name":"English",
+               "rating":1.0,
+               "desc":"A2 - B1"
+            }
+         ]
       }
    ]
 }

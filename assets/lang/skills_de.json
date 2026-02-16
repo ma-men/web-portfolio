@@ -351,6 +351,21 @@
                "desc":"Langjährige Erfahrung in der Entwicklung und dem Testen von Embedded Software für Telekommunikationsanwendungen und Steuergeräte in der Agrartechnik."
             } 
          ]
+      },
+      {
+         "group":"Sprachkenntnisse",
+         "skills":[
+            {
+               "name":"Deutsch",
+               "rating":5.0,
+               "desc":"Muttersprache"
+            },
+            {
+               "name":"Englisch",
+               "rating":1.0,
+               "desc":"A2 - B1"
+            }
+         ]
       }
    ]
 }
