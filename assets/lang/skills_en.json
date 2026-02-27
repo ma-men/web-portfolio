@@ -149,12 +149,24 @@
             {
                "name":"Gitlab CI",
                "rating":1.5,
-               "desc":"GitLab CI - first practical experience with CI/CD pipelines"
+               "desc":"GitLab CI - first practical experience with CI/CD pipelines",
+               "certs":[                 
+                  {
+                     "label":"Continuous Integration and Delivery (CI/CD) with GitLab CI",
+                     "file":"seminar-gitlab.pdf"
+                  }
+               ]
             },
             {
                "name":"xUnit , NUnit, MSTest",
                "rating":1.5,
-               "desc":"Test-driven development with C# .NET"
+               "desc":"TDD",
+               "certs":[                 
+                  {
+                     "label":"Test-driven development with C# .NET",
+                     "file":"seminar-tdd-csharp-mstest.pdf"
+                  }
+               ]
             }
          ]
       },
