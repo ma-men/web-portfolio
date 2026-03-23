@@ -136,6 +136,17 @@
                ]
             },
             {
+               "name":"Selenium Webdriver - XPath - POM",
+               "rating":1.5,
+               "desc":"Initial hands-on experience with automated interaction with websites, test reporting, wait times, locating elements, etc.",
+               "certs":[                 
+                  {
+                     "label":"Test Automation with Selenium",
+                     "file":"seminar-selenium.pdf"
+                  }
+               ]
+            },
+            {
                "name":"pytest",
                "rating":1.5,
                "desc":"pytest - Transferring classic testing methodology to automated unit tests using TDD",

@@ -132,6 +132,17 @@
                ]
             },
             {
+               "name":"Selenium Webdriver - XPath - POM",
+               "rating":1.5,
+               "desc":"Erste praktische Erfahrung in der automatisierten Interaktion mit Webseiten, Test Reporting, Waits, Finden von Lokatoren etc.",
+               "certs":[                 
+                  {
+                     "label":"Testautomatisierung mit Selenium",
+                     "file":"seminar-selenium.pdf"
+                  }
+               ]
+            },
+            {
                "name":"pytest",
                "rating":1.5,
                "desc":"pytest - Übertragung klassischer Testmethodik in automatisierte Unit-Tests mittels TDD",

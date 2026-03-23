@@ -14,10 +14,10 @@
                        "Java, JavaFX",
                        "HTML / CSS, responsives Webdesign",
                        "JavaScript, DOM, AJAX, jQuery",
-                       "C#, .NetCore, WinForms, LINQ",
+                       "C#, .NetCore, WinForms, LINQ, MSTest",
                        "MariaDB, PostgeSQL, SQLite, MS-SQL, MySQL",
                        "Git, GitHub, Gitlab CI, CI/CD",
-                       "Cypress, Mocha, TDD"
+                       "Cypress, Mocha, TDD, Selenium Webdriver, xUnit"
             ]
         },
         {
