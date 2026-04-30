@@ -9,10 +9,12 @@
         {
             "id": "story1",
             "title": "Kanban Board Application – C# / .NET 8 Desktop Project",
-            "image": {
-                "src": "assets/img/KanbanBoard.png",
-                "alt": "Screenshot of the Kanban Board",
-                "label": "📷 Screenshot"
+            "images": {
+                "label": "📷 Screenshots",
+                "items": [
+                    { "src": "assets/img/kanban_1.png", "alt": "Kanban Board – main view" },
+                    { "src": "assets/img/kanban_2.png", "alt": "Kanban Board – additional view" }
+                ]
             },
             "body": [
                 "The KanbanBoard is a desktop application I developed for visual task management based on the Kanban methodology. The goal of this project was to create a practical and user-friendly tool that helps organize workflows, prioritize tasks, and track progress efficiently. The application is designed for both individual users and small teams, with a strong focus on clarity, usability, and productivity.",

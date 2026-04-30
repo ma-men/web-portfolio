@@ -121,11 +121,11 @@ export const stories = {
 
                 // === Bild-Link im Klon neu verdrahten (cloneNode kopiert keine Listener) ===
                 const clonedImageLink = clone.querySelector('.story-card__image-link');
-                if (clonedImageLink && s.image && s.image.src) {
+                if (clonedImageLink && s.images && Array.isArray(s.images.items) && s.images.items.length) {
                     clonedImageLink.addEventListener('click', function (ev) {
                         ev.preventDefault();
                         ev.stopPropagation();
-                        stories._openImageModal(s.image);
+                        stories._openGallery(s.images.items);
                     });
                 }
 
@@ -171,17 +171,17 @@ export const stories = {
                 });
             });
 
-            // --- Bild-Link (oben links, nur wenn Story ein image hat) ---
+            // --- Bild-Link (oben links, nur wenn Story Bilder hat) ---
             let imageLink = null;
-            if (s.image && s.image.src) {
+            if (s.images && Array.isArray(s.images.items) && s.images.items.length) {
                 imageLink = document.createElement('a');
                 imageLink.href = '#';
                 imageLink.className = 'story-card__image-link';
-                imageLink.textContent = s.image.label || '📷';
+                imageLink.textContent = s.images.label || '📷';
                 imageLink.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    stories._openImageModal(s.image);
+                    stories._openGallery(s.images.items);
                 });
             }
 
@@ -215,42 +215,148 @@ export const stories = {
         }
     },
 
-    // === Bild-Modal öffnen (eigenständig, parallel zum Story-Overlay) ===
-    _openImageModal(image) {
-        const overlay = document.createElement('div');
-        overlay.className = 'image-overlay';
+    // === Bildergalerie öffnen ===
+    //   - manuell: Pfeile (Klick + Tastatur), Thumbnail-Klick
+    //   - automatisch: Play/Pause-Button (Standard: pausiert, 4 s pro Bild, Loop)
+    _openGallery(items) {
+        if (!Array.isArray(items) || !items.length) return;
 
+        let index = 0;
+        const slideMs = 4000;
+        let timerId = null;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'image-overlay gallery';
+
+        // Hauptbild
         const img = document.createElement('img');
-        img.src = image.src;
-        img.alt = image.alt || '';
         img.className = 'image-overlay__img';
 
+        // Prev/Next
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'gallery-nav gallery-nav--prev';
+        prevBtn.setAttribute('aria-label', 'Vorheriges Bild');
+        prevBtn.textContent = '‹';
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'gallery-nav gallery-nav--next';
+        nextBtn.setAttribute('aria-label', 'Nächstes Bild');
+        nextBtn.textContent = '›';
+
+        // Untere Leiste: Play + Counter + Thumbnails
+        const bar = document.createElement('div');
+        bar.className = 'gallery-bar';
+
+        const playBtn = document.createElement('button');
+        playBtn.className = 'gallery-play';
+        playBtn.setAttribute('aria-label', 'Diashow starten');
+        playBtn.textContent = '▶';
+
+        const counter = document.createElement('span');
+        counter.className = 'gallery-counter';
+
+        const thumbs = document.createElement('div');
+        thumbs.className = 'gallery-thumbs';
+
+        const thumbEls = items.map((item, i) => {
+            const t = document.createElement('img');
+            t.src = item.src;
+            t.alt = item.alt || '';
+            t.className = 'gallery-thumb';
+            t.addEventListener('click', (e) => {
+                e.stopPropagation();
+                stopAutoplay();
+                show(i);
+            });
+            thumbs.appendChild(t);
+            return t;
+        });
+
+        bar.append(playBtn, counter, thumbs);
+
+        // Close-Button
         const closeBtn = document.createElement('button');
         closeBtn.textContent = '×';
         closeBtn.className = 'story-close';
 
-        overlay.append(img, closeBtn);
+        // Bei nur einem Bild: Navigation + Bar ausblenden
+        if (items.length < 2) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            bar.style.display = 'none';
+        }
+
+        overlay.append(prevBtn, img, nextBtn, bar, closeBtn);
         document.body.appendChild(overlay);
 
-        setTimeout(() => overlay.classList.add('active'), 10);
-        document.body.style.overflow = 'hidden';
+        // Anzeige aktualisieren
+        const show = (i) => {
+            index = (i + items.length) % items.length;
+            const it = items[index];
+            img.src = it.src;
+            img.alt = it.alt || '';
+            counter.textContent = `${index + 1} / ${items.length}`;
+            thumbEls.forEach((t, k) => {
+                t.classList.toggle('gallery-thumb--active', k === index);
+            });
+        };
 
+        // Autoplay
+        const startAutoplay = () => {
+            if (timerId) return;
+            timerId = setInterval(() => show(index + 1), slideMs);
+            playBtn.textContent = '❚❚';
+            playBtn.setAttribute('aria-label', 'Diashow pausieren');
+            playBtn.classList.add('gallery-play--playing');
+        };
+        const stopAutoplay = () => {
+            if (!timerId) return;
+            clearInterval(timerId);
+            timerId = null;
+            playBtn.textContent = '▶';
+            playBtn.setAttribute('aria-label', 'Diashow starten');
+            playBtn.classList.remove('gallery-play--playing');
+        };
+
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            timerId ? stopAutoplay() : startAutoplay();
+        });
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            stopAutoplay();
+            show(index - 1);
+        });
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            stopAutoplay();
+            show(index + 1);
+        });
+
+        // Schließen
         const close = () => {
+            stopAutoplay();
             overlay.classList.remove('active');
             document.body.style.overflow = '';
+            document.removeEventListener('keydown', onKey);
             setTimeout(() => overlay.remove(), 400);
+        };
+        const onKey = (evt) => {
+            if (evt.key === 'Escape') close();
+            else if (evt.key === 'ArrowLeft') { stopAutoplay(); show(index - 1); }
+            else if (evt.key === 'ArrowRight') { stopAutoplay(); show(index + 1); }
         };
 
         closeBtn.addEventListener('click', close);
         overlay.addEventListener('click', (e) => {
             if (e.target === overlay) close();
         });
-        document.addEventListener('keydown', function escClose(evt) {
-            if (evt.key === 'Escape') {
-                close();
-                document.removeEventListener('keydown', escClose);
-            }
-        });
+        document.addEventListener('keydown', onKey);
+
+        // Initial-Anzeige + einblenden
+        show(0);
+        setTimeout(() => overlay.classList.add('active'), 10);
+        document.body.style.overflow = 'hidden';
     }
 
 };
