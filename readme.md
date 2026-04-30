@@ -6,9 +6,7 @@ Dieses Dokument dient als kleine Begleitnotiz für mein gesamtes Portfolio-Proje
 
 > **Repository:** https://ma-men.github.io/
 
-## 🔐 Passwort
 
-> **Passwort:** Euro-pa1
 
 ## 📝 Projektbeschreibung
 
