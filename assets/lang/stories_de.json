@@ -8,6 +8,18 @@
     "stories": [
         {
             "id": "story1",
+            "title": "Kanban Board Applikation – C# / .NET 8 Desktop Projekt",
+            "body": [
+                "Das KanbanBoard ist eine von mir entwickelte Desktop-Anwendung zur visuellen Aufgabenverwaltung nach der Kanban-Methode. Ziel des Projekts war es, ein praxisnahes Tool zu erstellen, mit dem sich Arbeitsprozesse übersichtlich organisieren, priorisieren und effizient nachverfolgen lassen. Die Anwendung richtet sich sowohl an Einzelanwender als auch an kleine Teams und bietet eine klare, intuitive Benutzeroberfläche mit Fokus auf Produktivität und Usability.",
+                "Technisch basiert das Projekt auf C# und dem .NET 8 Framework und wurde als klassische Windows Forms (WinForms) Anwendung umgesetzt. Für die Datenpersistenz kommt eine lokale SQLite-Datenbank zum Einsatz, wodurch keine zusätzliche Installation erforderlich ist und die Anwendung vollständig lokal betrieben werden kann.",
+                "Kernstück der Anwendung ist ein visuelles Kanban-Board mit Drag-&-Drop-Funktionalität. Aufgaben können flexibel zwischen verschiedenen Workflow-Stages wie „To Do“, „In Progress“ und „Done“ verschoben werden. Ergänzend dazu bietet das System umfangreiche Funktionen wie Projektverwaltung, Benutzerverwaltung mit Avatar-System, detaillierte Task-Informationen (z. B. Priorität, Zeitaufwand, Tags) sowie Filter- und Suchmöglichkeiten. Ein integriertes Reporting-Dashboard ermöglicht zudem die Auswertung von Fortschritt und Arbeitsverteilung.",
+                "Architektonisch wurde das Projekt sauber strukturiert und folgt etablierten Designprinzipien wie dem Repository Pattern und einer klaren Trennung zwischen UI, Business-Logik und Datenzugriff. Die Business-Logik ist in Service-Klassen gekapselt, während der Datenzugriff über dedizierte Repository-Klassen erfolgt. Dadurch ist der Code wartbar, testbar und leicht erweiterbar.",
+                "Ein besonderer Fokus lag auf der Umsetzung komplexer UI-Interaktionen, insbesondere der Drag-&-Drop-Funktionalität, die mithilfe von Win32-API-Erweiterungen realisiert wurde. Zusätzlich wurden wiederverwendbare UserControls entwickelt, um eine modulare und skalierbare Benutzeroberfläche zu gewährleisten.",
+                "nsgesamt demonstriert das Projekt meine Fähigkeiten in der Entwicklung strukturierter Desktop-Anwendungen, im Umgang mit Datenbanken sowie in der Umsetzung moderner Softwarearchitekturen im .NET-Umfeld."
+            ]
+        },
+        {
+            "id": "story2",
             "title": "Zusammenführung zweier Softwarewelten",
             "body": [
                 "Bei der PTx Trimble GmbH war ich jahrelang an der Entwicklung von Steuergeräten für diverse landwirtschaftliche Maschinen tätig, zuletzt an der sehr komplexen Steuerung einer Sämaschine.",
@@ -20,7 +32,7 @@
             ]
         },
         {
-            "id": "story2",
+            "id": "story3",
             "title": "Aufbau von strukturiertem Testen und Requirements Engineering",
             "body": [
                 "Vor rund fünf Jahren wurde bei meinem letzten Arbeitgeber eine neue Softwareabteilung gegründet. Bis dahin gab es keinen echten Softwaretest – Tests wurden unsystematisch und kaum dokumentiert durchgeführt. Ich wechselte in diese Abteilung und war gemeinsam mit zwei Kollegen dafür verantwortlich, strukturiertes Testen für ein zentrales Projekt aufzubauen.",
@@ -30,7 +42,7 @@
             ]
         },
         {
-            "id": "story3",
+            "id": "story4",
             "title": "SIM-Karten Server (GSM-Mobilfunk)",
             "body": [
 
@@ -44,7 +56,7 @@
             ]
         },
         {
-            "id": "story4",
+            "id": "story5",
             "title": "Mein erster Kontakt mit Softwaretest",
             "body": [
                 "Während meiner Zeit bei der Deutschen Telekom war ich am Aufbau eines Support-Systems für ein bundesweites Dispositionssystem zur Mitarbeiter- und Auftragsverwaltung in der Übertragungstechnik beteiligt.",
@@ -56,7 +68,7 @@
             ]
         },
         {
-            "id": "story5",
+            "id": "story6",
             "title": "Technischer Blick hinter die Kulissen",
             "body": [
                 "Meine Portfolio-Webseite ist weit mehr als eine statische HTML-Seite. Der gesamte Aufbau basiert auf JavaScript, das nahezu alle sichtbaren Elemente dynamisch erzeugt – vom Menü bis zu den Inhaltsbereichen. Die eigentliche HTML-Grundstruktur besteht aus nur wenigen Zeilen Code.",

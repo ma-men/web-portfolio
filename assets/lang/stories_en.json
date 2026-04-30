@@ -8,6 +8,18 @@
     "stories": [
         {
             "id": "story1",
+            "title": "Kanban Board Application – C# / .NET 8 Desktop Project",
+            "body": [
+                "The KanbanBoard is a desktop application I developed for visual task management based on the Kanban methodology. The goal of this project was to create a practical and user-friendly tool that helps organize workflows, prioritize tasks, and track progress efficiently. The application is designed for both individual users and small teams, with a strong focus on clarity, usability, and productivity.",
+                "Technically, the project is built using C# and the .NET 8 framework, implemented as a classic Windows Forms (WinForms) application. For data persistence, a local SQLite database is used, allowing the application to run entirely offline without requiring additional installations.",
+                "The core feature of the application is a visual Kanban board with drag-and-drop functionality. Tasks can be easily moved between workflow stages such as “To Do,” “In Progress,” and “Done.” In addition, the system provides a wide range of features, including project management, user management with an avatar system, detailed task information (e.g., priority, time tracking, and tags), as well as filtering and search capabilities. An integrated reporting dashboard also enables users to analyze progress and workload distribution.",
+                "From an architectural perspective, the project follows clean design principles and implements established patterns such as the Repository Pattern, ensuring a clear separation between UI, business logic, and data access layers. Business logic is encapsulated in service classes, while database interactions are handled through dedicated repository classes, resulting in maintainable, testable, and extensible code.",
+                "A particular focus was placed on implementing advanced UI interactions, especially the drag-and-drop functionality, which was realized using Win32 API extensions. Additionally, reusable user controls were developed to support a modular and scalable user interface.",
+                "Overall, this project demonstrates my ability to design and develop well-structured desktop applications, work with databases, and apply modern software architecture principles within the .NET ecosystem."
+            ]
+        },
+        {
+            "id": "story2",
             "title": "Merging Two Software Worlds",
             "body": [
                 "At PTx Trimble GmbH, I was involved for many years in the development of control units for various agricultural machines, most recently working on the highly complex control system of a seed drill.",
@@ -20,7 +32,7 @@
             ]
         },
         {
-            "id": "story2",
+            "id": "story3",
             "title": "Building Structured Testing and Requirements Engineering",
             "body": [
                 "Around five years ago, my former employer established a new software department. Up to that point, there had been no real software testing – tests were performed unsystematically and rarely documented. I joined this department and, together with two colleagues, was responsible for establishing structured testing for a central project.",
@@ -30,7 +42,7 @@
             ]
         },
         {
-            "id": "story3",
+            "id": "story4",
             "title": "SIM Card Server (GSM Mobile Network)",
             "body": [
                 "As a one-person project, I developed a client-server system serving as central management for a large number of SIM cards.",
@@ -43,7 +55,7 @@
             ]
         },
         {
-            "id": "story4",
+            "id": "story5",
             "title": "My First Contact with Software Testing",
             "body": [
                 "During my time at Deutsche Telekom, I was involved in building a support system for a nationwide dispatching system for employee and order management in transmission technology.",
@@ -55,7 +67,7 @@
             ]
         },
         {
-            "id": "story5",
+            "id": "story6",
             "title": "A Technical Look Behind the Scenes",
             "body": [
                 "My portfolio website is far more than a static HTML page. The entire structure is based on JavaScript, which dynamically generates almost all visible elements – from the menu to the content sections. The actual HTML base consists of only a few lines of code.",
