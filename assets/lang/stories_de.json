@@ -9,6 +9,11 @@
         {
             "id": "story1",
             "title": "Kanban Board Applikation – C# / .NET 8 Desktop Projekt",
+            "image": {
+                "src": "assets/img/KanbanBoard.png",
+                "alt": "Screenshot des Kanban Boards",
+                "label": "📷 Screenshot"
+            },
             "body": [
                 "Das KanbanBoard ist eine von mir entwickelte Desktop-Anwendung zur visuellen Aufgabenverwaltung nach der Kanban-Methode. Ziel des Projekts war es, ein praxisnahes Tool zu erstellen, mit dem sich Arbeitsprozesse übersichtlich organisieren, priorisieren und effizient nachverfolgen lassen. Die Anwendung richtet sich sowohl an Einzelanwender als auch an kleine Teams und bietet eine klare, intuitive Benutzeroberfläche mit Fokus auf Produktivität und Usability.",
                 "Technisch basiert das Projekt auf C# und dem .NET 8 Framework und wurde als klassische Windows Forms (WinForms) Anwendung umgesetzt. Für die Datenpersistenz kommt eine lokale SQLite-Datenbank zum Einsatz, wodurch keine zusätzliche Installation erforderlich ist und die Anwendung vollständig lokal betrieben werden kann.",

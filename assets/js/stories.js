@@ -119,6 +119,16 @@ export const stories = {
                 const toggleLink = clone.querySelector('.story-card__toggle');
                 if (toggleLink) toggleLink.style.display = 'none';
 
+                // === Bild-Link im Klon neu verdrahten (cloneNode kopiert keine Listener) ===
+                const clonedImageLink = clone.querySelector('.story-card__image-link');
+                if (clonedImageLink && s.image && s.image.src) {
+                    clonedImageLink.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        stories._openImageModal(s.image);
+                    });
+                }
+
                 // === Fester Close-Button (×) ===
                 const closeBtn = document.createElement('button');
                 closeBtn.textContent = '×';
@@ -161,6 +171,20 @@ export const stories = {
                 });
             });
 
+            // --- Bild-Link (oben links, nur wenn Story ein image hat) ---
+            let imageLink = null;
+            if (s.image && s.image.src) {
+                imageLink = document.createElement('a');
+                imageLink.href = '#';
+                imageLink.className = 'story-card__image-link';
+                imageLink.textContent = s.image.label || '📷';
+                imageLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    stories._openImageModal(s.image);
+                });
+            }
+
             // --- Story-Titel ---
             const title = document.createElement('h3');
             title.className = 'story-card__title';
@@ -186,8 +210,47 @@ export const stories = {
 
             // --- Zusammenbauen ---
             card.append(toggle, title, body);
+            if (imageLink) card.appendChild(imageLink);
             grid.appendChild(card);
         }
+    },
+
+    // === Bild-Modal öffnen (eigenständig, parallel zum Story-Overlay) ===
+    _openImageModal(image) {
+        const overlay = document.createElement('div');
+        overlay.className = 'image-overlay';
+
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.alt || '';
+        img.className = 'image-overlay__img';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+        closeBtn.className = 'story-close';
+
+        overlay.append(img, closeBtn);
+        document.body.appendChild(overlay);
+
+        setTimeout(() => overlay.classList.add('active'), 10);
+        document.body.style.overflow = 'hidden';
+
+        const close = () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => overlay.remove(), 400);
+        };
+
+        closeBtn.addEventListener('click', close);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) close();
+        });
+        document.addEventListener('keydown', function escClose(evt) {
+            if (evt.key === 'Escape') {
+                close();
+                document.removeEventListener('keydown', escClose);
+            }
+        });
     }
 
 };
